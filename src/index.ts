@@ -1,9 +1,12 @@
 import "./polyfills";
 
-import { app } from "@reco-m/core-ui";
+import dva from "dva";
 
+// import { app } from "@reco-m/core-ui";
 import reportWebVitals from "./reportWebVitals";
 import routers from "./router";
+
+const app= dva()
 
 app.router(routers as any);
 
