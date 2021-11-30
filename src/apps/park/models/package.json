@@ -1,0 +1,13 @@
+{
+  "name": "@reco-m/park-models",
+  "version": "0.0.0",
+  "description": "园区models模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/park-service": "~0.0.0",
+    "@reco-m/member-service": "~0.0.0",
+    "@reco-m/ipark-common-service": "~0.0.0",
+    "@reco-m/workorder-service": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

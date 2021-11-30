@@ -1,0 +1,10 @@
+{
+  "name": "@reco-m/invoice-models",
+  "version": "0.0.0",
+  "description": "发票models模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/invoice-service": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

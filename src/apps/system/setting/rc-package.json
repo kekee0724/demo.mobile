@@ -1,0 +1,11 @@
+{
+    "$schema": "../../../../node_modules/rc-packagr/rc-package.schema.json",
+
+    "dest": "../../../../dist-pkg/@reco-m/system-setting",
+    "deleteDestPath": true,
+    "lib": {
+        "jsx": "react",
+        "entryFile": "index.tsx"
+    },
+    "whitelistedNonPeerDependencies": ["tslib", "react", "reco", "dva", "antd-mobile"]
+}

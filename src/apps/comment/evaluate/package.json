@@ -1,0 +1,10 @@
+{
+  "name": "@reco-m/comment-evaluate",
+  "version": "0.0.0",
+  "description": "评价模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/comment-models": "~0.0.0",
+    "@reco-m/ipark-statistics": "~0.0.0"
+  }
+}

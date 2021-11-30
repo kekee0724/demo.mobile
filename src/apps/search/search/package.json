@@ -1,0 +1,21 @@
+{
+    "name": "@reco-m/search",
+    "version": "0.0.0",
+    "description": "搜索模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/search-models": "~0.0.0",
+        "@reco-m/article": "~0.0.0",
+        "@reco-m/activity": "~0.0.0",
+        "@reco-m/ipark-white-activity": "~0.0.0",
+        "@reco-m/ipark-white-circle": "~0.0.0",
+        "@reco-m/policymatching-policymatching": "~0.0.0",
+        "@reco-m/order": "~0.0.0",
+        "@reco-m/notice-notice": "~0.0.0",
+        "@reco-m/ipark-auth-login": "~0.0.0",
+        "@reco-m/ipark-statistics": "~0.0.0",
+        "@reco-m/member-common": "~0.0.0",
+        "@reco-m/member-certify": "~0.0.0",
+        "@reco-m/ipark-common": "~0.0.0"
+    }
+}

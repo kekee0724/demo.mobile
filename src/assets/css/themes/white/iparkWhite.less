@@ -1,0 +1,445 @@
+@import "../default";
+
+
+.theme-white {
+  .banner-head {
+    .am-navbar {
+      background-color: transparent;
+    }
+  }
+  .am-list-body div:not(:last-child) .am-list-line::after {
+    right: 0 !important;
+    left: -15px !important;
+  }
+
+
+  .policyListTab{
+    .am-tabs-default-bar-tab{
+      width: auto !important;
+      padding: 0 12px !important;
+    }
+  }
+
+
+  .policy-wite {
+    .am-flexbox-item{
+      .am-whitespace{
+        height: 4px !important;
+      }
+    }
+
+    .am-card {
+      border-radius: 0;
+      padding-bottom: 0;
+      &::before {
+        opacity: 0;
+      }
+
+      .am-card-body{
+        padding:10px 15px;
+        &::before {
+          left: 0;
+          right: 0;
+          width: auto;
+          bottom: 0;
+          top: auto;
+        }
+      }
+
+      .am-whitespace.am-whitespace-sm {
+        height: 10px;
+      }
+
+      .am-flexbox.am-flexbox-align-center {
+        position: relative;
+      }
+    }
+  .am-tabs-tab-bar-wrap{
+    &:after{
+      content:'';
+      position: absolute;
+      background-color: #e5e5e5;
+      display: block;
+      z-index: 1;
+      top: auto;
+      right: auto;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1PX;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      -webkit-transform: scaleY(0.5);
+      transform: scaleY(0.5);
+    }
+  }
+    .am-whitespace.am-whitespace-md {
+      display: none;
+    }
+
+    .am-wingblank {
+      margin: 0;
+    }
+
+    .am-tabs-default-bar-content {
+      .am-tabs-default-bar-tab {
+        color: #898b99;
+        font-size: 15px;
+        &::after{
+          opacity: 0;
+        }
+
+        &.am-tabs-default-bar-tab-active {
+          color: #000000;
+          font-weight: 600;
+
+          &::before {
+            position: absolute;
+            content: "";
+            height: 3px;
+            width: 15px;
+            border-radius: 30px;
+            left: 50%;
+            background-color: #05b8cd;
+            bottom: 9px;
+            transform: translate(-50%, 0);
+          }
+        }
+      }
+
+      .am-tabs-default-bar-underline {
+        display: none;
+      }
+    }
+
+    .am-notice-bar-marquee {
+      width: 100%;
+    }
+
+    .am-notice-bar {
+      color: #7f7f7f;
+      background-color: #f3f5f5;
+      height: 45px;
+
+      .s1 {
+        color: #0a0a0a;
+      }
+
+      .s2 {
+        color: #05b8cd;
+        font-weight: 500;
+        margin: 0 2px;
+      }
+
+      a {
+        display: inline-block;
+        width: 73px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        border: 1px solid #05b8cd;
+        background-color: rgb(234, 248, 250);
+        color: #05b8cd;
+        font-size: 12px;
+        border-radius: 30px;
+        float: right;
+        margin-top: 6px;
+      }
+    }
+  }
+
+  .tabbar .tabbar-item.active .icon-sever:before {
+    content: "\e854";
+  }
+
+  .tabbar .tabbar-item.active .icon-found:before {
+    content: "\e850";
+  }
+
+  .whitespace-gray-bg {
+    display: block;
+  }
+
+  .impression-footer {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  .default-gray-bg {
+    display: block;
+    &.gray{
+      background-color: #f5f5f9;
+    }
+  }
+
+
+
+  .am-navbar {
+    background-color: #fff;
+
+    &.am-navbar-dark {
+      color: #000;
+
+      &.back-none {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+        z-index: 999;
+        color: #FFFFFF;
+        transition: opacity 0.2s;
+        background-color: rgba(255, 255, 255, 0);
+        box-shadow: none;
+        &:after {
+          display: none;
+        }
+
+        &.new-bg-opcity2 {
+          background-color: rgba(255, 255, 255, 1);
+          color: @gray-color;
+          box-shadow: 0 1px 1px #eee;
+
+          .search-top {
+            color: @gray-color;
+          }
+        }
+
+        &.new-bg-opcity3 {
+          position: relative;
+          background-color: rgba(255, 255, 255, 1);
+          color: @gray-color;
+          box-shadow: none;
+
+          .header-search {
+            margin: 0;
+          }
+
+          .search-top {
+            color: @gray-color;
+          }
+        }
+
+        .border-1px {
+          &:after {
+            border-radius: 58px;
+            border-color: #ddd;
+          }
+        }
+      }
+    }
+  }
+
+  .container-page {
+    background-color: #ffffff;
+  }
+
+  // 搜索框样式
+  .am-search {
+    background-color: #ffffff;
+    padding: 10px 15px;
+    height: 35px;
+
+    .am-search-input {
+      background-color: #efeff4;
+      height: 35px;
+      line-height: 35px;
+
+      input[type="search"] {
+        height: 35px;
+        line-height: 35px !important;
+      }
+
+      .am-search-synthetic-ph {
+        height: 35px;
+        line-height: 35px;
+      }
+
+      .am-search-clear {
+        top: 10px;
+        right: 5px;
+      }
+    }
+  }
+
+  // 所有列表默认样式
+  .am-list {
+    //全局表头
+    .am-list-header {
+      background-color: #ffffff;
+      color: #000;
+      font-size: 16px;
+      padding-top: 13px;
+      padding-bottom: 7px;
+    }
+
+    .am-list-body {
+      &:before {
+        opacity: 0;
+      }
+    }
+  }
+
+  //状态机列表
+  .example-list {
+    .am-list {
+      .am-list-header {
+        .am-notice-bar {
+          color: #000;
+          height: 18px;
+          line-height: 18px;
+          font-size: 16px;
+          font-weight: bold;
+          overflow: initial;
+
+          .am-notice-bar-content {
+            overflow: initial;
+
+            .am-notice-bar-marquee-wrap {
+              overflow: initial !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //地图列表
+  .map-box {
+    .am-list-item {
+      .am-list-line {
+        .am-list-content {
+          > span {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .am-list-body::before {
+      opacity: 0;
+    }
+
+    .am-list-body::after {
+      opacity: 0;
+    }
+
+    .am-list-body div:not(:last-child) .am-list-line::after {
+      opacity: 0;
+    }
+  }
+
+  //问卷调查
+  .result-icon {
+    .am-result {
+      background-color: #fff;
+    }
+  }
+
+  //选择园区
+  .am-modal {
+    &.full-screen {
+      background-color: #fff;
+    }
+  }
+
+  //消息中心
+  .notice-list.am-list .am-list-header {
+    text-align: center;
+    padding-bottom: 15px;
+    font-size: 13px;
+    color: #bcbcbc;
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+}
+
+.iconew {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+//背景间隔
+.whitespace-gray-bg {
+  background-color: #efeff4;
+}
+
+//无边框列表
+.am-list {
+  &.border-none {
+    .am-list-body::before {
+      opacity: 0;
+    }
+
+    .am-list-body::after {
+      opacity: 0;
+    }
+
+    .am-list-body div:not(:last-child) .am-list-line::after {
+      opacity: 0;
+    }
+
+    .am-list-item.am-textarea-item::after {
+      opacity: 0;
+    }
+  }
+}
+
+.icon-lable {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+
+//
+.model-height {
+  top: 0;
+}
+
+.am-grid {
+  // margin: 7.5px 0 12.5px 0;
+}
+
+.grid-box {
+  margin: 0 10px 10px 10px;
+}
+
+.white-home-swiper {
+  position: relative;
+  overflow: hidden;
+  height: 20px;
+
+  .swiper-wrapper {
+    .swiper-slide {
+      position: relative;
+      overflow: hidden;
+
+      .am-badge {
+        padding-right: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        line-height: 1.5;
+
+        .am-badge-dot {
+          right: 0;
+          top: 5px;
+        }
+      }
+    }
+  }
+}
+
+.login-back {
+  width: 80px;
+  height: 80px;
+  margin: 20px 30px 0px 0px !important;
+  // text-align: center;
+  svg {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}

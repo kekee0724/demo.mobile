@@ -1,0 +1,9 @@
+{
+  "name": "@reco-m/home-access",
+  "version": "0.0.0",
+  "description": "门禁模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/ipark-statistics": "~0.0.0"
+  }
+}

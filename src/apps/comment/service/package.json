@@ -1,0 +1,7 @@
+{
+  "name": "@reco-m/comment-service",
+  "version": "0.0.0",
+  "description": "评论service模块",
+  "license": "MIT",
+  "dependencies": {}
+}

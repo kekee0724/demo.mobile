@@ -1,0 +1,11 @@
+{
+  "name": "@reco-m/order-common",
+  "version": "0.0.0",
+  "description": "订单common模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/order-models": "~0.0.0",
+    "@reco-m/ipark-statistics": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

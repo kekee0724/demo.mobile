@@ -1,0 +1,15 @@
+{
+  "name": "@reco-m/msgreach-msgreach",
+  "version": "0.0.0",
+  "description": "信息触达msgreach模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/msgreach-models": "~0.0.0",
+    "@reco-m/ipark-auth-login": "~0.0.0",
+    "@reco-m/activity": "~0.0.0",
+    "@reco-m/article": "~0.0.0",
+    "@reco-m/policymatching-policymatching": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0",
+    "@reco-m/msgreach-common": "~0.0.0"
+  }
+}

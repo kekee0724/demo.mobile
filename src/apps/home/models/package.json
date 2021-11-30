@@ -1,0 +1,17 @@
+{
+  "name": "@reco-m/home-models",
+  "version": "0.0.0",
+  "description": "首页models模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/home-service": "~0.0.0",
+    "@reco-m/service-service": "~0.0.0",
+    "@reco-m/park-service": "~0.0.0",
+    "@reco-m/workorder-service": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0",
+    "@reco-m/member-models": "~0.0.0",
+    "@reco-m/order-service": "~0.0.0",
+    "@reco-m/notice-models": "~0.0.0",
+    "@reco-m/policymatching-models": "~0.0.0"
+  }
+}

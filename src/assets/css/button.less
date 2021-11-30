@@ -1,0 +1,365 @@
+@import "themes/default";
+
+.am-button {
+    &.am-button-disabled {
+        background-color: #eee;
+        color: #666;
+    }
+
+    &.orange-button {
+        color: @white-color;
+        background-color: #f88000;
+    }
+
+    &.orange-button-hover {
+        background-color: #f8601a;
+    }
+
+    .am-button-disabled {
+        background-color: #eee;
+    }
+
+    &.orange-button-border {
+        color: #f88000;
+
+        &:before {
+            border-color: #f88000;
+        }
+    }
+
+    &.orange-button-border-hover {
+        background-color: #f88000;
+        color: @white-color;
+    }
+
+    &.button-no-radius {
+        border-radius: 0;
+
+        &:before {
+            border-radius: 0 !important;
+        }
+    }
+
+    &.gray-button {
+        color: @gray-three-color;
+        background-color: #f7f7f7;
+    }
+
+    &.end-button {
+        color: @gray-four-color;
+    }
+}
+/*老版底部按钮样式*/
+.theme-default {
+    .am-flexbox {
+        &.flex-collapse {
+            padding: 10px 15px;
+
+            .am-flexbox-item {
+                margin: 0;
+
+                .am-button {
+                    border-radius: 0;
+                    &:before {
+                        border-color: @primary-color;
+                        border-radius: 0;
+                    }
+                }
+
+                &:not(:first-child) {
+                    .am-button {
+                        &:before {
+                            border-left: 0;
+                        }
+
+                        &.am-button-primary {
+                            &:before {
+                                border-left: 1px solid @primary-color;
+                            }
+                        }
+                    }
+                }
+
+                &:first-child {
+                    .am-button {
+                        border-top-left-radius: 42px;
+                        border-bottom-left-radius: 42px;
+
+                        &.am-button-small {
+                            border-top-left-radius: 30px;
+                            border-bottom-left-radius: 30px;
+                        }
+                    }
+                }
+
+                &:last-child {
+                    .am-button {
+                        border-bottom-right-radius: 42px;
+                        border-top-right-radius: 42px;
+
+                        &.am-button-small {
+                            border-top-right-radius: 30px;
+                            border-bottom-right-radius: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*新版底部按钮样式*/
+.theme-white, .ft-detail {
+    .white-btn-radius {
+        border-radius: 45px !important;
+    }
+  .default-btn{
+    &.am-button.am-button-disabled{
+      background-color: @primary-color;
+
+    }
+  }
+    .tiled-btn{
+        margin: 0 -5px;
+        .am-flexbox-item{
+             padding: 0 5px;
+             .am-button{
+                background-color: #eaf8fa;
+                color: #0bbace;
+                overflow: unset;
+                 &::before{
+                     border-radius: 84px !important;
+                     border-color: #02b8cd;
+                 }
+             }
+             &:last-child{
+                .am-button{
+                    background-color: @primary-color;
+                    color: #fff;
+                    &::before{
+                        opacity: 0;
+                    }
+                }
+             }
+
+        }
+    }
+    .row-collapse{
+        .am-flexbox-item {
+            &:first-child{
+                .am-button {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                    background-color: #eaf8fa;
+                    color: #0bbace;
+                    margin-right: -1px;
+                  &::before{
+                    border-top-left-radius: 126px;
+                    border-bottom-left-radius: 126px;
+                    border: none;
+                  }
+
+                }
+            }
+            &:last-child{
+                .am-button{
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+    }
+
+    .am-flexbox {
+        &.flex-collapse {
+            padding: 10px 15px;
+            &.white {
+                .am-flexbox-item {
+                    text-align: right;
+                    .am-button {
+                        width: 100%;
+                        display: inline-block;
+                        &::before {
+                            content: none;
+                        }
+                    }
+                    &.tag-ft-btn {
+                        text-align: left !important;
+                        margin-right: 15px !important;
+                        .am-button {
+                            width: 42px;
+                        }
+                    }
+                }
+            }
+
+            .am-button {
+                border-radius: 42px;
+              &.am-button-disabled{
+                color: #333333;
+              }
+            }
+            .am-flexbox-item {
+                margin-left: 0;
+            }
+
+            .tag-ft-btn {
+                flex: unset;
+                width: 42px !important;
+                height: 42px;
+                line-height: 42px;
+                border-radius: 50%;
+                margin-right: 15px;
+                .zx-icon {
+                    &::after {
+                        content: "\e84d";
+                        font-family: "icon" !important;
+                        font-size: 16px;
+                        color: @primary-color;
+                    }
+                }
+                .am-button {
+                    background-color: #eaf8fa;
+                    width: 42px;
+                    height: 42px;
+                    line-height: 42px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    span {
+                        display: none;
+                    }
+                    &::before {
+                        content: none;
+                    }
+                    &.ysc-tag {
+                        &::after {
+                            content: "\e612";
+                            font-family: "icon" !important;
+                            font-size: 16px;
+                            color: @primary-color;
+                        }
+                    }
+                    &.sc-tag {
+                        background-color: #eaf8fa;
+                        &::after {
+                            content: "\E82A";
+                            font-family: "icon" !important;
+                            font-size: 16px;
+                            color: @primary-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.ft-detail{
+  background-color: #ffffff;
+}
+.am-textarea-label.am-textarea-label-5{
+    width: 100px !important;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+    html:not([data-scale]) .am-flexbox {
+        &.flex-collapse {
+            .am-button {
+                &.am-button-disabled {
+                    &:before {
+                        border-color: #909090 !important;
+                    }
+                }
+            }
+
+            .am-flexbox-item {
+                &:first-child {
+                    .am-button {
+                        &:before {
+                            border-top-left-radius: 84px;
+                            border-bottom-left-radius: 84px;
+                            border-color: @primary-color;
+                        }
+
+                        &.am-button-small {
+                            &:before {
+                                border-top-left-radius: 60px;
+                                border-bottom-left-radius: 60px;
+                                border-color: @primary-color;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    .am-button {
+                        &:before {
+                            border-top-right-radius: 84px;
+                            border-bottom-right-radius: 84px;
+                            border-color: @primary-color;
+                        }
+
+                        &.am-button-small {
+                            &:before {
+                                border-top-right-radius: 60px;
+                                border-bottom-right-radius: 60px;
+                                border-color: @primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx) {
+    html:not([data-scale]) .am-flexbox {
+        &.flex-collapse {
+            .am-flexbox-item {
+                .am-button {
+                    &.am-button-disabled {
+                        &:before {
+                            border-color: #909090 !important;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    .am-button {
+                        &:before {
+                            border-top-left-radius: 126px;
+                            border-bottom-left-radius: 126px;
+                            border-color: @primary-color;
+                        }
+
+                        &.am-button-small {
+                            &:before {
+                                border-top-left-radius: 90px;
+                                border-bottom-left-radius: 90px;
+                                border-color: @primary-color;
+                            }
+                        }
+                    }
+                }
+
+                &:last-child {
+                    .am-button {
+                        &:before {
+                            border-top-right-radius: 126px;
+                            border-bottom-right-radius: 126px;
+                            border-color: @primary-color;
+                        }
+
+                        &.am-button-small {
+                            &:before {
+                                border-top-right-radius: 90px;
+                                border-bottom-right-radius: 90px;
+                                border-color: @primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*底部按钮样式end*/

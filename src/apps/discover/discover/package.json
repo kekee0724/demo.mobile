@@ -1,0 +1,16 @@
+{
+    "name": "@reco-m/discover",
+    "version": "0.0.0",
+    "description": "发现模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/discover-models": "~0.0.0",
+        "@reco-m/article": "~0.0.0",
+        "@reco-m/ipark-white-activity": "~0.0.0",
+        "@reco-m/policymatching-policymatching": "~0.0.0",
+        "@reco-m/activity": "~0.0.0",
+        "@reco-m/search": "~0.0.0",
+        "@reco-m/ipark-white-circle": "~0.0.0",
+        "@reco-m/ipark-auth-login": "~0.0.0"
+    }
+}

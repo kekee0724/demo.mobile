@@ -1,0 +1,10 @@
+{
+  "name": "@reco-m/favorites-models",
+  "version": "0.0.0",
+  "description": "收藏model模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/favorites-service": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

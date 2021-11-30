@@ -1,0 +1,9 @@
+{
+  "name": "@reco-m/home-card",
+  "version": "0.0.0",
+  "description": "一卡通模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/ipark-statistics": "~0.0.0"
+  }
+}

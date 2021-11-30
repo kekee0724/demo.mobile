@@ -1,0 +1,9 @@
+{
+  "name": "@reco-m/member-service",
+  "version": "0.0.0",
+  "description": "会员service模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "@reco-m/order",
+  "version": "0.0.0",
+  "description": "订单列表模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/comment-evaluate": "~0.0.0",
+    "@reco-m/room": "~0.0.0",
+    "@reco-m/position": "~0.0.0",
+    "@reco-m/order-common": "~0.0.0",
+    "@reco-m/order-models": "~0.0.0",
+    "@reco-m/coupon-common": "~0.0.0",
+    "@reco-m/ipark-statistics": "~0.0.0",
+    "@reco-m/invoice-common": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0",
+    "@reco-m/invoice-models": "~0.0.0"
+  }
+}

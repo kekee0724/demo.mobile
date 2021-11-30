@@ -1,0 +1,32 @@
+{
+    "name": "@reco-m/ipark-white-my",
+    "version": "0.0.0",
+    "description": "ipark my模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/ipark-statistics": "~0.0.0",
+        "@reco-m/system-setting": "~0.0.0",
+        "@reco-m/member-certify": "~0.0.0",
+        "@reco-m/member-intergral": "~0.0.0",
+        "@reco-m/activity": "~0.0.0",
+        "@reco-m/workorder-apply": "~0.0.0",
+        "@reco-m/order": "~0.0.0",
+        "@reco-m/survey": "~0.0.0",
+        "@reco-m/favorites": "~0.0.0",
+        "@reco-m/ipark-auth-account": "~0.0.0",
+        "@reco-m/ipark-white-account": "~0.0.0",
+        "@reco-m/ipark-auth-login": "~0.0.0",
+        "@reco-m/invoice": "~0.0.0",
+        "@reco-m/coupon-coupon": "~0.0.0",
+        "@reco-m/workorder-market": "~0.0.0",
+        "@reco-m/member-manager": "~0.0.0",
+        "@reco-m/contact": "~0.0.0",
+        "@reco-m/notice-notice": "~0.0.0",
+        "@reco-m/ipark-white-circle": "~0.0.0",
+        "@reco-m/member-common": "~0.0.0",
+        "@reco-m/member-models": "~0.0.0",
+        "@reco-m/workorder-models": "~0.0.0",
+        "@reco-m/ipark-common": "~0.0.0",
+        "@reco-m/busynessbill": "~0.0.0"
+    }
+}

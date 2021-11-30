@@ -1,0 +1,11 @@
+{
+  "name": "@reco-m/msgreach-models",
+  "version": "0.0.0",
+  "description": "信息触达models模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/member-service": "~0.0.0",
+    "@reco-m/msgreach-service": "~0.0.0",
+    "@reco-m/ipark-common-service": "~0.0.0"
+  }
+}

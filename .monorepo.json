@@ -1,0 +1,443 @@
+{
+    "packages": {
+        "@reco-m/ipark-ide": {
+            "name": "RECO IDE Mobile lib",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-white-home": {
+            "name": "RECO IPark+ home",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/home": {
+            "name": "RECO IPark+ home",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/home-models": {
+            "name": "RECO IPark+ home-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/home-service": {
+            "name": "RECO IPark+ home-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/home-card": {
+            "name": "RECO IPark+ home-card",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/home-access": {
+            "name": "RECO IPark+ home-access",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/comment": {
+            "name": "RECO IPark+ comment",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/comment-service": {
+            "name": "RECO IPark+ comment-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/comment-models": {
+            "name": "RECO IPark+ comment-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/comment-evaluate": {
+            "name": "RECO IPark+ comment-evaluate",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-white-login": {
+            "name": "RECO IPark+ login",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-auth-account": {
+            "name": "RECO IPark+ auth-account",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-auth-login": {
+            "name": "RECO IPark+ auth-login",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-auth-models": {
+            "name": "RECO IPark+ auth-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-white-account": {
+            "name": "RECO IPark+ account",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/member-service": {
+            "name": "RECO IPark+ member-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/member-models": {
+            "name": "RECO IPark+ member-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/member-common": {
+            "name": "RECO IPark+ member-common",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/member-certify": {
+            "name": "RECO IPark+ member-certify",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/member-manager": {
+            "name": "RECO IPark+ member-manager",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/member-intergral": {
+            "name": "RECO IPark+ member-intergral",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-customer-service": {
+            "name": "RECO IPark+ customer-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-white-my": {
+            "name": "RECO IPark+ my",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-my-models": {
+            "name": "RECO IPark+ my-models",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/system-setting": {
+            "name": "RECO IPark+ system-setting",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/workorder": {
+            "name": "RECO IPark+ workorder",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/workorder-apply": {
+            "name": "RECO IPark+ workorder-apply",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/workorder-common": {
+            "name": "RECO IPark+ workorder-common",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/workorder-consult": {
+            "name": "RECO IPark+ workorder-consult",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/workorder-market": {
+            "name": "RECO IPark+ workorder-market",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/workorder-models": {
+            "name": "RECO IPark+ workorder-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/workorder-service": {
+            "name": "RECO IPark+ workorder-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-white-impression": {
+            "name": "RECO IPark+ ipark-white-impression",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/park": {
+            "name": "RECO IPark+ park",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/park-models": {
+            "name": "RECO IPark+ park-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/park-service": {
+            "name": "RECO IPark+ park-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/policymatching-models": {
+            "name": "RECO IPark+ policymatching-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/policymatching-policymatching": {
+            "name": "RECO IPark+ policymatching-policymatching",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/policymatching-service": {
+            "name": "RECO IPark+ policymatching-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/policyservice": {
+            "name": "RECO IPark+ policyservice",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-white-space": {
+            "name": "RECO IPark+ white-space",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/space-models": {
+            "name": "RECO IPark+ space-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/space-service": {
+            "name": "RECO IPark+ space-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/space": {
+            "name": "RECO IPark+ space",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/favorites": {
+            "name": "RECO IPark+ favorites",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/favorites-common": {
+            "name": "RECO IPark+ favorites-common",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/favorites-models": {
+            "name": "RECO IPark+ favorites-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/favorites-service": {
+            "name": "RECO IPark+ favorites-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-white-activity": {
+            "name": "RECO IPark+ activity",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/activity": {
+            "name": "RECO IPark+ activity",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/activity-models": {
+            "name": "RECO IPark+ activity-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/activity-service": {
+            "name": "RECO IPark+ activity-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/survey-models": {
+            "name": "RECO IPark+ survey-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/survey-service": {
+            "name": "RECO IPark+ survey-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/survey": {
+            "name": "RECO IPark+ survey",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/invoice": {
+            "name": "RECO IPark+ invoice",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/invoice-models": {
+            "name": "RECO IPark+ invoice-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/invoice-common": {
+            "name": "RECO IPark+ @reco-m/invoice-common",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/invoice-service": {
+            "name": "RECO IPark+ invoice-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/service-home": {
+            "name": "RECO IPark+ service-home",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/service-models": {
+            "name": "RECO IPark+ service-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/service-service": {
+            "name": "RECO IPark+ service-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/room": {
+            "name": "RECO IPark+ room",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/order-models": {
+            "name": "RECO IPark+ order-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/order-service": {
+            "name": "RECO IPark+ order-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/position": {
+            "name": "RECO IPark+ position",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/order": {
+            "name": "RECO IPark+ order",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/order-common": {
+            "name": "RECO IPark+ order-common",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/contact": {
+            "name": "RECO IPark+ contact",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/contact-models": {
+            "name": "RECO IPark+ contact-models",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-white-article": {
+            "name": "RECO IPark+ article",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/article": {
+            "name": "RECO IPark+ article",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/article-models": {
+            "name": "RECO IPark+ article-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/article-service": {
+            "name": "RECO IPark+ article-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/search-models": {
+            "name": "RECO IPark+ search-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/search": {
+            "name": "RECO IPark+ search",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/notice-assistant": {
+            "name": "RECO IPark+ notice-assistant",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/notice-models": {
+            "name": "RECO IPark+ notice-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/notice-service": {
+            "name": "RECO IPark+ notice-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/notice-setting": {
+            "name": "RECO IPark+ notice-setting",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/notice-notice": {
+            "name": "RECO IPark+ notice-notice",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/coupon-coupon": {
+            "name": "RECO IPark+ coupon-coupon",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/coupon-models": {
+            "name": "RECO IPark+ coupon-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/coupon-service": {
+            "name": "RECO IPark+ coupon-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/coupon-common": {
+            "name": "RECO IPark+ @reco-m/coupon-common",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-white-circle": {
+            "name": "RECO IPark+ circle",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-white-circle-models": {
+            "name": "RECO IPark+ circle-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-white-circle-service": {
+            "name": "RECO IPark+ circle-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/discover": {
+            "name": "RECO IPark+ discover",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/discover-models": {
+            "name": "RECO IPark+ discover-models",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/msgreach-common": {
+            "name": "RECO IPark+ msgreach-common",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/msgreach-msgreach": {
+            "name": "RECO IPark+ msgreach-msgreach",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/msgreach-models": {
+            "name": "RECO IPark+ msgreach-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/msgreach-service": {
+            "name": "RECO IPark+ msgreach-service",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/ipark-common": {
+            "name": "RECO IPark+ ipark-common",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-common-page": {
+            "name": "RECO IPark+ ipark-common-page",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-common-service": {
+            "name": "RECO IPark+ ipark-commonservice",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-statistics": {
+            "name": "RECO IPark+ ipark-statistics",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-common-models": {
+            "name": "RECO IPark+ @reco-m/ipark-common-models",
+            "version": "10.1.25-rc.3"
+        },
+
+        "@reco-m/busynessbill": {
+            "name": "RECO IPark+ busynessbill",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/busynessbill-models": {
+            "name": "RECO IPark+ busynessbill-models",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/busynessbill-service": {
+            "name": "RECO IPark+ busynessbill-service",
+            "version": "10.1.25-rc.3"
+        },
+        "@reco-m/ipark-h5home-h5home": {
+            "name": "RECO IPark+ ipark-h5home-h5home",
+            "version": "10.1.25-rc.3"
+        }
+    }
+}

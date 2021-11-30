@@ -1,0 +1,9 @@
+{
+  "name": "@reco-m/busynessbill",
+  "version": "0.0.0",
+  "description": "企业账单模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/busynessbill-models": "~0.0.0"
+  }
+}

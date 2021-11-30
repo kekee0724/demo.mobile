@@ -1,0 +1,11 @@
+{
+  "name": "@reco-m/notice-models",
+  "version": "0.0.0",
+  "description": "消息models模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/notice-service": "~0.0.0",
+    "@reco-m/article-service": "~0.0.0",
+    "@reco-m/member-models": "~0.0.0"
+  }
+}

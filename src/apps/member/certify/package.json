@@ -1,0 +1,12 @@
+{
+  "name": "@reco-m/member-certify",
+  "version": "0.0.0",
+  "description": "会员认证模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/member-models": "~0.0.0",
+    "@reco-m/member-common": "~0.0.0",
+    "@reco-m/ipark-statistics": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

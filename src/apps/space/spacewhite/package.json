@@ -1,0 +1,9 @@
+{
+    "name": "@reco-m/ipark-white-space",
+    "version": "0.0.0",
+    "description": "空间模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/space-models": "~0.0.0"
+    }
+}

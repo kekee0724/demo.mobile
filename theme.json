@@ -1,0 +1,16 @@
+{
+    "brand-primary": "#02b8cd",
+    "brand-primary-tap": "#02bdd3",
+    "fill-tap": "rgba(0,0,0,0.05)",
+    "switch-fill": "#02b8cd",
+    "font-size-icontext": "10px",
+    "font-size-caption-sm": "12px",
+    "font-size-base": "13px",
+    "font-size-subhead": "14px",
+    "font-size-caption": "15px",
+    "font-size-heading": "16px",
+    "input-font-size": "16px",
+    "border-color-base": "#e5e5e5",
+    "button-height": "42px",
+    "button-font-size": "16px"
+}

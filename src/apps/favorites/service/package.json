@@ -1,0 +1,7 @@
+{
+  "name": "@reco-m/favorites-service",
+  "version": "0.0.0",
+  "description": "收藏models模块",
+  "license": "MIT",
+  "dependencies": {}
+}

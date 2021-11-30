@@ -1,0 +1,10 @@
+{
+  "name": "@reco-m/survey-models",
+  "version": "0.0.0",
+  "description": "问卷models模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/survey-service": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

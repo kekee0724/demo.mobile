@@ -1,0 +1,13 @@
+{
+  "name": "@reco-m/coupon-coupon",
+  "version": "0.0.0",
+  "description": "优惠券模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/coupon-models": "~0.0.0",
+    "@reco-m/article": "~0.0.0",
+    "@reco-m/coupon-common": "~0.0.0",
+    "@reco-m/order": "~0.0.0",
+    "@reco-m/ipark-statistics": "~0.0.0"
+  }
+}

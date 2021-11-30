@@ -1,0 +1,7 @@
+{
+  "name": "@reco-m/msgreach-service",
+  "version": "0.0.0",
+  "description": "信息触达service模块",
+  "license": "MIT",
+  "dependencies": {}
+}

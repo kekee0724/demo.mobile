@@ -1,0 +1,30 @@
+/*暂无数据*/
+.am-result {
+  &.no-data {
+    height: 100%;
+    flex: 1;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    &::after {
+      display: none;
+      opacity: 0;
+    }
+
+    p {
+      color: @gray-three-color;
+    }
+
+    &.no-height {
+      height: initial;
+    }
+  }
+}
+
+/*暂无数据end*/

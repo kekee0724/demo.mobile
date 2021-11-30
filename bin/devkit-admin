@@ -1,0 +1,40 @@
+#!/usr/bin/env node --max-old-space-size=4096 --optimize-for-size --max_old_space_size=4096 --optimize_for_size
+
+"use strict";
+
+const minimist = require("minimist");
+const path = require("path");
+
+const args = minimist(process.argv.slice(2), {
+    boolean: ["verbose"]
+});
+const scriptName = args._.shift();
+const scriptPath = path.join("../scripts", scriptName);
+
+const cwd = process.cwd();
+process.chdir(path.join(__dirname, ".."));
+
+let logger = {
+    debug: console.log.bind(console),
+    info: console.log.bind(console),
+    warn: console.warn.bind(console),
+    error: console.error.bind(console),
+    fatal: x => {
+        console.error(x);
+        process.exit(100);
+    },
+    createChild: () => logger
+};
+
+try {
+    Promise.resolve()
+        .then(() => require(scriptPath).default(args, logger, cwd))
+        .then(exitCode => process.exit(exitCode || 0))
+        .catch(err => {
+            logger.fatal(err.stack);
+            process.exit(99);
+        });
+} catch (err) {
+    logger.fatal(err.stack);
+    process.exit(99);
+}

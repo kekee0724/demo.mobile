@@ -1,0 +1,7 @@
+{
+  "name": "@reco-m/article-service",
+  "version": "0.0.0",
+  "description": "资讯service模块",
+  "license": "MIT",
+  "dependencies": {}
+}

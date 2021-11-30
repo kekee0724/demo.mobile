@@ -1,0 +1,13 @@
+{
+  "name": "@reco-m/activity-models",
+  "version": "0.0.0",
+  "description": "活动models模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/activity-service": "~0.0.0",
+    "@reco-m/ipark-statistics": "~0.0.0",
+    "@reco-m/ipark-common-service": "~0.0.0",
+    "@reco-m/member-models": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

@@ -1,0 +1,304 @@
+@import "../themes/default";
+
+/*首页*/
+.shortcut-list {
+  position: relative;
+  top: -1px;
+  background-color: @primary-color;
+
+  &.am-grid .am-flexbox {
+    background: none;
+  }
+
+  .am-grid-item {
+    .am-grid-item-content {
+      height: auto !important;
+    }
+
+    .row {
+      .icon {
+        color: #ffffff;
+        font-size: 36px;
+      }
+
+      span {
+        display: block;
+        font-size: 14px;
+        color: #ffffff;
+        padding-top: 9px;
+      }
+    }
+  }
+}
+
+.search-top {
+  color: @white-color;
+}
+
+.sever-icon {
+  .row {
+    >.icon {
+      position: relative;
+      font-size: 24px;
+    }
+
+    span {
+      position: relative;
+      display: block;
+      font-size: 12px;
+      padding-top: 5px;
+    }
+  }
+}
+
+.am-grid {
+  // margin: 7.5px 0 12.5px 0;
+
+  &.home-sever-icon {
+    .row {
+      .icon-bg {
+        position: relative;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        margin: 0 auto;
+        text-align: center;
+        line-height: 42px;
+
+        .icon {
+          position: relative;
+          font-size: 20px;
+          color: #fff !important;
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        }
+
+      }
+
+      .tit {
+        position: relative;
+        display: block;
+        font-size: 13px;
+        padding-top: 7.5px;
+        color: #666;
+      }
+
+    }
+
+    .am-flexbox {
+      .am-grid-item {
+        .am-grid-item-content {
+          padding: 12.5px 0;
+        }
+      }
+    }
+
+    .am-flexbox {
+      &:nth-of-type(1) {
+        .am-grid-item {
+          &:nth-of-type(1) {
+            .icon-bg {
+              background-image: linear-gradient(120deg, rgb(47, 96, 210) 0%, rgb(76, 155, 249) 100%);
+              background-image: -webkit-linear-gradient(120deg, rgb(47, 96, 210) 0%, rgb(76, 155, 249) 100%);
+            }
+          }
+
+          &:nth-of-type(2) {
+            .icon-bg {
+              background-image: linear-gradient(120deg, rgb(0, 165, 145) 0%, rgb(0, 212, 190) 100%);
+              background-image: -webkit-linear-gradient(120deg, rgb(0, 165, 145) 0%, rgb(0, 212, 190) 100%);
+            }
+          }
+
+          &:nth-of-type(3) {
+            .icon-bg {
+              background-image: linear-gradient(120deg, rgb(230, 138, 40) 0%, rgb(255, 196, 127) 100%);
+              background-image: -webkit-linear-gradient(120deg, rgb(230, 138, 40) 0%, rgb(255, 196, 127) 100%);
+
+            }
+          }
+
+          &:nth-of-type(4) {
+            .icon-bg {
+              background-image: linear-gradient(120deg, rgb(224, 69, 61) 0%, rgb(255, 135, 129) 100%);
+              background-image: -webkit-linear-gradient(120deg, rgb(224, 69, 61) 0%, rgb(255, 135, 129) 100%)
+            }
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        .am-grid-item {
+
+          &:nth-of-type(1) {
+            .icon-bg {
+              background-image: linear-gradient(120deg, rgb(0, 172, 196) 0%, rgb(18, 213, 238) 100%);
+              background-image: -webkit-linear-gradient(120deg, rgb(0, 172, 196) 0%, rgb(18, 213, 238) 100%);
+
+            }
+          }
+
+          &:nth-of-type(2) {
+            .icon-bg {
+              background-image: linear-gradient(120deg, rgb(13, 162, 230) 0%, rgb(93, 209, 255) 100%);
+              background-image: -webkit-linear-gradient(120deg, rgb(13, 162, 230) 0%, rgb(93, 209, 255) 100%);
+            }
+          }
+
+          &:nth-of-type(3) {
+            .icon-bg {
+              background-image: linear-gradient(120deg, rgb(91, 103, 240) 0%, rgb(137, 150, 254) 100%);
+              background-image: -webkit-linear-gradient(120deg, rgb(91, 103, 240) 0%, rgb(137, 150, 254) 100%);
+            }
+          }
+
+          &:nth-of-type(4) {
+            .icon-bg {
+              background-image: linear-gradient(120deg, rgb(137, 137, 137) 0%, rgb(218, 218, 218) 100%);
+              background-image: -webkit-linear-gradient(120deg, rgb(137, 137, 137) 0%, rgb(218, 218, 218) 100%);
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+.park-ceo {
+  display: flex;
+  align-items: center;
+  padding: 7px 10px;
+  background-color: #fff;
+  width: 100%;
+  box-sizing: border-box;
+
+  .icon-1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    border-radius: 35px;
+    background-color: #e1f6ff;
+    color: #2375a1;
+    font-size: 25px;
+  }
+
+  .icon-more {
+    color: #ededed;
+    font-size: 30px;
+  }
+
+  .bd {
+    flex: 1;
+    padding: 0 15px;
+    width: calc(100% - 112px);
+  }
+
+  .list {
+    display: flex;
+
+    div {
+      height: 17px;
+      flex: 1;
+      font-size: 15px;
+      color: #333;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      padding-right: 5px;
+    }
+
+    span {
+      color: #999;
+    }
+  }
+}
+
+.staff-list {
+  .bd {
+    word-wrap: break-word;
+    word-break: normal;
+    display: flex;
+
+    .word {
+      flex: 1;
+    }
+
+    .tit {
+      display: flex;
+      align-items: center;
+      margin-top: 4px;
+
+      em {
+        display: inline-block;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 10px;
+        font-style: normal;
+        font-size: 12px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        margin-left: 7px;
+
+        &.type1 {
+          border-color: #feba69;
+          color: #feba69;
+        }
+
+        &.type2 {
+          border-color: #92d1f0;
+          color: #92d1f0;
+        }
+      }
+    }
+
+    .name {
+      font-size: 16px;
+    }
+
+    .phone {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+
+      .icon {
+        color: #999;
+        margin-right: 3px;
+      }
+
+      font-size: 14px;
+      color: #999;
+    }
+  }
+}
+
+.ios-index-box {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width: 100%;
+  background: #f4f4f4;
+  transition: all 0.1s;
+}
+
+.indexMini {
+  position: absolute;
+  left: 0;
+  width: 85vw;
+  height: 45px;
+  line-height: 45px;
+  background-color: @primary-color;
+  display: none;
+
+  .am-flexbox {
+    width: 200px;
+  }
+
+  .icon {
+    font-size: 24px;
+  }
+}
+
+/*首页end*/

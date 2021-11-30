@@ -1,0 +1,14 @@
+{
+  "name": "@reco-m/policymatching-models",
+  "version": "0.0.0",
+  "description": "政策匹配model模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/policymatching-service": "~0.0.0",
+    "@reco-m/member-service": "~0.0.0",
+    "@reco-m/member-models": "~0.0.0",
+    "@reco-m/ipark-common-service": "~0.0.0",
+    "@reco-m/ipark-customer-service": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0"
+  }
+}

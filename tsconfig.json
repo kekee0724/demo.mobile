@@ -1,0 +1,190 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "strictNullChecks": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "experimentalDecorators": true,
+        "jsx": "preserve",
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "declaration": false,
+        "removeComments": true,
+        "target": "es6",
+        "lib": ["dom", "es7"],
+        "typeRoots": ["./node_modules/@types", "./src/@types"],
+        "paths": {
+            /*————————————————————————————ipark模块start———————————————————————————*/
+            // 首页
+            "@reco-m/ipark-white-home": ["./src/apps/home/homewhite/index"],
+            "@reco-m/home": ["./src/apps/home/home/index"],
+            "@reco-m/home-models": ["./src/apps/home/models/index"],
+            "@reco-m/home-service": ["./src/apps/home/service/index"],
+            "@reco-m/home-card": ["./src/apps/home/card/index"],
+            "@reco-m/home-access": ["./src/apps/home/access/index"],
+
+            // 评论
+            "@reco-m/comment": ["./src/apps/comment/comment/index"],
+            "@reco-m/comment-service": ["./src/apps/comment/service/index"],
+            "@reco-m/comment-models": ["./src/apps/comment/models/index"],
+            "@reco-m/comment-evaluate": ["./src/apps/comment/evaluate/index"],
+
+            // 登录
+            "@reco-m/ipark-white-login": ["./src/apps/auth/loginwhite/index"],
+            "@reco-m/ipark-auth-account": ["./src/apps/auth/account/index"],
+            "@reco-m/ipark-auth-login": ["./src/apps/auth/login/index"],
+            "@reco-m/ipark-auth-models": ["./src/apps/auth/models/index"],
+            "@reco-m/ipark-white-account": ["./src/apps/auth/accountwhite/index"],
+
+            // 会员
+            "@reco-m/member-service": ["./src/apps/member/service/index"],
+            "@reco-m/member-models": ["./src/apps/member/models/index"],
+            "@reco-m/member-common": ["./src/apps/member/common/index"],
+            "@reco-m/member-certify": ["./src/apps/member/certify/index"],
+            "@reco-m/member-manager": ["./src/apps/member/manager/index"],
+            "@reco-m/member-intergral": ["./src/apps/member/intergral/index"],
+
+            // 客户
+            "@reco-m/ipark-customer-service": ["./src/apps/customer/service/index"],
+
+            // 我的
+            "@reco-m/ipark-white-my": ["./src/apps/my/myWhite/index"],
+            "@reco-m/ipark-my-models": ["./src/apps/my/models/index"],
+
+            // 系统设置
+            "@reco-m/system-setting": ["./src/apps/system/setting/index"],
+
+            // 工单
+            "@reco-m/workorder": ["./src/apps/workorder/workorder/index"],
+            "@reco-m/workorder-consult": ["./src/apps/workorder/consult/index"],
+            "@reco-m/workorder-apply": ["./src/apps/workorder/apply/index"],
+            "@reco-m/workorder-common": ["./src/apps/workorder/common/index"],
+            "@reco-m/workorder-market": ["./src/apps/workorder/market/index"],
+            "@reco-m/workorder-models": ["./src/apps/workorder/models/index"],
+            "@reco-m/workorder-service": ["./src/apps/workorder/service/index"],
+
+            // 园区
+            "@reco-m/ipark-white-impression": ["./src/apps/park/parkwhite/impression.white/index"],
+            "@reco-m/park": ["./src/apps/park/park/index"],
+            "@reco-m/park-models": ["./src/apps/park/models/index"],
+            "@reco-m/park-service": ["./src/apps/park/service/index"],
+
+            // 政策
+            "@reco-m/policymatching-policymatching": ["./src/apps/policymatching/policymatching/index"],
+            "@reco-m/policymatching-models": ["./src/apps/policymatching/models/index"],
+            "@reco-m/policymatching-service": ["./src/apps/policymatching/service/index"],
+            "@reco-m/policyservice": ["./src/apps/policymatching/policyservice/index"],
+
+            // 空间
+            "@reco-m/ipark-white-space": ["./src/apps/space/spacewhite/index"],
+            "@reco-m/space": ["./src/apps/space/space/index"],
+            "@reco-m/space-models": ["./src/apps/space/models/index"],
+            "@reco-m/space-service": ["./src/apps/space/service/index"],
+
+            // 收藏
+            "@reco-m/favorites": ["./src/apps/favorites/favorites/index"],
+            "@reco-m/favorites-common": ["./src/apps/favorites/common/index"],
+            "@reco-m/favorites-models": ["./src/apps/favorites/models/index"],
+            "@reco-m/favorites-service": ["./src/apps/favorites/service/index"],
+
+            // 活动
+            "@reco-m/ipark-white-activity": ["./src/apps/activity/activitywhite/index"],
+            "@reco-m/activity": ["./src/apps/activity/activity/index"],
+            "@reco-m/activity-models": ["./src/apps/activity/models/index"],
+            "@reco-m/activity-service": ["./src/apps/activity/service/index"],
+
+            // 问卷
+            "@reco-m/survey": ["./src/apps/survey/survey/index"],
+            "@reco-m/survey-models": ["./src/apps/survey/models/index"],
+            "@reco-m/survey-service": ["./src/apps/survey/service/index"],
+
+            // 发票
+            "@reco-m/invoice": ["./src/apps/invoice/invoice/index"],
+            "@reco-m/invoice-models": ["./src/apps/invoice/models/index"],
+            "@reco-m/invoice-service": ["./src/apps/invoice/service/index"],
+            "@reco-m/invoice-common": ["./src/apps/invoice/common/index"],
+
+            // 服务
+            "@reco-m/service-home": ["./src/apps/service/home/index"],
+            "@reco-m/service-models": ["./src/apps/service/models/index"],
+            "@reco-m/service-service": ["./src/apps/service/service/index"],
+
+            // 资源
+            "@reco-m/room": ["./src/apps/order/room/index"],
+            "@reco-m/order-models": ["./src/apps/order/models/index"],
+            "@reco-m/order-service": ["./src/apps/order/service/index"],
+            "@reco-m/position": ["./src/apps/order/position/index"],
+            "@reco-m/order": ["./src/apps/order/order/index"],
+            "@reco-m/order-common": ["./src/apps/order/common/index"],
+
+            // 联系人
+            "@reco-m/contact": ["./src/apps/contact/contact/index"],
+            "@reco-m/contact-models": ["./src/apps/contact/models/index"],
+
+            // 资讯
+            "@reco-m/ipark-white-article": ["./src/apps/article/articlewhite/index"],
+            "@reco-m/article": ["./src/apps/article/article/index"],
+            "@reco-m/article-models": ["./src/apps/article/models/index"],
+            "@reco-m/article-service": ["./src/apps/article/service/index"],
+
+            // 全局搜索
+            "@reco-m/search": ["./src/apps/search/search/index"],
+            "@reco-m/search-models": ["./src/apps/search/models/index"],
+
+            // 消息
+            "@reco-m/notice-assistant": ["./src/apps/notice/assistant/index"],
+            "@reco-m/notice-models": ["./src/apps/notice/models/index"],
+            "@reco-m/notice-service": ["./src/apps/notice/service/index"],
+            "@reco-m/notice-setting": ["./src/apps/notice/setting/index"],
+            "@reco-m/notice-notice": ["./src/apps/notice/notice/index"],
+
+            // 优惠卷
+            "@reco-m/coupon-coupon": ["./src/apps/coupon/coupon/index"],
+            "@reco-m/coupon-models": ["./src/apps/coupon/models/index"],
+            "@reco-m/coupon-service": ["./src/apps/coupon/service/index"],
+            "@reco-m/coupon-common": ["./src/apps/coupon/common/index"],
+
+            // 圈子
+            "@reco-m/ipark-white-circle": ["./src/apps/circle/circle/index"],
+            "@reco-m/ipark-white-circle-models": ["./src/apps/circle/models/index"],
+            "@reco-m/ipark-white-circle-service": ["./src/apps/circle/service/index"],
+
+            //发现
+            "@reco-m/discover": ["./src/apps/discover/discover/index"],
+            "@reco-m/discover-models": ["./src/apps/discover/models/index"],
+
+            // 信息触达
+            "@reco-m/msgreach-common": ["./src/apps/msgreach/common/index"],
+            "@reco-m/msgreach-msgreach": ["./src/apps/msgreach/msgreach/index"],
+            "@reco-m/msgreach-models": ["./src/apps/msgreach/models/index"],
+            "@reco-m/msgreach-service": ["./src/apps/msgreach/service/index"],
+
+            // 公共组件
+            "@reco-m/ipark-common": ["./src/apps/iparkcommon/common/index"],
+            "@reco-m/ipark-common-page": ["./src/apps/iparkcommon/commonpage/index"],
+            "@reco-m/ipark-common-service": ["./src/apps/iparkcommon/service/index"],
+            "@reco-m/ipark-statistics": ["./src/apps/iparkcommon/iparkstatistics/index"],
+            "@reco-m/ipark-common-models": ["./src/apps/iparkcommon/models/index"],
+
+            // 企业账单
+            "@reco-m/busynessbill": ["./src/apps/busynessbill/busynessbill/index"],
+            "@reco-m/busynessbill-models": ["./src/apps/busynessbill/models/index"],
+            "@reco-m/busynessbill-service": ["./src/apps/busynessbill/service/index"],
+
+            /**
+             * h5页面过渡页
+             */
+            "@reco-m/ipark-h5home-h5home": ["src/apps/h5home/h5home/index"]
+            // "@reco-m/ipark-h5home-models": ["src/apps/h5home/models/index"]
+
+            /*——————————————————————————————end————————————————————————————————*/
+        }
+    },
+    "exclude": ["node_modules", "dist", "build", "src/assets"],
+    "awesomeTypescriptLoaderOptions": {
+        "forceIsolatedModules": true,
+        "useCache": true,
+        "usePrecompiledFiles": true
+    },
+}

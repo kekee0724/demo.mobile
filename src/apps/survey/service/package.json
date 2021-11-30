@@ -1,0 +1,7 @@
+{
+  "name": "@reco-m/survey-service",
+  "version": "0.0.0",
+  "description": "问卷service模块",
+  "license": "MIT",
+  "dependencies": {}
+}

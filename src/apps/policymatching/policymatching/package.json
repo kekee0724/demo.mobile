@@ -1,0 +1,18 @@
+{
+    "name": "@reco-m/policymatching-policymatching",
+    "version": "0.0.0",
+    "description": "政策匹配模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/ipark-statistics": "~0.0.0",
+        "@reco-m/policymatching-models": "~0.0.0",
+        "@reco-m/favorites-common": "~0.0.0",
+        "@reco-m/workorder": "~0.0.0",
+        "@reco-m/ipark-auth-login": "~0.0.0",
+        "@reco-m/member-certify": "~0.0.0",
+        "@reco-m/msgreach-models": "~0.0.0",
+        "@reco-m/msgreach-common": "~0.0.0",
+        "@reco-m/ipark-common": "~0.0.0",
+        "@reco-m/ipark-common-models": "~0.0.0"
+    }
+}

@@ -1,0 +1,192 @@
+@import "themes/default";
+
+/*类型-匹配*/
+.am-tag-normal {
+  &.matching {
+    background-color: @component-background;
+  }
+
+}
+.drawer-detail{
+  .am-tag{
+    max-width: 100%;
+    .am-tag-text{
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+}
+.am-tag-active {
+  &.matching {
+    background-color: @primary-color;
+
+    .am-tag-text {
+      color: @white-color;
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 2dppx) {
+  html:not([data-scale]) .am-tag-normal.matching::before {
+    border-color: #f4f5f6;
+    display: none;
+  }
+
+  html:not([data-scale]) .am-tag-active.matching::before {
+    border-color: #e1f2fe;
+    display: none;
+  }
+}
+
+/*类型-匹配end*/
+/*类型-历史记录*/
+.am-tag.tag-type2 {
+  background-color: #f4f5f6;
+  color: #666;
+  border-radius: 25px;
+  max-width: 150px;
+
+  >div {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* autoprefixer: off */
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 2dppx) {
+  html:not([data-scale]) .am-tag.tag-type2::before {
+    border-color: #f4f5f6;
+    border-radius: 50px;
+  }
+}
+
+/*类型-历史记录end*/
+.tag-content {
+  margin-left: -13px;
+
+  .am-tag {
+    margin-left: 13px;
+    margin-bottom: 13px;
+    border-radius: 25px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  ul{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+    li{
+      list-style: none;
+      text-align: center;
+      display: inline-block;
+      padding: 10px 5px;
+      box-sizing: border-box;
+      .am-tag{
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+.am-tag.am-tag-yellow {
+  color: @highlight-color;
+  white-space: nowrap;
+  &::before {
+    border: 1px @highlight-color solid !important;
+  }
+}
+
+.am-tag.am-tag-primary {
+  color: @primary-color;
+
+  &::before {
+    border: 1px @primary-color solid !important;
+  }
+}
+
+// tag 空心样式
+.tag-state {
+  border: #02B8CD solid 1px;
+  height: 20px;
+  padding: 0 5px;
+  display: inline-block;
+  line-height: 20px;
+  text-align: center;
+  color: #02B8CD;
+  background-color: rgba(2, 184, 205, 0.1);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+div {
+  .state-notbkg {
+    background-color: rgba(255, 255, 255, 0) !important;
+  }
+
+  .tag-hui {
+    background-color: #f1eeee;
+    color: #333;
+    border: none;
+    width: 60px;
+    text-align: center;
+  }
+
+  .tag-lan {
+    border: none;
+    width: 60px;
+    text-align: center;
+  }
+}
+
+.not-card-border {
+  .am-card-body {
+    &::after {
+      opacity: 0;
+    }
+
+    &::before {
+      opacity: 0;
+    }
+  }
+}
+
+// END tag 空心样式
+
+/*自定义tag标签*/
+.am-tag.tag-row {
+  width: 100%;
+  padding: 0 5px;
+}
+
+.am-tag.tag-row .am-tag-text {
+  display: block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-size: 12px;
+}
+
+/*END 自定义tag标签*/
+
+.theme-white .tag-big.am-tag{
+  padding: 4px 10px;
+  height: auto;
+  border-radius: 30px;
+  background-color: #eaf8fa;
+  color: @brand-primary;
+  white-space: nowrap;
+  &:before{
+    opacity: 0;
+  }
+}

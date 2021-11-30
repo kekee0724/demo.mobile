@@ -1,0 +1,8 @@
+{
+  "name": "@reco-m/ipark-statistics",
+  "version": "0.0.0",
+  "description": "统计事件模块",
+  "license": "MIT",
+  "dependencies": {
+  }
+}

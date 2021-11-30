@@ -1,0 +1,16 @@
+{
+    "name": "@reco-m/space-models",
+    "version": "0.0.0",
+    "description": "空间models模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/space-service": "~0.0.0",
+        "@reco-m/member-service": "~0.0.0",
+        "@reco-m/workorder-service": "~0.0.0",
+        "@reco-m/member-models": "~0.0.0",
+        "@reco-m/park-service": "~0.0.0",
+        "@reco-m/order-service": "~0.0.0",
+        "@reco-m/ipark-common-service": "~0.0.0",
+        "@reco-m/ipark-common": "~0.0.0"
+    }
+}

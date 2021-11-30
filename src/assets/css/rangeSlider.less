@@ -1,0 +1,142 @@
+// 滑动选择组件自定义样式
+@import "themes/default";
+
+.range-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 5px 15px 15px;
+  transform: translate3d(0,0,0);
+  //pointer-events: none;
+  .select-box{
+    background-color: rgba(255,255,255, 1);
+    height: 70px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  .irs-grid-text{
+    margin-bottom: -20px;
+  }
+}
+
+.range-slider-box {
+  position: relative;
+  &.error{
+    .irs--flat .irs-bar{
+      background-color: red;
+    }
+     .irs-handle.to{
+      border: #ff000059 2px solid !important;
+    }
+  }
+  .irs-handle.from{
+    display: none;
+
+  }
+  .irs--flat.irs-with-grid {
+    height: 115px;
+  }
+
+  .irs--flat .irs-line {
+    height: 70px;
+    position: absolute;
+    left: 7px;
+    right: 9px;
+    background-color: transparent;
+  }
+
+  .irs--flat .irs-handle {
+    top: 25px;
+    height: 70px;
+    margin-left: -3px;
+  }
+  .irs-bar, .irs-handle, .irs-to, .irs-from {
+    //transition: all 0.2s;
+    pointer-events: all;
+  }
+  .irs--flat .irs-grid-pol{
+    background-color: #d3d5d8;
+  }
+  .irs-grid-pol {
+    top: 0;
+  }
+
+  .irs-grid {
+    height: 70px;
+    top: 24px;
+    background-color: rgba(221,221,221,0.6);
+    .irs-grid-pol {
+      &:nth-child(even) {
+        height: 30px;
+      }
+      &.odd{
+        height: 35px;
+        top: 35px;
+      }
+    }
+  }
+
+  .irs-handle{
+    &.type_last, &.to{
+      height: 25px;
+      width: 25px;
+      background-color: #fff;
+      border-radius: 50%;
+      top: 52%;
+      transform: translate(-16%, -50%);
+      border: @primary-color 2px solid;
+      z-index: 2;
+      i {
+        display: none !important;
+      }
+    }
+
+
+
+  }
+
+
+  .irs-grid-pol {
+    height: 70px;
+    z-index: 2;
+  }
+
+  //.irs--flat .irs-line {
+  //  background-color: rgba(221,221,221,0.6);
+  //  border-radius: 0;
+  //}
+  .irs-grid-pol{
+    &:after{
+      content: "";
+      width: 40px;
+      background-color: #dddddd;
+      height: 40px;
+    }
+  }
+
+  .irs--flat .irs-bar {
+    background-color: @primary-color;
+    top: 24px;
+    height: 70px;
+    opacity: 0.2;
+    margin-left: -2px;
+    z-index: 2;
+  }
+
+  .irs--flat .irs-handle > i:first-child {
+    background-color: @primary-color;
+    z-index: 2;
+  }
+
+  .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
+    background-color: @primary-color;
+    z-index: 2;
+  }
+
+  .irs--flat .irs-from:before, .irs--flat .irs-to:before, .irs--flat .irs-single:before {
+    border-top-color: @primary-color;
+    z-index: 2;
+  }
+
+}

@@ -1,0 +1,21 @@
+{
+    "extends": "../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../out-tsc/lib",
+        "baseUrl": ".",
+        "declaration": true,
+        "sourceMap": true,
+        "inlineSources": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "lib": ["dom", "es2018"],
+        "rootDir": ".",
+        "rootDirs": [".", "../dist-pkg/@reco-m"],
+        "paths": {
+            "@reco-m/*": ["../dist-pkg/@reco-m/*"]
+        }
+    },
+    "types": [],
+    "exclude": ["../node_modules", "../dist", "../dist-pkg", "test.ts", "**/*.spec.ts"]
+}

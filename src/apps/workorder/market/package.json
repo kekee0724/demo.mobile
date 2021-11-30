@@ -1,0 +1,19 @@
+{
+  "name": "@reco-m/workorder-market",
+  "version": "0.0.0",
+  "description": "服务集市模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/workorder": "~0.0.0",
+    "@reco-m/workorder-apply": "~0.0.0",
+    "@reco-m/workorder-models": "~0.0.0",
+    "@reco-m/workorder-common": "~0.0.0",
+    "@reco-m/favorites-common": "~0.0.0",
+    "@reco-m/order-common": "~0.0.0",
+    "@reco-m/order-models": "~0.0.0",
+    "@reco-m/ipark-common": "~0.0.0",
+    "@reco-m/ipark-common-models": "~0.0.0",
+    "@reco-m/ipark-statistics": "~0.0.0",
+    "@reco-m/ipark-auth-login": "~0.0.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "@reco-m/ipark-white-account",
+    "version": "0.0.0",
+    "description": "Auth account模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/ipark-statistics": "~0.0.0",
+        "@reco-m/ipark-auth-models": "~0.0.0"
+    }
+}

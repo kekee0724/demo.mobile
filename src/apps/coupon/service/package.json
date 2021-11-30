@@ -1,0 +1,7 @@
+{
+  "name": "@reco-m/coupon-service",
+  "version": "0.0.0",
+  "description": "优惠券service模块",
+  "license": "MIT",
+  "dependencies": {}
+}

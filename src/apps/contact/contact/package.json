@@ -1,0 +1,12 @@
+{
+  "name": "@reco-m/contact",
+  "version": "0.0.0",
+  "description": "通讯录models模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/ipark-common": "~0.0.0",
+    "@reco-m/ipark-statistics": "~0.0.0",
+    "@reco-m/contact-models": "~0.0.0",
+    "@reco-m/member-certify": "~0.0.0"
+  }
+}
