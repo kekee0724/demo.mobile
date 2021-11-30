@@ -1,12 +1,12 @@
 import "./polyfills";
 
-import dva from "dva";
+// import dva, { DvaInstance } from "dva";
 
-// import { app } from "@reco-m/core-ui";
+import { app } from "@reco-m/core-ui";
 import reportWebVitals from "./reportWebVitals";
 import routers from "./router";
 
-const app= dva()
+// const app: DvaInstance = dva()
 
 app.router(routers as any);
 
