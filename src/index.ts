@@ -2,9 +2,8 @@ import "./polyfills";
 
 import { app } from "@reco-m/core-ui";
 
-
-import routers from "./router";
 import reportWebVitals from "./reportWebVitals";
+import routers from "./router";
 
 app.router(routers as any);
 
