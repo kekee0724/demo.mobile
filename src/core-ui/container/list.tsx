@@ -89,6 +89,7 @@ export namespace ListComponent {
                     >
                         <List mode={this.listMode as any}>
                             {items.map((item, key) => (
+                                // eslint-disable-next-line react/jsx-key
                                 <>{this.renderItemsContent(item, key)}</>
                             ))}
                         </List>
