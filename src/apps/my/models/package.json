@@ -1,9 +1,12 @@
 {
-  "name": "@reco-m/ipark-my-models",
+  "name": "@reco-m/my-models",
   "version": "0.0.0",
-  "description": "ipark my models模块",
+  "description": "我的models模块",
   "license": "MIT",
   "dependencies": {
-
+    "@reco-m/core": "~0.0.0",
+    "@reco-m/core-ui": "~0.0.0",
+    "@reco-m/auth-service": "~0.0.0",
+    "@reco-m/auth-models": "~0.0.0"
   }
 }

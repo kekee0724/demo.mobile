@@ -10,3 +10,28 @@
   padding: 0;
   list-style: none;
 }
+
+#react-container {
+  .display-flex {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .flex(@fg: 1, @fs: '', @fb: '') {
+    flex: @fg @fs @fb;
+  }
+  .flex-direction(@value: row) {
+    flex-direction: @value;
+  }
+  .align-items(@value: stretch) {
+    align-items: @value;
+  }
+  .justify-content(@value: stretch) {
+    justify-content: @value;
+  }
+
+  .container-grow {
+    #react-container .flex(1,1,0);
+    position: relative;
+  }
+}

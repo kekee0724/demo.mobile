@@ -1,9 +1,0 @@
-{
-  "name": "@reco-m/notice-assistant",
-  "version": "0.0.0",
-  "description": "园区小秘书模块",
-  "license": "MIT",
-  "dependencies": {
-    "@reco-m/notice-models": "~0.0.0"
-  }
-}

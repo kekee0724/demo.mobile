@@ -1,10 +1,13 @@
 {
-    "name": "@reco-m/ipark-auth-login",
-    "version": "0.0.0",
-    "description": "ipark login模块",
-    "license": "MIT",
-    "dependencies": {
-        "@reco-m/ipark-white-login": "~0.0.0",
-        "@reco-m/ipark-auth-models": "~0.0.0"
-    }
+  "name": "@reco-m/auth-login",
+  "version": "0.0.0",
+  "description": "登录模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/core": "~0.0.0",
+    "@reco-m/core-ui": "~0.0.0",
+    "@reco-m/auth-models": "~0.0.0",
+    "@reco-m/auth-account": "~0.0.0",
+    "@reco-m/statistics": "~0.0.0"
+  }
 }

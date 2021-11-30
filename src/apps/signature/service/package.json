@@ -1,0 +1,10 @@
+{
+    "name": "@reco-m/signature-service",
+    "version": "0.0.0",
+    "description": "signature Service",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/core": "~0.0.0",
+        "@reco-m/core-ui": "~0.0.0"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "name": "@reco-m/statistics",
+    "version": "0.0.0",
+    "description": "RECO Statistics Mobile lib",
+    "license": "MIT",
+    "dependencies": {}
+}

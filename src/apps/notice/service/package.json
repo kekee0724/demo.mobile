@@ -1,7 +1,0 @@
-{
-  "name": "@reco-m/notice-service",
-  "version": "0.0.0",
-  "description": "消息service模块",
-  "license": "MIT",
-  "dependencies": {}
-}

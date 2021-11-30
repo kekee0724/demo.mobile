@@ -1,0 +1,11 @@
+{
+    "name": "@reco-m/signature-signature",
+    "version": "0.0.0",
+    "description": "签名模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/core": "~0.0.0",
+        "@reco-m/core-ui": "~0.0.0",
+        "@reco-m/signature-models": "~0.0.0"
+    }
+}

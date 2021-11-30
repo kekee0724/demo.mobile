@@ -1,0 +1,15 @@
+{
+  "name": "@reco-m/my",
+  "version": "0.0.0",
+  "description": "我的模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/core": "~0.0.0",
+    "@reco-m/core-ui": "~0.0.0",
+    "@reco-m/system-about": "~0.0.0",
+    "@reco-m/auth-account": "~0.0.0",
+    "@reco-m/my-models": "~0.0.0",
+    "@reco-m/statistics": "~0.0.0",
+    "@reco-m/files-manage": "~0.0.0"
+  }
+}

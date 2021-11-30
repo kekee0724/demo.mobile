@@ -1,33 +1,12 @@
-//@import "~antd-mobile/dist/antd-mobile";
-
-@brand-primary: "#02b8cd";
-@brand-primary-tap: "#02bdd3";
-@fill-tap: "rgba(0,0,0,0.05)";
-@switch-fill: "#02b8cd";
-@font-size-icontext: "10px";
-@font-size-caption-sm: "12px";
-@font-size-base: "13px";
-@font-size-subhead: "14px";
-@font-size-caption: "15px";
-@font-size-heading: "16px";
-@input-font-size: "16px";
-
 /*全局字体*/
 @font-family: "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 /*字体大小*/
 @font-size-base: 14px;
 
 /*行高*/
 @line-height-base: 1.5;
-
-/*间距大小*/
-@xs: 5px;
-@sm: 10px;
-@defaultSize: 15px;
-@lg: 20px;
-@xl: 32px;
 
 /*字体颜色*/
 @text-color: fade(#000, 65%);
@@ -45,12 +24,35 @@
 @component-background: #f4f4f4;
 
 /*灰阶*/
-@gray-color: #000;
-@gray-one-color: #333333;
-@gray-two-color: #666666;
-@gray-three-color: #999999;
-@gray-four-color: #bdbdbd;
-@gray-five-color: #e6e6e6;
+@gray-color-one: #333333;
+@gray-color-two: #666666;
+@gray-color-three: #999999;
+@gray-color-four: #cccccc;
+@gray-color-five: #e6e6e6;
 
 /*红色*/
-@error-color: #cf2525;
+@error-color:#cf2525;
+
+@bg-color: #efeff4;
+
+/*_spacing调整间距*/
+@xxs: 4px;
+@xs: 8px;
+@default: 12px;
+@sm: 16px;
+@lg: 24px;
+@xl: 32px;
+
+:root{
+  --bg-color: @bg-color;
+  --nav-bar-color: @white-color;
+  --default-gap: @default;
+  --border-radius: @xs;
+  --xxs: @xxs;
+  --xs: @xs;
+  --default: @default;
+  --sm: @sm;
+  --lg: @lg;
+  --xl: @xl;
+  --login-back: @white-color;
+}

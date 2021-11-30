@@ -1,9 +1,0 @@
-{
-  "name": "@reco-m/workorder-common",
-  "version": "0.0.0",
-  "description": "工单common模块",
-  "license": "MIT",
-  "dependencies": {
-    "@reco-m/ipark-common": "~0.0.0"
-  }
-}

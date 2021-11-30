@@ -1,9 +1,0 @@
-{
-  "name": "@reco-m/member-common",
-  "version": "0.0.0",
-  "description": "会员common模块",
-  "license": "MIT",
-  "dependencies": {
-    "@reco-m/member-models": "~0.0.0"
-  }
-}

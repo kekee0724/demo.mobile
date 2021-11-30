@@ -1,7 +1,0 @@
-{
-  "name": "@reco-m/order-service",
-  "version": "0.0.0",
-  "description": "订单service模块",
-  "license": "MIT",
-  "dependencies": {}
-}

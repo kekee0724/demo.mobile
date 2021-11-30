@@ -16,7 +16,6 @@
 @spin-dot-size-lg: 32px;
 
 .@{spin-prefix-cls} {
-  .reset-component;
   color: @primary-color;
   vertical-align: middle;
   text-align: center;
@@ -24,6 +23,7 @@
   position: absolute;
   transition: transform 0.3s @ease-in-out-circ;
   display: none;
+
   &-box {
     position: fixed;
     top: 0;
@@ -36,6 +36,7 @@
     background-color: rgba(255, 255, 255, .5);
     z-index: 999;
   }
+
   &-spinning {
     opacity: 1;
     position: static;
@@ -44,6 +45,7 @@
 
   &-nested-loading {
     position: relative;
+
     > div > .@{spin-prefix-cls} {
       display: block;
       position: absolute;
@@ -51,12 +53,14 @@
       max-height: 400px;
       width: 100%;
       z-index: 4;
+
       .@{spin-prefix-cls}-dot {
         position: absolute;
         top: 50%;
         left: 50%;
         margin: -@spin-dot-size / 2;
       }
+
       .@{spin-prefix-cls}-text {
         position: absolute;
         top: 50%;
@@ -64,6 +68,7 @@
         padding-top: (@spin-dot-size - @font-size-base) / 2 + 2px;
         text-shadow: 0 1px 2px #fff;
       }
+
       &.@{spin-prefix-cls}-show-text .@{spin-prefix-cls}-dot {
         margin-top: -@spin-dot-size / 2 - 10px;
       }
@@ -73,9 +78,11 @@
       .@{spin-prefix-cls}-dot {
         margin: -@spin-dot-size-sm / 2;
       }
+
       .@{spin-prefix-cls}-text {
         padding-top: (@spin-dot-size-sm - @font-size-base) / 2 + 2px;
       }
+
       &.@{spin-prefix-cls}-show-text .@{spin-prefix-cls}-dot {
         margin-top: -@spin-dot-size-sm / 2 - 10px;
       }
@@ -85,9 +92,11 @@
       .@{spin-prefix-cls}-dot {
         margin: -@spin-dot-size-lg / 2;
       }
+
       .@{spin-prefix-cls}-text {
         padding-top: (@spin-dot-size-lg - @font-size-base) / 2 + 2px;
       }
+
       &.@{spin-prefix-cls}-show-text .@{spin-prefix-cls}-dot {
         margin-top: -@spin-dot-size-lg / 2 - 10px;
       }
@@ -149,20 +158,24 @@
       opacity: 0.3;
       animation: antSpinMove 1s infinite linear alternate;
       transform-origin: 50% 50%;
+
       &:nth-child(1) {
         left: 0;
         top: 0;
       }
+
       &:nth-child(2) {
         right: 0;
         top: 0;
         animation-delay: 0.4s;
       }
+
       &:nth-child(3) {
         right: 0;
         bottom: 0;
         animation-delay: 0.8s;
       }
+
       &:nth-child(4) {
         left: 0;
         bottom: 0;
@@ -180,6 +193,7 @@
   &-sm &-dot {
     font-size: @spin-dot-size-sm;
     .square(@spin-dot-size-sm);
+
     i {
       width: 6px;
       height: 6px;
@@ -190,6 +204,7 @@
     font-size: @spin-dot-size-lg;
 
     .square(@spin-dot-size-lg);
+
     i {
       width: 14px;
       height: 14px;
@@ -202,16 +217,18 @@
   }
 }
 
-.loading-nav-bar.am-navbar{
+.loading-nav-bar {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: transparent;
-  .am-navbar-left-icon{
+
+  .am-navbar-left-icon {
     color: #333333;
   }
 }
+
 @keyframes antSpinMove {
   to {
     opacity: 1;

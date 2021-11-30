@@ -34,6 +34,7 @@ declare namespace RECO.Mobile {
 
             isBiParkApp?: boolean;
             thirdshareLogo?: string;
+            mapKey?: string;
         }
 
         namespace Client {
@@ -64,7 +65,7 @@ declare namespace RECO.Mobile {
 
                     title: string;
 
-                    path?: string;
+                    key?: string;
 
                     type: string | number;
                 }
@@ -126,6 +127,9 @@ declare namespace RECO.Mobile {
             imgURL?: any;
 
             assetsUrl?: any;
+
+            previewUrl?: any;
+
             /**
              * redirectUrl
              *
@@ -136,7 +140,6 @@ declare namespace RECO.Mobile {
             wechatAppid?: string;
             corpId?: string;
             h5url?: string;
-            weburl?: string
             rsa?: any;
         }
 
@@ -435,40 +438,6 @@ interface String {
     htmlInjectEncode(tagExp?: RegExp): string;
 }
 
-declare namespace AMap {
-    class LngLat {
-        constructor(...args);
-    }
-
-    class add {
-        constructor(...args);
-    }
-
-    class Point {
-        constructor(...args);
-    }
-
-    class Marker {
-        constructor(...args);
-
-        setAnimation(...args);
-    }
-
-    class Map {
-        constructor(...args);
-
-        centerAndZoom(...args);
-
-        add(...args);
-
-        addOverlay(...args);
-    }
-
-    class Geocoder {
-        getLocation(...args);
-    }
-
-    class plugin {
-        constructor(...args);
-    }
-}
+declare const AMap: any;
+declare const AMapUI: any;
+declare const Loca: any;

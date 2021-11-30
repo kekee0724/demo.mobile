@@ -1,0 +1,46 @@
+{
+    "$schema": "../../../node_modules/rc-packagr/rc-package.schema.json",
+
+    "dest": "../../../dist-pkg/@reco-m/ide-kit",
+    "deleteDestPath": true,
+    "lib": {
+        "jsx": "react",
+        "entryFile": "index.ts"
+    },
+    "whitelistedNonPeerDependencies": [
+        "tslib",
+        "react",
+        "reco",
+        "dva",
+        "antd-mobile",
+        "base-64",
+        "tsickle",
+        "jquery",
+        "moment",
+        "rc",
+        "swiper",
+        "webuploader",
+        "babel",
+        "eslint",
+        "husky",
+        "ts-node",
+        "history",
+        "echarts",
+        "jest",
+        "user-event",
+        "lodash",
+        "node",
+        "date",
+        "immer",
+        "rmc",
+        "typescript",
+        "web",
+        "jsencrypt",
+        "simditor",
+        "fingerprintjs",
+        "ion",
+        "sortablejs",
+        "bi-packagr",
+        "amap"
+    ]
+}

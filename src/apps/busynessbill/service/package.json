@@ -1,7 +1,0 @@
-{
-  "name": "@reco-m/busynessbill-service",
-  "version": "0.0.0",
-  "description": "企业账单service模块",
-  "license": "MIT",
-  "dependencies": {}
-}

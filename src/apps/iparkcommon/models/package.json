@@ -1,9 +1,0 @@
-{
-  "name": "@reco-m/ipark-common-models",
-  "version": "0.0.0",
-  "description": "ipark公共模块models",
-  "license": "MIT",
-  "dependencies": {
-    "@reco-m/ipark-common-service": "~0.0.0"
-  }
-}

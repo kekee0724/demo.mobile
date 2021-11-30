@@ -1,119 +1,83 @@
-@import "themes/default";
+@import "mixins/reset";
 
-@container-prefix: container;
-
-.@{container-prefix}-pages{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-}
-.@{container-prefix}-hide{
-  display: none;
-  pointer-events: none;
-}
-.@{container-prefix}-page {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
+.container-fill {
   height: 100%;
-  background: #efeff4;
-  // transition: all .3s;
-  &.ios{
-    transform: translate3d(100%, 0, 0);
-  }
-  &.page-show{
-    transform: translate3d(0, 0, 0);
-    transition: none;
+
+  > .container-fill {
+    #react-container .container-grow();
   }
 }
 
-.@{container-prefix}-height{
-  max-height: 100%;
-  overflow: hidden;
-  &.@{container-prefix}-scrollable{
-    max-height: 100%;
-    overflow: hidden;
-  }
-}
-
-.@{container-prefix}-fill {
-  height: 100%;
-  width: 100%;
-  & > & {
-    flex: 1 1 0;
-    position: relative;
-  }
-}
-
-.@{container-prefix}-column,
-.@{container-prefix}-row {
-  display: flex;
+.container-column,
+.container-row {
+  #react-container .display-flex();
   max-height: 100%;
   width: 100%;
 
-  > .@{container-prefix}-fill {
-    flex: 1 1 0;
-    position: relative;
+  > .ViewManager,
+  > .container-fill {
+    #react-container .container-grow();
   }
+
 }
 
-.@{container-prefix}-column {
-  flex-direction: column;
+.container-column {
+  #react-container .flex-direction(column);
 }
 
-.@{container-prefix}-row {
-  flex-direction: row;
-  height: auto;
+.container-row {
+  #react-container .flex-direction(row);
 
-  > .@{container-prefix}-fill {
+  > .container-fill {
     height: auto;
     width: auto;
   }
 }
 
 
-.@{container-prefix}-align-end {
-  align-items: flex-end;
+.container-align-end {
+  #react-container .align-items(flex-end);
 }
 
-.@{container-prefix}-align-center {
-  align-items: center;
+.container-align-center {
+  #react-container .align-items(center);
 
-  .@{container-prefix}-direction-column > & {
+  .container-column > & {
     text-align: center;
   }
 }
 
-.@{container-prefix}-align-start {
-  align-items: flex-start;
+.container-align-start {
+  #react-container .align-items(flex-start);
 }
 
 
-.@{container-prefix}-justified {
-  justify-content: space-around;
+.container-justified {
+  #react-container .justify-content(space-around);
 }
 
-.@{container-prefix}-justify-end {
-  justify-content: flex-end;
+.container-justify-end {
+  #react-container .justify-content(flex-end);
 }
 
-.@{container-prefix}-justify-center {
-  justify-content: center;
+.container-justify-center {
+  #react-container .justify-content(center);
 }
 
-.@{container-prefix}-justify-start {
-  justify-content: flex-start;
+.container-justify-start {
+  #react-container .justify-content(flex-start);
 }
 
-.@{container-prefix}-scrollable {
+.container-hidden{
+  overflow: hidden;
+}
+
+.container-scrollable {
   max-height: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  -webkit-overflow-scrolling: touch; /*ios滚动区域必加属性*/
+  overflow: scroll;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+
   &:before,
   &:after {
     content: "";
@@ -125,42 +89,53 @@
   &:before {
     bottom: -1px;
   }
+
   &:after {
     top: -1px;
   }
 }
 
-.@{container-prefix}-list {
-  overflow: hidden !important;
-  height: auto !important;
-  .am-list-view-scrollview-content{
-    position: relative !important;
-  }
+.container-hide {
+  display: none;
 }
-.@{container-prefix}-hidden {
-  max-height: 100%;
-  overflow: hidden !important;
-}
-.@{container-prefix}-props{
-   width: 100%;
-}
-.@{container-prefix}-body{
+
+.container-pages {
   position: absolute;
-  top: 0;
   left: 0;
   right: 0;
+  top: 0;
   bottom: 0;
-  .am-tabs-horizontal .am-tabs-pane-wrap-active{
-    height: 100%;
+  overflow: hidden;
+  transition:all .3s;
+}
+
+.container-page {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 1;
+  background-color: var(--bg-color);
+  transform: translate3d(0,0,0);
+}
+
+.android{
+  .container-page-shadow {
+    display: none;
   }
 }
-.shadow{
-  position: absolute;
-  top: 0;
-  width: 16px;
-  bottom: 0;
-  z-index: -1;
-  content: '';
-  right: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.1) 100%);
+
+.ios{
+  .container-page-shadow {
+    position: absolute;
+    top: 0;
+    width: 16px;
+    bottom: 0;
+    z-index: -1;
+    content: '';
+    opacity: 1;
+    right: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.2) 100%);
+  }
 }

@@ -1,38 +1,36 @@
 import React from "react";
 
-import { List } from "antd-mobile-v2";
+import { List, Switch } from "antd-mobile";
 
 import { template } from "@reco-m/core";
-import { gesture, gusture, setEventWithLabel } from "@reco-m/core-ui";
-import { statisticsEvent } from "@reco-m/ipark-statistics";
+import { ViewComponent, gesture, gusture, setEventWithLabel } from "@reco-m/core-ui";
 
-import { Namespaces, SignTypeEnum, accountItems } from "@reco-m/auth-models";
-
-
-import { AccountSafe as oldAccountSafe } from "@reco-m/auth-account";
+import { statisticsEvent } from "@reco-m/statistics";
+import { Namespaces, SignTypeEnum, accountSafeModel, accountItems, AccountSecurityEnum } from "@reco-m/auth-models";
 
 export namespace AccountSafe {
-    export interface IProps extends oldAccountSafe.IProps { }
+    export interface IProps<S = IState> extends ViewComponent.IProps<S> {}
 
-    export interface IState extends oldAccountSafe.IState {
-        checked?: boolean;
+    export interface IState extends ViewComponent.IState, accountSafeModel.StateType {
     }
 
-    export class Component<P extends IProps = IProps, S extends IState = IState> extends oldAccountSafe.Component<P, S> {
+    export class Component<P extends IProps = IProps, S extends IState = IState> extends ViewComponent.Base<P, S> {
         showloading = false;
         headerContent = "账号与安全";
         namespace = Namespaces.accountsafe;
 
         componentDidMount() {
-            this.dispatch({ type: "user/getCurrentUser" });
-            this.dispatch({ type: "getCurrentUser" });
+            this.dispatch({ type: "initPage" });
         }
 
         componentMount() {
+            setEventWithLabel(statisticsEvent.c_app_Myself_AaccountAndSecurity);
+
             if (+gusture.isGusture === SignTypeEnum.modify) this.dispatch({ type: "input", data: { checked: true } });
         }
 
         change(value: any) {
+            console.log(value)
             this.dispatch({ type: "input", data: { checked: value } });
             if (!value) {
                 gusture.isGusture = SignTypeEnum.noiModify;
@@ -42,30 +40,39 @@ export namespace AccountSafe {
 
         renderBody(): React.ReactNode {
             const { state } = this.props,
-                mobile = state!.mobile;
+                checked = state!.checked,
+                mobile = state!.Mobile;
 
             return (
-                <List>
+                <List mode='card'>
                     {accountItems.map((item, i) => {
+                        if (!client.openThirdLogin && item.itemName === "社交账号") {
+                            return null
+                        }
                         return (
                             <List.Item
                                 key={i}
                                 onClick={() => {
                                     this.goTo(item.url);
 
-                                    i === 2 && setEventWithLabel(statisticsEvent.bindSocialAccounts);
+                                    i === AccountSecurityEnum.social && setEventWithLabel(statisticsEvent.c_app_Myself_Social);
                                 }}
-                                arrow="horizontal"
-                                extra={(i === 0 && mobile) || (i === 1 && "修改")}
+                                extra={(i === AccountSecurityEnum.changeMobile && mobile) || (i === AccountSecurityEnum.changePassword && "修改")}
                             >
                                 {item.itemName}
                             </List.Item>
                         );
                     })}
+                    <List.Item extra={<Switch onChange={(value) => this.change(value)} checked={checked} />}>手势密码</List.Item>
+                    {checked && (
+                        <List.Item onClick={() => this.goTo(`gestures`)}>
+                            手势设置
+                        </List.Item>
+                    )}
                 </List>
             );
         }
     }
 
-    export const Page = template(Component, state => state[Namespaces.accountsafe]);
+    export const Page = template(Component, (state) => state[Namespaces.accountsafe]);
 }

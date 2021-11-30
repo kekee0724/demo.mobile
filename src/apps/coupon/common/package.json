@@ -1,9 +1,0 @@
-{
-  "name": "@reco-m/coupon-common",
-  "version": "0.0.0",
-  "description": "优惠券通用模块",
-  "license": "MIT",
-  "dependencies": {
-    "@reco-m/coupon-models": "~0.0.0"
-  }
-}

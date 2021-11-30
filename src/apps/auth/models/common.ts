@@ -1,87 +1,118 @@
 export enum Namespaces {
-    authbindmodal = "authbindmodal",
-    accountEdit = "accountEdit",
+    user = "user",
+    login = "login",
+    app = "app",
+    accountsafe = "accountsafe",
+    gestures = "gestures",
+    changepassword = "changepassword",
+    accountMobile = "accountMobile",
+    accountBindMobile = "accountBindMobile",
+    pwd = "pwd",
+    accountinfo = "accountinfo"
 }
 /**
- * 登录类型
+ * 登录方式
  */
 export enum LoginTypeEnum {
     /**
-     * 手机号登录
+     * 验证码
      */
-    phone = 1,
+    sms,
     /**
-     * 账号密码登录
+     * 账号密码
      */
-    account = 2
+    pwd
 }
-export const SceneCodes = ["WORKORDER", "ParkPush", "InteractiveMessage"];
+/**
+ * 性别
+ */
+export enum GenderTypeValesEnum {
+    /**
+     * 男
+     */
+    man = 1,
+    /**
+     * 女
+     */
+    woman = 2
+}
+/**
+ * 显示手势轨迹
+ */
+export enum SignTypeEnum {
+    /**
+     * 显示
+     */
+    modify = 1,
+    /**
+     * 不显示
+     */
+    noiModify = 0
+}
+/**
+ * 密码输入框类型
+ */
+export enum PasswordTypeEnum {
+    /**
+     * 密码
+     */
+    password = "password",
+    /**
+     * 文本
+     */
+    text = "text"
+}
+/**
+ * 密码操作类型 
+ */
+export enum PasswordChangeTypeEnum {
+    /**
+     * 找回密码
+     */
+    unAuth = "unAuth",
+    /**
+     * 修改密码
+     */
+    auth = "Auth"
+}
 
-export function judgeInfo(state: any) {
-    let writeCount: number = 0;
-    const thumb = state!.thumb,
-        birthday = state!.birthday,
-        email = state!.email,
-        nickName = state!.nickName,
-        gender = state!.gender,
-        guoj = state!.guoj,
-        minz = state!.minz,
-        huny = state!.huny,
-        jiax = state!.jiax,
-        zhengzmm = state!.zhengzmm,
-        xuel = state!.xuel,
-        xuew = state!.xuew,
-        zhic = state!.zhic,
-        zhuanyfx = state!.zhuanyfx,
-        getTagApplyInfos = state!.getTagApplyInfos,
-        idiograph = state!.idiograph;
-    if (thumb.id) {
-        writeCount += 1;
-    }
-    if (birthday) {
-        writeCount += 1;
-    }
-    if (email) {
-        writeCount += 1;
-    }
-    if (nickName) {
-        writeCount += 1;
-    }
-    if (gender !== 0) {
-        writeCount += 1;
-    }
-    if (getTagApplyInfos.length > 0) {
-        writeCount += 1;
-    }
-    if (guoj.name) {
-        writeCount += 1;
-    }
-    if (minz.name) {
-        writeCount += 1;
-    }
-    if (huny.name) {
-        writeCount += 1;
-    }
-    if (zhengzmm.name) {
-        writeCount += 1;
-    }
-    if (xuel.name) {
-        writeCount += 1;
-    }
-    if (xuew.name) {
-        writeCount += 1;
-    }
-    if (zhuanyfx.name) {
-        writeCount += 1;
-    }
-    if (zhic.name) {
-        writeCount += 1;
-    }
-    if (idiograph) {
-        writeCount += 1;
-    }
-    if (jiax.name) {
-        writeCount += 1;
-    }
-    return writeCount;
+/**
+ * 账号安全导航操作 
+ */
+export enum AccountSecurityEnum {
+    /**
+     * 换绑手机
+     */
+    changeMobile = 0,
+    /**
+     * 登录密码
+     */
+    changePassword = 1,
+    /**
+    * 社交账号
+    */
+    social = 2
 }
+/**
+ * 修改密码操作框
+ */
+ export enum PasswordChangeInputEnum {
+    /**
+     * 新密码
+     */
+    newPassword = 1,
+    /**
+     * 确认密码
+     */
+     confirm = 2
+ }
+/**
+ * 业务表名
+ */
+ export enum BindTableNameEnum {
+    /**
+     * 用户
+     */
+    account = "sys_account",
+  }
+  

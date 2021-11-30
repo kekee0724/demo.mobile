@@ -1,26 +1,13 @@
 export enum Namespaces {
-    my = "my"
+    my = "my",
+    mycompany = "mycompany",
+    coretest = "coretest"
 }
-
-export const menuData = [
-    {
-        icon: "icon0203",
-        name: "我的活动",
-        url: "myActivity"
-    },
-    {
-        icon: "wenjuan",
-        name: "我的问卷",
-        url: "survey/1"
-    },
-    {
-        icon: "tubiaozhizuomoban",
-        name: "我的发票",
-        url: "invoice"
-    },
-    {
-        icon: "coupon",
-        name: "我的优惠券",
-        url: "mine"
-    }
+/**
+ * 业务导航
+ */
+export const listItems = [
+    { title: "账号安全", route: "safe", icon: "iconoa icon-zhanghaomima color0" },
+    { title: "清除缓存", icon: "iconoa icon-Reset color4" },
+    { title: "关于", route: "about", icon: "iconoa icon-guanyu1 color5" }
 ];

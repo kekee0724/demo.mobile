@@ -1,0 +1,9 @@
+{
+  "name": "@reco-m/tag-service",
+  "version": "0.0.0",
+  "description": "RECO Tag Service Mobile lib",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/core": "~0.0.0"
+  }
+}

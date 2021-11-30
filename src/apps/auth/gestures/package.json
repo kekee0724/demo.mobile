@@ -1,0 +1,11 @@
+{
+  "name": "@reco-m/auth-gestures",
+  "version": "0.0.0",
+  "description": "手势设置模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/core": "~0.0.0",
+    "@reco-m/core-ui": "~0.0.0",
+    "@reco-m/auth-models": "~0.0.0"
+  }
+}

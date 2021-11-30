@@ -1,0 +1,10 @@
+{
+  "name": "@reco-m/system-about",
+  "version": "0.0.0",
+  "description": "关于模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/core": "~0.0.0",
+    "@reco-m/system-models": "~0.0.0"
+  }
+}

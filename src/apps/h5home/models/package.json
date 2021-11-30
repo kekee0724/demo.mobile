@@ -1,0 +1,11 @@
+{
+    "name": "@reco-m/h5home-models",
+    "version": "0.0.0",
+    "description": "小程序自动登录模块model",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/core": "~0.0.0",
+        "@reco-m/core-ui": "~0.0.0",
+        "@reco-m/auth-service": "~0.0.0"
+    }
+}

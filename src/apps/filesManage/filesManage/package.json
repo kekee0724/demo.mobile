@@ -1,0 +1,12 @@
+{
+    "name": "@reco-m/files-manage",
+    "version": "0.0.0",
+    "description": "文件模块",
+    "license": "MIT",
+    "dependencies": {
+        "@reco-m/core": "~0.0.0",
+        "@reco-m/core-ui": "~0.0.0",
+        "@reco-m/files-manage-models": "~0.0.0",
+        "@reco-m/statistics": "~0.0.0"
+    }
+}

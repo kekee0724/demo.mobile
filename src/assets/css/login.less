@@ -1,0 +1,86 @@
+@import "themes/default";
+
+.reco-login-box {
+  background: var(--login-back);
+  &:after, &:before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    transform: scale(1.4);
+  }
+
+  &:after {
+    background: url("../../assets/images/back.png") no-repeat;
+    background-size: 100%;
+    animation: login-back-an 5s alternate forwards;
+  }
+
+  &:before {
+    background: url("../../assets/images/back_1.png") no-repeat;
+    background-size: 100%;
+    animation: login-back-an 6s alternate forwards;
+  }
+}
+
+@keyframes login-back-an {
+  0% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.reco-login {
+  position: relative;
+  z-index: 1;
+  padding: 12px 18px 0;
+}
+
+.reco-login-title {
+  margin: 55px @default 0;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+
+.reco-login-desc {
+  font-size: 14px;
+  color: #999999;
+  margin: 12px @default 20px;
+}
+
+.reco-login-logo {
+  font-size: 40px;
+  margin-right: var(--xs);
+  color: #02b8cd;
+}
+
+.reco-login-item {
+  padding: var(--default) 0;
+}
+
+.reco-login-check {
+  margin: 0 var(--default) var(--default);
+
+  .adm-checkbox {
+    --font-size: 14px;
+    color: var(--adm-color-weak);
+  }
+}
+
+.reco-login-button {
+  margin: var(--lg) var(--default) 0;
+}
+
+.reco-login-cut {
+  text-align: center;
+  font-size: 16px;
+  margin-top: var(--lg);
+}
+
+

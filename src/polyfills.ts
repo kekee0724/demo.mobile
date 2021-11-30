@@ -1,30 +1,7 @@
+import "antd-mobile/es/global";
 import "./reco.config";
-
-// 通用图标库
-import "./assets/fonts/two/iconfont.css";
-
-// 新版图标库
-import "./assets/fonts/iconfont.css";
-import "./assets/fonts/app_new/iconfont.css";
-import "./assets/fonts/app_new_color/iconfont.js";
-
-// 老版图标库
-// import "./assets/fonts/iconfont.default.css";
-
-import "./assets/css/vendor.less";
-import "./assets/css/index.less";
-
-/** 主题样式 */
-import "./assets/css/themes/white/index.less";
-
-import "../src/assets/fonts/two/iconfont.js";
-
-import $ from "jquery";
-
-import "ion-rangeslider/js/ion.rangeSlider.min";
-import "ion-rangeslider/css/ion.rangeSlider.min.css";
-
-window["$"] = $;
+import "./assets/css/index.less"
+import "./assets/css/vendor.less"
 
 function remove<T>(this: T[], v: T, deleteCount?: number): number | void;
 function remove<T>(this: T[], v: T, deleteCount?: number, ...items: T[]): number | void {
@@ -90,30 +67,6 @@ export function dateDiff(this: Date, interval: "y" | "m" | "d" | "w" | "h" | "n"
 
 Date.prototype.dateDiff = dateDiff;
 
-export function dateDiffDecimals(this: Date, interval: "y" | "m" | "d" | "w" | "h" | "n" | "s" | "l", date: Date): number | void {
-    const long = this.getTime() - date.getTime();
-    // tslint:disable-next-line:switch-default
-    switch (interval.toLowerCase()) {
-        case "y":
-            return this.getFullYear() - date.getFullYear();
-        case "m":
-            return (this.getFullYear() - date.getFullYear()) * 12 + (this.getMonth() - date.getMonth());
-        case "d":
-            return +(long / 1000 / 60 / 60 / 24);
-        case "w":
-            return +(long / 1000 / 60 / 60 / 24 / 7);
-        case "h":
-            return +(long / 1000 / 60 / 60);
-        case "n":
-            return +(long / 1000 / 60);
-        case "s":
-            return +(long / 1000);
-        case "l":
-            return long;
-    }
-}
-
-Date.prototype.dateDiffDecimals = dateDiffDecimals;
 
 export function dateAdd(this: Date, interval: "s" | "n" | "h" | "d" | "w" | "q" | "m" | "y", number: number): Date {
     // tslint:disable-next-line:switch-default

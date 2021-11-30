@@ -1,12 +1,11 @@
 {
-    "name": "@reco-m/ipark-h5home-h5home",
+    "name": "@reco-m/h5home-h5home",
     "version": "0.0.0",
     "description": "小程序自动登录模块",
     "license": "MIT",
     "dependencies": {
-        "@reco-m/workorder-apply": "~0.0.0",
-        "@reco-m/workorder": "~0.0.0",
-        "@reco-m/policyservice": "~0.0.0",
-        "@reco-m/workorder-market": "~0.0.0"
+        "@reco-m/core": "~0.0.0",
+        "@reco-m/core-ui": "~0.0.0",
+        "@reco-m/h5home-models": "~0.0.0"
     }
 }

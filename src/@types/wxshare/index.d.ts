@@ -9,4 +9,10 @@ declare namespace wx {
     function onMenuShareTimeline(param)
     function openLocation(param);
     function closeWindow();
+
+    namespace miniProgram  {
+        function switchTab(param)
+        function navigateTo(param)
+        function navigateBack()
+    }
 }

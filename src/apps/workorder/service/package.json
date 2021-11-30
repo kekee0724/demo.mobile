@@ -1,7 +1,0 @@
-{
-  "name": "@reco-m/workorder-service",
-  "version": "0.0.0",
-  "description": "RECO Work order Service mobile lib",
-  "license": "MIT",
-  "dependencies": {}
-}

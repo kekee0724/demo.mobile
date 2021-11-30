@@ -1,0 +1,9 @@
+{
+  "name": "@reco-m/system-service",
+  "version": "0.0.0",
+  "description": "关于services模块",
+  "license": "MIT",
+  "dependencies": {
+    "@reco-m/core": "~0.0.0"
+  }
+}

@@ -1,0 +1,37 @@
+// 定义颜色数组
+@colorArr: #99ccff, #ffcccc, #3399cc, #ffff99, #ccccff, #ff9966, #ff6666, #ffcccc, #ffcc99, #ccff99, #99cccc, #99ccff, #0099cc, #CC0033;
+
+// 定义循环最大值，此处使用颜色数组的长度
+@len: length(@colorArr);
+
+/**
+ * 定义循环方法
+ * @index--传入的循环起始值
+ * @len--循环的最大值  也可使用常量  eg:(@index<4)
+ */
+.Loop(@index) when (@index<@len) {
+    // 执行内容
+    // 类名参数要加大括号@{index}
+    // 根据index获取对应的某个值 extract(数组名, 对应的序号)
+    .color-@{index} {
+        color: extract(@colorArr, @index + 1);
+    }
+
+    //递归调用 达到循环目的
+    .Loop(@index + 1);
+}
+
+// 调用循环
+.Loop(0);
+
+.color-wechat {
+    color: #27c069;
+}
+
+.color-qq {
+    color: #27b6f1;
+}
+
+.color-weiBo {
+    color: #d3342e;
+}

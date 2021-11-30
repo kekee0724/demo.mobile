@@ -1,27 +1,25 @@
 import React from "react";
 
 import { router } from "dva";
-
 import { Route } from "@reco-m/core-ui";
 
-import { changePasswordRoutes, changeBindMobileRoutes } from "@reco-m/auth-account";
+import { changePasswordRoutes, changeBindMobileRoutes, pChangePasswordRoutes } from "@reco-m/auth-account";
 
-import { AgreementComponent, RepasswordBefore, Login } from "@reco-m/auth-login";
+import { Login } from "./login";
 
-import { AgreementIparkComponent, TacticsComponent, LoginWhite, Code, Phone, changePasswordWhiteRoutes, pChangePasswordRoutes } from "@reco-m/ipark-white-login";
+import { AgreementComponent } from "./login.agreement";
 
-import "@reco-m/ipark-auth-models";
+import { RepasswordBefore } from "./login.repassword.before";
 
-export { AgreementComponent, RepasswordBefore };
+export { Login, AgreementComponent, RepasswordBefore };
 
-export const routes = ({ match }, renderRoutes?: (match: router.match) => JSX.Element | JSX.Element[] | null) => {
+export const routes = ({ match }, renderRoutes?: (match: router.match) => React.ReactNode) => {
     renderRoutes = typeof renderRoutes === "function" ? renderRoutes : () => null;
     return (
         <>
             <Route path={match.path} component={Login.Page} />
             <router.Switch>
-                <Route path={`${match.path}/agreement`} component={AgreementIparkComponent} />
-                <Route path={`${match.path}/tactics`} component={TacticsComponent} />
+                <Route path={`${match.path}/agreement`} component={AgreementComponent} />
                 <Route
                     path={`${match.path}/find`}
                     render={({ match }) => (
@@ -38,30 +36,3 @@ export const routes = ({ match }, renderRoutes?: (match: router.match) => JSX.El
         </>
     );
 };
-
-export function loginRoutes(match: router.match) {
-    return  <Route
-    path={`${match.path}/login`}
-    render={({ match }) => (
-        <>
-            <Route path={match.path} component={LoginWhite.Page} />
-            <Route path={`${match.path}/agreement`} component={AgreementIparkComponent} />
-            <Route path={`${match.path}/tactics`} component={TacticsComponent} />
-            <Route
-                path={`${match.path}/find`}
-                render={({ match }) => (
-                    <>
-                        {changePasswordWhiteRoutes(match)}
-                        <Route path={match.path} component={Phone.Page} />
-                    </>
-                )}
-            />
-            {changeBindMobileRoutes(match)}
-            {pChangePasswordRoutes(match)}
-            <Route path={`${match.path}/code`} component={Code.Page} />
-            <Route path={`${match.path}/phone`} component={Phone.Page} />
-        </>
-    )}
-/>
-}
-
