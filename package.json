@@ -7,7 +7,7 @@
         "clean": "npx rimraf dist-pkg dist",
         "clean:all": "npx rimraf node_modules dist",
         "bi-packagr":"bi-packagr",
-        "start": "react-scripts start --port 3000",
+        "start": "react-scripts start --port 2233",
         "build": "react-scripts build",
         "build:pkg": "npm run bi-packagr -- -m",
         "publish": "npm run bi-packagr -- -m -p",
