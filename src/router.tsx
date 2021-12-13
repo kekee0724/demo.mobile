@@ -1,12 +1,5 @@
-/*
- * @Author: 可可同学
- * @Date: 2021-11-30 20:24:41
- * @LastEditTime: 2021-11-30 22:52:45
- * @LastEditors: 可可同学
- * @Description:
- */
-import { router } from "dva";
-
+// import { router } from "dva";
+import * as router from 'react-router-dom';
 import { loadLazyModule } from "@reco-m/core-ui";
 
 import IndexPage from "./routes/IndexPage";
