@@ -112,15 +112,4 @@ export const server: RECO.Mobile.Config.Server = (window["server"] = {
      * 项目接口地址
      */
     url: "https://fat.bitechdevelop.com/reco-oa-10-1-mobileapi/", // 正在使用win
-    // url: "http://192.168.30.150:8081/",  // 伍振飞本地
-
-    // assetsUrl: "https://linux.bitechdevelop.com/ipark_test1.mobileapi/",
-    // url: "https://linux.bitechdevelop.com/ipark_test1.mobileapi/"
-
-    // url: "http://linux.bitechdevelop.com/reco.biparkall.10.0.mobileapi.service/", // 正在使用win
-    // assetsUrl: "http://linux.bitechdevelop.com/reco.biparkall.10.0.mobileapi.service/",
-
-    // g6
-    // url: "https://linux.bitechdevelop.com/reco.g6.10.0.mobileapi/", // 正在使用win
-    // assetsUrl: "https://linux.bitechdevelop.com/reco.g6.10.0.mobileapi/",
 });
