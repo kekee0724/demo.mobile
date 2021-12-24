@@ -3,6 +3,7 @@ import React, { ReactNode } from "react";
 import { PureComponent, transformAssetsUrl } from "@reco-m/core";
 
 import { Image } from "antd-mobile";
+import classNames from "classnames";
 
 export namespace ImageAuto {
     export interface IProps extends PureComponent.IProps {
@@ -13,6 +14,8 @@ export namespace ImageAuto {
         cutHeight?: any;
         cropWidth?: any;
         cropHeight?: any;
+        style?: any;
+        className?: any;
         fit?: any; // 图片填充模式 'contain' | 'cover' | 'fill' | 'none' | 'scale-down'
         onClick?: (event: React.MouseEvent<HTMLImageElement, Event>) => void; // 图片点击时间
         alt?: any; // 图片描述
@@ -50,7 +53,24 @@ export namespace ImageAuto {
 
         // 客户列表的图片，在请求错误时要显示传过来的文字不显示错误图片
         render(): React.ReactNode {
-            const { src: target, width, height, cutWidth, cutHeight, cropWidth, cropHeight, fit, onClick, alt, borderRadius, lazy, onError } = this.props;
+            const {
+                src: target,
+                width,
+                height,
+                cutWidth,
+                cutHeight,
+                cropWidth,
+                cropHeight,
+                fit,
+                onClick,
+                alt,
+                borderRadius,
+                lazy,
+                onError,
+                style,
+                className,
+                children,
+            } = this.props;
             let src = transformAssetsUrl((this.state && this.state.src) || target);
             if (!src) {
                 src = "";
@@ -62,11 +82,21 @@ export namespace ImageAuto {
                 cropWidth && (src = `${src}cropWidth=${cropWidth * v}&`);
                 cropHeight && (src = `${src}cropHeight=${cropHeight * v}`);
             }
-
             return (
-                <>
-                    <Image src={src} lazy={lazy} width={width} height={height} fit={fit} onClick={onClick} alt={alt} onError={onError} style={{ borderRadius: borderRadius }} />
-                </>
+                <div className={classNames("reco-image", className)} style={{ width: width, height: height }}>
+                    <Image
+                        src={src}
+                        lazy={lazy}
+                        width="100%"
+                        height={height}
+                        fit={fit}
+                        onClick={onClick}
+                        alt={alt}
+                        onError={onError}
+                        style={{ ...style, borderRadius: borderRadius }}
+                    />
+                    {children && <div className="reco-image-shade">{children}</div>}
+                </div>
             );
         }
     }

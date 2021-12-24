@@ -22,7 +22,7 @@ export namespace PictureUploadWrap {
         }
 
         onChange(files: any[]) {
-            this.setState({ files: files.map((f) => (f.thumbUrl ? f : this.files.find((d: any) => f.url === d.thumbUrl) ?? f)) });
+            this.setState({ files: files.map((f) => (f.thumbnailUrl ? f : this.files.find((d: any) => f.url === d.url) ?? f)) });
         }
 
         beforeUpload(files: File[]) {
@@ -45,7 +45,9 @@ export namespace PictureUploadWrap {
                     if ((uploadFile as any).source.source === file) {
                         uploader.off("uploadSuccess", uploadSuccess).off("uploadError", uploadError).off("errorMessage", errorMessage);
 
-                        resolve({ url: (uploadFile.url = (uploadFile as any).thumbUrl = getThumbUrl(((uploadFile as any).rawUrl = uploadFile.url!))) });
+                        (uploadFile as any).thumbnailUrl = getThumbUrl(((uploadFile as any).rawUrl = uploadFile.url!));
+
+                        resolve({ url: uploadFile.url });
                     }
                 }
 
@@ -79,13 +81,9 @@ export namespace PictureUploadWrap {
             this.files = files;
         }
 
-        protected onFileUploadProgress(_file: WebUploader.File, _percentage: number) { }
+        protected onFileUploadProgress(_file: WebUploader.File, _percentage: number) {}
 
-        protected onFileUploadComplete(_file: WebUploader.File) { }
-
-        getFiles(files: any[]) {
-            return files.map((file) => Object.create(file, { url: { value: file.thumbUrl ?? file.url } }));
-        }
+        protected onFileUploadComplete(_file: WebUploader.File) {}
 
         onPreview0(index: number, _: any[]) {
             super.onPreview0(index, this.state.files);
@@ -97,7 +95,7 @@ export namespace PictureUploadWrap {
                 fileNumLimit = this.attachUploadService?.fileNumLimit;
             let captureProps = {};
             if (browser.versions.weChatMini && browser.versions.android) {
-                captureProps = { capture: "camera" }
+                captureProps = { capture: "camera" };
             }
 
             return (
@@ -105,7 +103,7 @@ export namespace PictureUploadWrap {
                     {...props}
                     {...captureProps}
                     className={this.classnames(className, this.getClassSet(), readonly ? "readonly" : "")}
-                    value={this.getFiles(files)}
+                    value={files}
                     beforeUpload={this.beforeUpload.bind(this)}
                     multiple={multiple}
                     onChange={this.onChange.bind(this)}

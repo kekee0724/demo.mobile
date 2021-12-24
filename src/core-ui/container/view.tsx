@@ -16,6 +16,7 @@ export namespace ViewComponent {
         ignoreClass?: boolean;
         showheader?: boolean;
         scrollable?: boolean;
+        hidden?: boolean;
         canBack?: boolean;
         bodyClass?: string;
         wrap?: PageWrap.Component;
@@ -25,6 +26,7 @@ export namespace ViewComponent {
     export interface IState extends CoreComponent.IState {
         showloadingContent?: string;
         showloading?: boolean;
+        hidden?: boolean;
         isLoading?: boolean;
         vertical?: boolean;
     }
@@ -47,6 +49,7 @@ export namespace ViewComponent {
         protected canBack = false;
         protected bodyClass: string;
         protected pageClass: any;
+        protected hidden = false;
 
         protected headerContent: any;
         protected scroll: any;
@@ -80,6 +83,7 @@ export namespace ViewComponent {
                     left={this.renderHeaderLeft() as any}
                     right={this.renderHeaderRight() as any}
                     onBack={back ? this.goBack.bind(this) : null}
+                    backArrow={back ? true : false}
                 >
                     {this.renderHeaderContent(headerContent)}
                 </NavBar.Component>
@@ -138,8 +142,8 @@ export namespace ViewComponent {
             Promise.resolve().then(() => {
                 if (value !== formRef.current?.getFieldValue(key)) {
                     formRef.current?.setFieldsValue({ [key]: value });
-                }    
-            })
+                }
+            });
         }
         render(): React.ReactNode {
             return (
@@ -148,6 +152,7 @@ export namespace ViewComponent {
                     <div
                         className={this.classnames(
                             this.scrollable && this.props.scrollable !== false ? "container-scrollable" : "",
+                            this.hidden && this.props.hidden !== false ? "container-hidden" : "",
                             "container-fill body",
                             this.props.bodyClass || this.bodyClass
                         )}

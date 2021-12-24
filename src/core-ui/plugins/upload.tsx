@@ -1,7 +1,5 @@
 import React from "react";
 
-import { List } from "antd-mobile";
-
 import { BaseAttachUpload } from "@reco-m/core";
 
 export namespace AttachUpload {
@@ -13,7 +11,7 @@ export namespace AttachUpload {
         renderBody(): React.ReactNode {
             const { content } = this.props as any;
 
-            return <List.Item>{content}</List.Item>;
+            return <>{content}</>;
         }
     }
 }

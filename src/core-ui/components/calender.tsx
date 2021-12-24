@@ -7,7 +7,6 @@ import "moment/locale/zh-cn";
 
 import SwipeableViews from "react-swipeable-views";
 import { virtualize } from "react-swipeable-views-utils";
-import QueueAnim from "rc-queue-anim";
 
 import { PureComponent } from "@reco-m/core";
 
@@ -463,9 +462,9 @@ export namespace RMCalendar {
                 startx = e.touches[0].pageX;
                 starty = e.touches[0].pageY;
                 sc = $(this.calendar.current);
-                sc.css({ transform: "translate3d(0, 0, 0)"});
+                sc.css({ transform: "translate3d(0, 0, 0)" });
                 st = sc.height();
-                $(".container-scrollable").css({overflow: "hidden"})
+                $(".container-scrollable").css({ overflow: "hidden" });
             } else if (e.type === "touchend") {
                 let endx, endy;
                 endx = e.changedTouches[0].pageX;
@@ -511,7 +510,7 @@ export namespace RMCalendar {
                     }
                 }
             } else if (e.type === "touchmove") {
-                $(".container-scrollable").attr("style", "")
+                $(".container-scrollable").attr("style", "");
                 let sel = this._getDirection(startx, starty) || 1;
                 const ie = e.touches[0].clientY - starty <= 0 ? e.touches[0].clientY - starty : e.touches[0].clientY - starty;
                 switch (sel) {
@@ -604,18 +603,16 @@ export namespace RMCalendar {
                                     />
                                 </div>
                             </div>
-                            <QueueAnim>
-                                {dropdownlist && (
-                                    <div key={"a"} className={"options"}>
-                                        <div className={"opt"} role="button" data-index="-3" onClick={() => this.handleChangeType("month")}>
-                                            <i className={cx({ selected: type === "month" })}>月</i>
-                                        </div>
-                                        <div className={"opt"} role="button" data-index="-4" onClick={() => this.handleChangeType("week")}>
-                                            <i className={cx({ selected: type === "week" })}>周</i>
-                                        </div>
+                            {dropdownlist && (
+                                <div key={"a"} className={"options"}>
+                                    <div className={"opt"} role="button" data-index="-3" onClick={() => this.handleChangeType("month")}>
+                                        <i className={cx({ selected: type === "month" })}>月</i>
                                     </div>
-                                )}
-                            </QueueAnim>
+                                    <div className={"opt"} role="button" data-index="-4" onClick={() => this.handleChangeType("week")}>
+                                        <i className={cx({ selected: type === "week" })}>周</i>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     )}
                     <div className={"date-body " + bodyClassName}>

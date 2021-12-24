@@ -1,0 +1,36 @@
+.webuploader-container {
+  position: relative;
+}
+
+.webuploader-element-invisible {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.webuploader-pick {
+  --border-radius: var(--adm-button-border-radius, 4px);
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 12px 16px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  color: var(--adm-color-primary);
+
+  .mini {
+    padding: 3px 7px;
+    font-size: 13px;
+  }
+
+  .small {
+    padding: 3px 11px;
+    font-size: 15px;
+  }
+}
+
+.webuploader-pick-disable {
+  opacity: 0.6;
+  pointer-events: none;
+}

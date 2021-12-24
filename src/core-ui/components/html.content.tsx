@@ -1,43 +1,41 @@
 import React from "react";
-import {Grid, Popup} from "antd-mobile";
-import SwiperCore, { Navigation, Pagination, Zoom } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { ImageViewer } from "antd-mobile";
 
 import { PureComponent, htmlInjectEncode, htmlInjectDecode, getAssetsUrl, transformAssetsUrl } from "@reco-m/core";
-
-SwiperCore.use([Navigation, Pagination, Zoom]);
 
 export namespace HtmlContent {
     export interface IProps extends PureComponent.IProps {
         html: any;
         component?: any;
         encode?: boolean;
+        padding?: boolean;
     }
 
     export interface IState extends PureComponent.IState {
-        imgs: any[];
+        images: any[];
         open: boolean;
         index: number;
     }
 
     export class Component<P extends HtmlContent.IProps = HtmlContent.IProps, S extends HtmlContent.IState = HtmlContent.IState> extends PureComponent.Base<P, S> {
         static defaultProps: any = {
-            classPrefix: "html-content ck-content",
+            classPrefix: "",
             component: "div",
             html: "",
             encode: true,
+            padding: true,
         };
 
         protected getInitState(_nextProps: Readonly<P>): Readonly<S> {
             return {
-                imgs: [],
+                images: [],
                 open: false,
             } as any;
         }
 
         renderRef(e) {
             const _this = this;
-            let imgs = [] as any;
+            let images = [] as any;
             $(document).keydown((event) => {
                 if (event.keyCode === 27) {
                     _this.setState({
@@ -50,13 +48,13 @@ export namespace HtmlContent {
                 .on("click.img", "img", function () {
                     _this.setState({
                         open: true,
-                        imgs: imgs,
+                        images: images,
                         index: ($(this).attr("id") as any) || 0,
                     });
                 })
                 .find("img")
                 .each((i, el) => {
-                    imgs.push($(el).attr("id", i).attr("src"));
+                    images.push($(el).attr("id", i).attr("src"));
                 });
         }
 
@@ -81,7 +79,7 @@ export namespace HtmlContent {
                 if (imgSrc && (imgSrc.startsWith("./") || imgSrc.startsWith("~/"))) {
                     $img.attr("src", baseUrl + imgSrc.substr(1));
                 } else {
-                    if (imgSrc && (imgSrc.startsWith("//"))) $img.attr("src", protocol + imgSrc);
+                    if (imgSrc && imgSrc.startsWith("//")) $img.attr("src", protocol + imgSrc);
                 }
                 $(img).attr("style", "max-width: 100%");
             });
@@ -97,37 +95,21 @@ export namespace HtmlContent {
             return (
                 <>
                     {React.createElement(component, {
-                        ...props,
                         ref: this.renderRef.bind(this),
-                        className: this.classnames(className, this.getClassSet()),
+                        className: this.classnames("reco-edit-view ck-content", this.props.padding && "padding", className, this.getClassSet()),
                         dangerouslySetInnerHTML: { __html: newHtml },
                     })}
                     {this.state.open ? (
-                        <Popup
+                        <ImageViewer.Multi
+                            images={this.state.images.map((data) => transformAssetsUrl(data)!)}
                             visible={this.state.open}
-                        >
-                            <Grid columns={0}>
-                                <Grid.Item>
-                                    预览 <span className="size-12 text-error">(温馨提示：双击可放大，拖动滚动条预览大图)</span>
-                                </Grid.Item>
-                                <a onClick={this.onCancel.bind(this)}>
-                                    x
-                                </a>
-                            </Grid>
-                            <Swiper initialSlide={this.state.index} zoom={true} keyboard={true} navigation={true} pagination={true} slidesPerView="auto">
-                                {this.state.imgs &&
-                                    this.state.imgs.length > 0 &&
-                                    this.state.imgs.map((e, i) => {
-                                        return (
-                                            <SwiperSlide key={i}>
-                                                <div className="reco-upload-item swiper-zoom-container">
-                                                    <img src={transformAssetsUrl(e)} alt="" />
-                                                </div>
-                                            </SwiperSlide>
-                                        );
-                                    })}
-                            </Swiper>
-                        </Popup>
+                            defaultIndex={this.state.index}
+                            onClose={() => {
+                                this.setState({
+                                    open: false,
+                                });
+                            }}
+                        />
                     ) : null}
                 </>
             );

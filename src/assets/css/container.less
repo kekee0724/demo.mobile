@@ -68,7 +68,7 @@
   #react-container .justify-content(flex-start);
 }
 
-.container-hidden{
+.container-hidden {
   overflow: hidden;
 }
 
@@ -96,7 +96,7 @@
 }
 
 .container-hide {
-  display: none;
+  visibility: hidden;
 }
 
 .container-pages {
@@ -106,7 +106,7 @@
   top: 0;
   bottom: 0;
   overflow: hidden;
-  transition:all .3s;
+  transition: all .3s;
 }
 
 .container-page {
@@ -117,16 +117,16 @@
   bottom: 0;
   opacity: 1;
   background-color: var(--bg-color);
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 }
 
-.android{
+.android {
   .container-page-shadow {
     display: none;
   }
 }
 
-.ios{
+.ios {
   .container-page-shadow {
     position: absolute;
     top: 0;
@@ -137,5 +137,23 @@
     opacity: 1;
     right: 100%;
     background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.2) 100%);
+  }
+}
+
+.reco-touch-move {
+  &:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999;
+    pointer-events: auto;
+  }
+
+  * {
+    pointer-events: none;
+    touch-action: none;
   }
 }

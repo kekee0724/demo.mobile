@@ -1,7 +1,7 @@
 import React from "react";
 
 import { template } from "@reco-m/core";
-import { ViewComponent, getPhone, OSVersionType, EditorView, Container } from "@reco-m/core-ui";
+import { ViewComponent, getPhone, OSVersionType, HtmlContent, Container } from "@reco-m/core-ui";
 
 import { Namespaces, aboutVersionModel, editionTypeEnum, updateTypeEnum } from "@reco-m/system-models";
 import { Empty } from "antd-mobile";
@@ -31,10 +31,11 @@ export namespace AboutVersion {
         }
 
         renderBody(): React.ReactNode {
-            const { state } = this.props, hotversion = state!.hotversion;
+            const { state } = this.props,
+                hotversion = state!.hotversion;
 
             return hotversion && hotversion ? (
-                <EditorView.Component>{hotversion.remark ? hotversion.remark : ""}</EditorView.Component>
+                <HtmlContent.Component html={hotversion.remark ? hotversion.remark : ""} />
             ) : (
                 <Container.Component range="center">
                     <Empty description={<div>暂无数据</div>} />

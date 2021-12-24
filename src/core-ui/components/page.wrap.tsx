@@ -3,6 +3,7 @@ import React from "react";
 import { browser } from "@reco-m/core";
 
 import { app } from "../bootstrap";
+import classNames from "classnames";
 
 export const domNode = document.getElementById("root")!;
 
@@ -108,22 +109,13 @@ export namespace PageWrap {
                     if (prevDom !== null) {
                         prevDom.classList.add("container-hide");
                     }
-                }, 400);
+                }, 500);
             } else {
                 this.setState({
                     styles: undefined,
                 });
             }
-
-            $(".container-scrollable").on("scroll", this.scroll);
         }
-
-        scroll = () => {
-            clearTimeout(this.time);
-            const dom = $(".am-notice-bar-marquee");
-            dom.addClass("no-right");
-            this.time = setTimeout(() => dom.removeClass("no-right"), 400);
-        };
 
         goBack = (e?: MouseEvent | boolean) => {
             if (!this.freeze) {
@@ -148,7 +140,7 @@ export namespace PageWrap {
         };
 
         exclude(e) {
-            const target = $(e.target).closest(".adm-nav-bar.adm-list-item,.adm-nav-bar-back, .scroll, .fab").get(0);
+            const target = $(e.target).closest(".adm-nav-bar.adm-list-item,.adm-nav-bar-back, .scroll, .fab, .exclude").get(0);
             if (target) {
                 return true;
             }
@@ -197,6 +189,11 @@ export namespace PageWrap {
                     } else {
                         const x = this.distanceX - this.startX >= 0 ? this.distanceX - this.startX : 0;
                         this.setState({ styles: { transform: `translate3d(${x}px, 0, 0)`, transition: "none" }, opacity: 1 - x / window.innerWidth });
+                        if (x > 20) {
+                            this.setState({
+                                touchClass: "reco-touch-move",
+                            });
+                        }
                         if (domNode.children.length >= 3) {
                             const { style: styles } = this.getPreviousElement();
                             styles && (styles.transform = `translate3d(${this.distanceX * 0.1 - 40}px, 0 , 0)`);
@@ -212,7 +209,7 @@ export namespace PageWrap {
                 const { style: styles } = this.getPreviousElement();
                 styles && (styles.transform = "");
                 styles && (styles.transition = "");
-                this.setState({ styles: { transition: "all .3s" } });
+                this.setState({ styles: { transition: "all .3s" }, touchClass: "" });
                 this.err = true;
             }, 500);
         };
@@ -221,6 +218,7 @@ export namespace PageWrap {
             if (this.exclude(e)) {
                 return;
             }
+            this.setState({ touchClass: "" });
             this.endX = e.changedTouches[0].clientX;
             this.endTime = new Date().getTime();
 
@@ -276,7 +274,7 @@ export namespace PageWrap {
                     }
                 }, 300);
             }
-            this.moveTime = setTimeout(() => (this.isMoved = false), 300);
+            this.moveTime = setTimeout(() => (this.isMoved = false), 500);
         };
 
         clearStyle(styles) {
@@ -302,10 +300,10 @@ export namespace PageWrap {
 
         render(): React.ReactNode {
             const { component: Component, root, onTouch, ...props } = this.props,
-                wrapProps: any = root || this.isRoot ? { className: `container-page` } : { className: `container-page ${this.state.slideClass}` };
+                wrapProps: any = root || this.isRoot ? { className: "container-page" } : { className: classNames("container-page", this.state.slideClass) };
             return (
                 <div
-                    className={`container-pages ` + this.state.touchClass}
+                    className={classNames("container-pages", this.state.touchClass)}
                     onTouchStart={!(root || this.isRoot) && onTouch ? this.handleTouchStart : this.noTouch}
                     onTouchMove={!(root || this.isRoot) && onTouch ? this.handleTouchMove : this.noTouch}
                     onTouchEnd={!(root || this.isRoot) && onTouch ? this.handleTouchEnd : this.noTouch}

@@ -2,8 +2,8 @@ import React, { ReactNode } from "react";
 import { NavBar as AntNavBar } from "antd-mobile";
 import { PureComponent } from "@reco-m/core";
 import { Fab } from "./ui/fab";
-import { FabButtons } from "./ui/fab-buttons";
-import { FabButton } from "./ui/fab-button";
+import { FabButtons } from "./ui/fab.buttons";
+import { FabButton } from "./ui/fab.button";
 
 export namespace NavBar {
     export interface IProps extends PureComponent.IProps {
@@ -25,10 +25,10 @@ export namespace NavBar {
     export class Component<P extends IProps = IProps, S extends IState = IState> extends PureComponent.Base<P, S> {
         static defaultProps: NavBar.IProps = {
             visible: client.showheader,
-            fabContentOpen: true
+            fabContentOpen: true,
         } as any;
         renderFab(right) {
-            if (!right) return null
+            if (!right) return null;
 
             if (!(right as any)!.props.children || !Array.isArray((right as any)!.props.children)) {
                 return <Fab position="right-bottom" text={right}></Fab>;

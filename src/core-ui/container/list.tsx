@@ -1,7 +1,7 @@
 import React from "react";
 
 import { isEqual } from "lodash";
-import { PullToRefresh, List, InfiniteScroll, Loading, Empty } from "antd-mobile";
+import { PullToRefresh, List, InfiniteScroll, Loading, Empty, Divider } from "antd-mobile";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 import { Container } from "../components";
@@ -40,6 +40,7 @@ export namespace ListComponent {
         protected NoDataText = "暂无数据";
         protected loadingOptimize = false;
         protected listMode = "default";
+        protected noList = false;
 
         shouldUpdateData(state: any) {
             const { items } = state;
@@ -87,12 +88,11 @@ export namespace ListComponent {
                             return <div>{statusRecord[status]}</div>;
                         }}
                     >
-                        <List mode={this.listMode as any}>
-                            {items.map((item, key) => (
-                                // eslint-disable-next-line react/jsx-key
-                                <>{this.renderItemsContent(item, key)}</>
-                            ))}
-                        </List>
+                        {this.noList ? (
+                            items.map((item, key) => this.renderItemsContent(item, key))
+                        ) : (
+                            <List mode={this.listMode as any}>{items.map((item, key) => this.renderItemsContent(item, key))}</List>
+                        )}
                         <InfiniteScroll loadMore={this.onEndReached.bind(this)} hasMore={getResolveData(state, "hasMore")}>
                             <InfiniteScrollContent hasMore={getResolveData(state, "hasMore")} />
                         </InfiniteScroll>
@@ -162,7 +162,7 @@ export namespace ListComponent {
                             <Loading />
                         </>
                     ) : (
-                        <span>- 没有更多内容了 -</span>
+                        <Divider>没有更多内容了</Divider>
                     )}
                 </>
             );

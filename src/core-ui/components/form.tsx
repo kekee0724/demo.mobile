@@ -1,13 +1,12 @@
 import React from "react";
 
-import { Popup, Button, Input,  Checkbox, DatePicker, TextArea, Selector, CascadePicker, Form, CheckList, Picker, Space } from "antd-mobile";
+import { Popup, Button, Input, Checkbox, DatePicker, TextArea, Selector, CascadePicker, Form, CheckList, Picker, Space } from "antd-mobile";
 import { FormInstance } from "antd-mobile/es/components/form";
 
 import { formatDate, getDate, formatDateTime } from "@reco-m/core";
 
 import { Container, NavBar, FooterButton } from "../components/index";
 import { ListComponent } from "../container/index";
-
 
 /**
  * 单行输入框配置
@@ -113,6 +112,7 @@ export interface WBTagProps {
     foldnum?: number; // 设置折叠显示数量
     foldTitle?: string; // 设置折叠显示标题
     filterKey?: string; // 标签中该字段如果为空就过滤掉
+    onChange?: (val: any) => void;
 }
 
 export interface WBTagListProps {
@@ -127,6 +127,7 @@ export interface WBTagListProps {
     foldnum?: number; // 设置折叠显示数量
     foldTitle?: string; // 设置折叠显示标题
     filterKey?: string; // 标签中该字段如果为空就过滤掉
+    onChange?: (val: any) => void;
 }
 
 export namespace WBFormViewComponent {
@@ -192,7 +193,7 @@ export namespace WBFormViewComponent {
         renderForm(props: { layout?: "horizontal" | "vertical"; children: any }) {
             !props.layout && (props.layout = "horizontal");
             return (
-                <Form ref={this.formRef} layout={props.layout}>
+                <Form ref={this.formRef} layout={props.layout} mode="card">
                     {props.children}
                 </Form>
             );
@@ -661,6 +662,7 @@ export namespace WBFormViewComponent {
                         value={selectedTags}
                         onChange={(v) => {
                             this.dispatch({ type: "input", data: { [props.stateKey]: v } });
+                            props.onChange && props.onChange(v);
                         }}
                     />
                     {foldnum && tagFoldnum < tagsData.length && (
@@ -690,7 +692,7 @@ export namespace WBFormViewComponent {
                 tagsData = props.tagsData;
             if (props.multiple) {
                 return (
-                    <CheckList multiple={true} value={selectedTags ? selectedTags.map((item) => item[props.tagValueKey]) : []}>
+                    <CheckList mode="card" multiple={true} value={selectedTags ? selectedTags.map((item) => item[props.tagValueKey]) : []}>
                         {(tagsData || []).map((tag, i) => {
                             return (
                                 <CheckList.Item
@@ -719,7 +721,7 @@ export namespace WBFormViewComponent {
                 );
             } else {
                 return (
-                    <CheckList value={selectedTags ? [selectedTags[props.tagValueKey]] : []}>
+                    <CheckList mode="card" value={selectedTags ? [selectedTags[props.tagValueKey]] : []}>
                         {(tagsData || []).map((tag, i) => {
                             return (
                                 <CheckList.Item

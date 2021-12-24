@@ -1,27 +1,25 @@
 @import "themes/default";
-
 .reco-login-box {
   background: var(--login-back);
-  &:after, &:before {
+
+  .reco-login-back, .reco-login-back_1{
     content: "";
     position: fixed;
     left: 0;
     top: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 0;
+    z-index: 1;
     transform: scale(1.4);
+    background: center no-repeat;
+    background-size: cover;
   }
 
-  &:after {
-    background: url("../../assets/images/back.png") no-repeat;
-    background-size: 100%;
+  .reco-login-back{
     animation: login-back-an 5s alternate forwards;
   }
 
-  &:before {
-    background: url("../../assets/images/back_1.png") no-repeat;
-    background-size: 100%;
+  .reco-login-back_1{
     animation: login-back-an 6s alternate forwards;
   }
 }

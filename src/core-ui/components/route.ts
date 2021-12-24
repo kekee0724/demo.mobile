@@ -27,7 +27,6 @@ export class Route<P extends RouteProps = RouteProps> extends router.Route<P> {
 
                     return ReactDOM.createPortal(reactNode, domNode);
                 }
-
                 return super.render();
             });
         }

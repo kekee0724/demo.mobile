@@ -211,6 +211,27 @@ export function ToastInfo(content, duration = 1000, icon?: "success" | "fail" | 
     });
 }
 
+/**
+ * 自定义Toast弹出框,默认是感叹号+1秒停留
+ */
+ export function ToastLoading(content, duration = 0, icon?: "success" | "fail" | "loading" | React.ReactNode, success?: () => void) {
+    Toast.show({
+        icon: icon || "loading",
+        content: <div className="size-15 mt10 mb5 ml5 mr5">{content}</div>,
+        duration,
+        afterClose: success,
+    });
+}
+
+
+/**
+ * 隐藏Toast提示框
+ */
+export function ToastClear() {
+    Toast.clear();
+}
+
+
 export function getSlots(props: any = {}) {
     const slots = {};
     if (!props) return slots;

@@ -1,0 +1,45 @@
+.card-text-container {
+  display: inline-block;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: #ffffff;
+
+  &.block {
+    display: block;
+  }
+
+  .adm-image {
+    display: block;
+  }
+
+  .card-text {
+    margin: var(--xs);
+    white-space: normal;
+  }
+
+  .card-footer {
+    margin: var(--xs);
+  }
+}
+
+.card-text-tag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #fff;
+  text-align: center;
+  padding: 8px;
+  border-bottom-left-radius: var(--border-radius);
+
+  &.signing-up {
+    background-color: #ff7600;
+  }
+
+  &.in-progress {
+    background-color: var(--adm-color-primary);
+  }
+
+  &.released {
+    background-color: #a4a4a4;
+  }
+}

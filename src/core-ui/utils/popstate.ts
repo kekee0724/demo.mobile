@@ -42,10 +42,10 @@ class PopstateHandler {
 export const popstateHandler = new PopstateHandler();
 
 // 安卓返回键优先关闭弹框
-export function callModal(content: string, callback?, cancelback?, title?, suretext?, canceltext?) {
+export function callModal(content: any, callback?, cancelback?, title?, suretext?, canceltext?) {
     const modal = Dialog.show({
         title: title ? title : "操作提示",
-        content: `${content}`,
+        content: content,
         closeOnAction: true,
         actions: [
             [{

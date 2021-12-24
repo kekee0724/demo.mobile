@@ -17,7 +17,7 @@
     "dependencies": {
         "@amap/amap-jsapi-loader": "^1.0.1",
         "animate.css": "^4.1.1",
-        "antd-mobile": "~5.0.0-rc.0",
+        "antd-mobile": "^5.0.0-rc.7",
         "antd-mobile-icons": "^0.2.2",
         "base-64": "~1.0.0",
         "date-fns": "~2.25.0",

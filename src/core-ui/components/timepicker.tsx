@@ -2,12 +2,13 @@ import React, { ReactNode } from "react";
 import { Picker } from "antd-mobile";
 import { PureComponent } from "@reco-m/core";
 import { Fab } from "./ui/fab";
-import { FabButtons } from "./ui/fab-buttons";
-import { FabButton } from "./ui/fab-button";
+import { FabButtons } from "./ui/fab.buttons";
+import { FabButton } from "./ui/fab.button";
+
 declare type PickerValue = string | null;
-declare type PickerValueExtend = {
-    items: (PickerColumnItem | null)[];
-};
+// declare type PickerValueExtend = {
+//     items: (PickerColumnItem | null)[];
+// };
 declare type PickerColumnItem = {
     label: string;
     value: string;
@@ -17,9 +18,9 @@ export namespace TimePicker {
     export interface IProps extends PureComponent.IProps {
         visible?: boolean;
         value?: PickerValue[];
-        defaultValue?: PickerValue[];
-        onConfirm?: (label: PickerValue[], value: object) => void;
-        onSelect?: (label: PickerValue[], value: object) => void;
+        defaultValue?: Date;
+        onConfirm?: (label: PickerValue[], value: any, date: Date) => void;
+        onSelect?: (label: PickerValue[], value: any, date: Date) => void;
         onCancel?: () => void;
         onClose?: () => void;
         title?: ReactNode;
@@ -32,12 +33,15 @@ export namespace TimePicker {
     export interface IState extends PureComponent.IState {}
 
     export class Component<P extends IProps = IProps, S extends IState = IState> extends PureComponent.Base<P, S> {
-        static defaultProps: TimePicker.IProps = {} as any;
+        static defaultProps: TimePicker.IProps = {
+            defaultValue: new Date(),
+        } as any;
+
         renderFab(right) {
             if (!right) return null;
 
             if (!(right as any)!.props.children || !Array.isArray((right as any)!.props.children)) {
-                return <Fab position="right-bottom" text={right}></Fab>;
+                return <Fab position="right-bottom" text={right} />;
             } else if ((right as any)!.props.children.length > 1) {
                 return (
                     <Fab position="right-bottom">
@@ -54,7 +58,10 @@ export namespace TimePicker {
         render(): React.ReactNode {
             const { visible, cancelText, confirmText, title, onClose, onCancel, onSelect, onConfirm, defaultValue, value, content } = this.props;
 
-            let timeprops = {
+            let hour = defaultValue?.getHours(),
+                mInit = defaultValue?.getMinutes();
+
+            let timeProps = {
                 visible,
                 cancelText,
                 confirmText,
@@ -62,29 +69,38 @@ export namespace TimePicker {
                 onClose,
                 onCancel,
                 onSelect: (value: PickerValue[]) => {
-                    let hour = value[0]?.split("时")[0];
-                    let minit = value[1]?.split("分")[0];
-                    onSelect && onSelect(value, {hour, minit});
+                    let hour = value[0]?.split("时")[0] || 0;
+                    let mInit = value[1]?.split("分")[0] || 0;
+
+                    let data = new Date();
+                    data.setHours(+hour);
+                    data.setMinutes(+mInit);
+                    onSelect && onSelect(value, { hour, mInit }, data);
                 },
                 onConfirm: (value: PickerValue[]) => {
-                    let hour = value[0]?.split("时")[0];
-                    let minit = value[1]?.split("分")[0];
-                    onConfirm && onConfirm(value, {hour, minit});
+                    let hour = value[0]?.split("时")[0] || 0;
+                    let mInit = value[1]?.split("分")[0] || 0;
+
+                    let data = new Date();
+                    data.setHours(+hour);
+                    data.setMinutes(+mInit);
+
+                    onConfirm && onConfirm(value, { hour, mInit }, data);
                 },
-                defaultValue,
+                defaultValue: [`${hour}时`, `${mInit}分`],
                 value,
             } as any;
 
             let columnsT = [[], []] as any;
-                for (let i = 0; i < 24; i++) {
-                    columnsT[0].push(`${i}时`);
-                }
-                for (let j = 0; j < 60; j++) {
-                    columnsT[1].push(`${j}分`);
-                }
-                timeprops.columns = columnsT;
+            for (let i = 0; i < 24; i++) {
+                columnsT[0].push(`${i}时`);
+            }
+            for (let j = 0; j < 60; j++) {
+                columnsT[1].push(`${j}分`);
+            }
+            timeProps.columns = columnsT;
 
-            return <Picker {...timeprops}>{content}</Picker>;
+            return <Picker {...timeProps}>{content}</Picker>;
         }
     }
 }

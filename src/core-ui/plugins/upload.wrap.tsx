@@ -1,7 +1,10 @@
 import React from "react";
-import { List, Grid, NoticeBar, Popup } from "antd-mobile";
+import { List, ProgressBar } from "antd-mobile";
+import { DeleteOutline } from "antd-mobile-icons";
 
 import { UploadrWrap } from "@reco-m/core";
+import { Container, FileIcon } from "../components";
+
 import { ToastInfo } from "../utils/index";
 
 import { AttachUpload } from "./upload";
@@ -27,7 +30,6 @@ export namespace UploadWrap {
 
             return (
                 <div className={this.classnames(className, this.getClassSet(), readonly ? "readonly" : "")}>
-                    {this.renderUploadBtn()}
                     {children}
                     {this.renderItems()}
                 </div>
@@ -35,21 +37,45 @@ export namespace UploadWrap {
         }
 
         renderItems(): React.ReactNode {
-            return <List>{this.state && this.state.files && this.state.files.map(this.renderItem.bind(this))}</List>;
+            return (
+                <List mode={"card"}>
+                    {this.state && this.state.files && this.state.files.map(this.renderItem.bind(this))}
+                    {this.renderUploadBtn()}
+                </List>
+            );
         }
 
         renderItem(file: WebUploader.File, index: number): React.ReactNode {
+            const { readonly } = this.props as any;
             return (
-                <List.Item key={index} className={file.isError ? "error" : ""}>
-                    {this.renderItemContent(file)}
-                    {file.percentage! >= 0 ? (
-                        <div className="progress">
-                            <div className="progress-bar" style={{ width: file.percentage + "%" }} />
+                file && (
+                    <List.Item
+                        key={index}
+                        className={file.isError ? "error" : ""}
+                        prefix={<FileIcon text={file.ext} />}
+                        extra={
+                            readonly || !this.removePermission(file) ? null : (
+                                <a onClick={(event) => this.removeFile(file, event)}>
+                                    <DeleteOutline />
+                                </a>
+                            )
+                        }
+                        arrow={false}
+                    >
+                        <div className={(file as any).status === "error" ? "update-error" : ""} onClick={this.onPreview.bind(this, file)}>
+                            <Container.Component direction={"row"} align={"center"}>
+                                <Container.Component fill className="padding-right">
+                                    {file.name}
+                                </Container.Component>
+                                {file.formatSize}
+                            </Container.Component>
                         </div>
-                    ) : null}
-                </List.Item>
+                        {file.percentage! > 0 ? <ProgressBar percent={file.percentage} /> : null}
+                    </List.Item>
+                )
             );
         }
+
         removePermission(file) {
             const { removePermission } = this.props as any;
             if (removePermission) {
@@ -61,29 +87,6 @@ export namespace UploadWrap {
                 return true;
             }
         }
-        renderItemContent(file: WebUploader.File): React.ReactNode {
-            const { readonly } = this.props as any;
-
-            return (
-                <div className={(file as any).status === "error" ? "update-error" : ""} onClick={this.onPreview.bind(this, file)}>
-                    <Grid columns={0} >
-                        <div className="type-box">
-                            <i className="icon icon-dingdan size-16" />
-                            <span>{file.ext}</span>
-                        </div>
-                        <Grid.Item>
-                            <NoticeBar icon={null} content={file.name} className="no-notice" />
-                        </Grid.Item>
-                        <div className="size-14">{file.formatSize}</div>
-                        {readonly || !this.removePermission(file) ? null : (
-                            <div className="margin-left-sm am-file-picker-item-remove" onClick={(event) => this.removeFile(file, event)}>
-                                <i className="icon icon-shanchu" />
-                            </div>
-                        )}
-                    </Grid>
-                </div>
-            );
-        }
 
         renderUploadBtn(): React.ReactNode {
             const { customUpload, readonly } = this.props as any;
@@ -91,32 +94,8 @@ export namespace UploadWrap {
             return customUpload || readonly ? null : <AttachUpload.Component />;
         }
 
-        touchStop(e) {
-            $(e)
-                .parents(".upload-modal")
-                .on("touchstart", (e) => e.stopPropagation())
-                .on("touchmove", (e) => e.stopPropagation())
-                .on("touchend", (e) => e.stopPropagation());
-        }
-        
         renderModal(): React.ReactNode {
-            return (
-                <Popup
-                    visible={this.attachDataService.previewVisible}
-                >
-                    <Grid columns={0}>
-                        <Grid.Item>
-                            预览 <span className="size-12 text-error">(温馨提示：双击或双指可放大缩小)</span>
-                        </Grid.Item>
-                        <a onClick={this.onCancel.bind(this)}>
-                           x
-                        </a>
-                    </Grid>
-                    <div className="container-fill" ref={(e) => this.touchStop(e)}>
-                        {this.renderModalBody()}
-                    </div>
-                </Popup>
-            );
+            return this.renderModalBody();
         }
     }
 }
