@@ -1,0 +1,26 @@
+{
+    "name": "@types/webuploader",
+    "version": "1.0.0",
+    "description": "TypeScript definitions for webuploader",
+    "license": "MIT",
+    "contributors": [
+        {
+            "name": "Sabeeh Ul Hussnain",
+            "url": "https://github.com/itboy87",
+            "githubUsername": "itboy87"
+        }
+    ],
+    "main": "",
+    "publishConfig": {
+        "registry": "http://src.devops.bitech.cn:86/repository/RECO.NPM.PKG/"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://www.github.com/DefinitelyTyped/DefinitelyTyped.git"
+    },
+    "scripts": {},
+    "dependencies": {
+        "@types/jquery": "^3.3.23"
+    },
+    "typeScriptVersion": "2.3"
+}
