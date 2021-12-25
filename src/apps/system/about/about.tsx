@@ -56,7 +56,7 @@ export namespace About {
                 lastVersion = getVersion(); // 获取app本地壳子版本号
             return (
                 <div className="reco-about">
-                    <div className="reco-about-logo"><img src={"assets/images/login-logo.png"} alt=""/></div>
+                    <div className="reco-about-logo"><img src={"src/assets/images/login-logo.png"} alt=""/></div>
                     <div className="reco-about-version" onClick={() => this.dispatch({ type: "input", data: { versionSwitch: !versionSwitch } })}>{versionSwitch ? (lastVersion ? `版本号(K): ${lastVersion}` : `版本号(K): 0.0`) : updateVersion ? `版本号(R): ${updateVersion}` : `版本号(R): 0.0.0`}</div>
                 </div>
             );
