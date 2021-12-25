@@ -10,7 +10,19 @@ import { getObjectProp, browser } from "../../utils";
 
 import { IAttachInfo } from "./base";
 
-const onlineDoc = getObjectProp(client, "plugins.attach.onlineDoc", false);
+const onlineDoc = getObjectProp(client, "plugins.attach.onlineDoc", false),
+    previewBaseUrl = getObjectProp(client, "plugins.attach.previewBaseUrl", "https://preview.bitech.cn/"),
+    openPreviewUrl = getObjectProp(client, "plugins.attach.openPreviewUrl", (previewUrl: string, _dataService: AttachDataService) => {
+        if (previewUrl) {
+            previewUrl = /^\s?(https?:)?\/\//i.test(previewUrl) ? previewUrl : `${previewBaseUrl}${previewUrl}`;
+
+            if (browser.versions.weChatMini) {
+                wx.miniProgram.navigateTo({ url: "/apps-preview/apps-preview/apps-preview?path=" + previewUrl });
+            } else {
+                window.open(previewUrl);
+            }
+        }
+    });
 
 export class AttachDataService {
     static propsNames = [
@@ -76,22 +88,16 @@ export class AttachDataService {
         } else if (onlineDoc) {
             const { previewUrl, previewUrlExpire } = file;
 
-            if (previewUrl && (!previewUrlExpire || isAfter(parseISO(previewUrlExpire), new Date()))) this.openPreviewUrl(server.previewUrl + previewUrl);
+            if (previewUrl && (!previewUrlExpire || isAfter(parseISO(previewUrlExpire), new Date()))) this.openPreviewUrl(server.previewUrl + previewUrl, this);
             else {
                 this.attachService.getPreviewUrl(file.sid || file.id, this.uid).then((previewUrl) => {
-                    this.openPreviewUrl((file.previewUrl = previewUrl));
+                    this.openPreviewUrl((file.previewUrl = previewUrl), this);
                 });
             }
         }
     };
 
-    openPreviewUrl = (previewUrl: string) => {
-        if (browser.versions.weChatMini) {
-            wx.miniProgram.navigateTo({url: "/apps-preview/apps-preview/apps-preview?path=" + previewUrl})
-        } else {
-            previewUrl && window.open(previewUrl);
-        }
-    };
+    openPreviewUrl = openPreviewUrl;
 
     constructor(protected attachService: AttachService) {}
 

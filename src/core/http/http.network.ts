@@ -52,8 +52,8 @@ export function httpRequest(input: HttpRequest) {
                         // console.log("res", res);
                         res.json().then((d) => {
                             // console.log("dddddddddd", d);
-                            
-                            return ((((res as any).data = d), ((res as any).input = input), ((res as any).options = options)), emit(res), reject(d))
+
+                            return (((res as any).data = d), ((res as any).input = input), ((res as any).options = options)), emit(res), reject(d);
                         }, reject);
                     } else {
                         let errmsg;
@@ -66,6 +66,11 @@ export function httpRequest(input: HttpRequest) {
                                 errmsg = "无权限。";
                                 break;
                             case 404:
+                                if (res.ok !== false) {
+                                    emit(res);
+                                    return;
+                                }
+
                                 errmsg = `网络不稳定，请稍后再试。`; // `远程地址 "${typeof input === "string" ? input : input && input.url}" 无法访问。`;
                                 break;
                             default:

@@ -1,9 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import SwiperCore, { Navigation, Pagination, Zoom } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import * as WebUploader from "webuploader";
 
 import { PureComponent } from "../../container";
@@ -12,8 +9,7 @@ import { getObjectProp } from "../../utils";
 
 import { AttachDataService } from "./attach.data-service";
 import { AttachUploadService } from "./attach.upload-service";
-
-SwiperCore.use([Navigation, Pagination, Zoom]);
+import { ImageViewer } from "antd-mobile";
 
 const fileNameMaxLength = getObjectProp(client, "plugins.attach.fileNameMaxLength", 50);
 
@@ -51,7 +47,7 @@ export namespace UploadrWrap {
         initDataService(context: any) {
             const attachDataService: AttachDataService = (this.attachDataService = context.getDataService());
 
-            this.state = { files: attachDataService.files } as any;
+            this.state = { files: [...attachDataService.files] } as any;
 
             this.unSubscribeFileChange = attachDataService.subscribeFileChange(this.onFileChange.bind(this));
         }
@@ -180,19 +176,15 @@ export namespace UploadrWrap {
 
         renderModalBody(): React.ReactNode {
             return (
-                <Swiper initialSlide={this.attachDataService.previewImageIndex} zoom={true} keyboard={true} navigation={true} pagination={false}>
-                    {this.attachDataService.previewImages
-                        .filter((f) => f.url)
-                        .map((data, i) => {
-                            return (
-                                <SwiperSlide key={i}>
-                                    <div className="reco-upload-item swiper-zoom-container">
-                                        <img src={data.rawUrl ?? data.url} alt={data.fileName || data.name} />
-                                    </div>
-                                </SwiperSlide>
-                            );
-                        })}
-                </Swiper>
+                <ImageViewer.Multi
+                    images={this.attachDataService.previewImages.map((data) => data.url)}
+                    visible={this.attachDataService.previewVisible}
+                    defaultIndex={this.attachDataService.previewImageIndex}
+                    onClose={() => {
+                        this.attachDataService.previewVisible = false;
+                        this.forceUpdate();
+                    }}
+                />
             );
         }
 
@@ -210,7 +202,7 @@ export namespace UploadrWrap {
             const { id, wrapClassName } = this.props as any;
 
             return (
-                <div className={this.classnames("clearfix", wrapClassName)} id={id}>
+                <div className={wrapClassName} id={id}>
                     {this.renderUpload()}
                     {this.renderModal()}
                 </div>
