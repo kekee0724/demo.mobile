@@ -1,16 +1,13 @@
 {
-    "name": "my-app",
-    "version": "0.1.0",
-    "private": true,
+    "name": "kekee",
+    "version": "0.1.2",
+    "private": false,
     "homepage": "./",
     "scripts": {
         "clean": "npx rimraf dist-pkg dist",
         "clean:all": "npx rimraf node_modules dist",
-        "bi-packagr":"bi-packagr",
         "start": "react-scripts start --port 3000",
         "build": "react-scripts build",
-        "build:pkg": "npm run bi-packagr -- -m",
-        "publish": "npm run bi-packagr -- -m -p",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
     },
@@ -53,8 +50,6 @@
         "@types/react-router-dom": "~5.1.6",
         "@types/webuploader": "~1.0.0",
         "eslint-config-prettier": "~8.3.0",
-        "rc-packagr": "^5.3.0",
-        "bi-packagr": "0.0.1",
         "react-scripts": "4.3.0",
         "ts-node": "~10.3.1",
         "tsickle": ">=0.29.0",
@@ -64,11 +59,11 @@
         "@types/eslint": "8.2.0"
     },
     "publishConfig": {
-        "registry": "http://src.devops.bitech.cn:86/repository/RECO.NPM.PKG/"
+        "registry": "https://registry.npmjs.org/"
     },
     "repository": {
         "type": "git",
-        "url": "http://src.devops.bitech.cn/framework/RECO10.Mobile.git"
+        "url": "https://github.com/kekee0724/demo.mobile.git"
     },
     "eslintConfig": {
         "extends": [
