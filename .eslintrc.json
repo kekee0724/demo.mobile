@@ -1,7 +1,7 @@
 {
     "extends": ["react-app", "react-app/jest", "alloy", "alloy/react", "alloy/typescript"],
     "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint/eslint-plugin"],
+    "plugins": ["@typescript-eslint/eslint-plugin", "jest"],
     "settings": { "react": { "version": "detect" } },
     "rules": {
         "@typescript-eslint/consistent-type-assertions": "off",
