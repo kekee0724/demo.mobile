@@ -24,7 +24,7 @@
         "date-fns": "~2.25.0",
         "dva": "2.6.0-beta.22",
         "immer": "~9.0.6",
-        "jsencrypt": "3.0.6",
+        "jsencrypt": "~3.0.6",
         "lodash": "~4.17.21",
         "moment": "~2.29.1",
         "rc-queue-anim": "~2.0.0",
@@ -37,7 +37,7 @@
         "react-signature-canvas": "1.0.3",
         "react-swipeable-views": "~0.14.0",
         "react-swipeable-views-utils": "~0.14.0",
-        "rmc-pull-to-refresh": "1.0.14",
+        "rmc-pull-to-refresh": "~1.0.14",
         "swiper": "^7.0.9",
         "web-vitals": "~2.1.2",
         "webuploader": "~0.1.8"
@@ -52,11 +52,11 @@
         "@types/react": "~17.0.31",
         "@types/react-dom": "~17.0.10",
         "@types/react-router-dom": "~5.1.6",
-        "@types/webuploader": "~1.0.0",
-        "bi-packagr": "0.0.1",
+        "@levi-m/webuploader": "~1.0.0",
+        "@levi-m/bi-packagr": "0.0.1",
         "eslint-config-prettier": "~8.3.0",
-        "rc-packagr": "^5.3.0",
-        "react-scripts": "4.3.0",
+        "@levi-m/rc-packagr": "^5.3.0",
+        "react-scripts": "~4.3.0",
         "ts-node": "~10.3.1",
         "tsickle": ">=0.29.0",
         "typescript": "~4.4.4"
@@ -65,7 +65,7 @@
         "@types/eslint": "8.2.0"
     },
     "publishConfig": {
-        "registry": "http://src.devops.bitech.cn:86/repository/RECO.NPM.PKG/"
+        "registry": "https://registry.npmjs.org/"
     },
     "repository": {
         "type": "git",
