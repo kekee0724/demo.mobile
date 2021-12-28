@@ -483,7 +483,7 @@
     jest-diff "^27.0.0"
     pretty-format "^27.0.0"
 
-"@types/jquery@~3.5.1":
+"@types/jquery@^3.3.23", "@types/jquery@~3.5.1":
   version "3.5.11"
   resolved "https://registry.npmmirror.com/@types/jquery/download/@types/jquery-3.5.11.tgz#fb2a255e8376779e89a10ddd04bfc1a93398f861"
   integrity sha512-lYZGdfOtUa0XFjIATQgiogqeTY5PNNMOmp3Jq48ghmJALL8t/IqABRqlEwdHfuUdA8iIE1uGD1HoI4a7Tiy6OA==
@@ -610,6 +610,13 @@
   integrity sha512-vehbtyHUShPxIa9SioxDwCvgxukDMH//icJG90sXQBUm5lJOHLT5kNeU9tnivhnA/TkOFMzGIXN2cTc4hY8/kg==
   dependencies:
     "@types/jest" "*"
+
+"@types/webuploader@npm:@levi-m/webuploader@~1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmmirror.com/@levi-m/webuploader/download/@levi-m/webuploader-1.0.0.tgz#53ebbe92fbbd566961ce2a72bb4fc7afeca54bc4"
+  integrity sha512-qiiWOzBllk94GfH6Rr0tuMGdv+DjkABgim+ksa08a7YKbc+xvQrXIeMQhYPrLJrsEqbPmsTrvB6AWyJYJkrN3Q==
+  dependencies:
+    "@types/jquery" "^3.3.23"
 
 "@types/yargs-parser@*":
   version "20.2.1"
