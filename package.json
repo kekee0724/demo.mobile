@@ -1,5 +1,6 @@
 {
   "name": "kekee",
+  "author": "kekeexyz",
   "version": "0.2.0",
   "private": false,
   "homepage": "./",
@@ -11,7 +12,10 @@
     "babel-build": "babel src -w -d lib",
     "build:beta": "tsc && vite build --mode beta",
     "build:release": "tsc && vite build --mode release",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "bi-packagr": "bi-packagr",
+    "build:pkg": "npm run bi-packagr -- -m",
+    "publish": "npm run bi-packagr -- -m -p"
   },
   "dependencies": {
     "@amap/amap-jsapi-loader": "^1.0.1",
@@ -53,11 +57,16 @@
     "@types/react-dom": "~17.0.10",
     "@types/react-router-dom": "~5.1.6",
     "@vitejs/plugin-react": "^1.0.7",
+    "bi-packagr": "npm:@levi-m/bi-packagr",
     "eslint-config-prettier": "~8.3.0",
+    "glob": "^7.2.0",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
+    "rc-packagr": "npm:@levi-m/rc-packagr",
+    "rxjs": "^7.5.1",
     "ts-node": "~10.3.1",
     "tsickle": ">=0.29.0",
+    "tslib": "^2.3.1",
     "typescript": "~4.4.4",
     "vite": "^2.7.0",
     "vite-tsconfig-paths": "^3.3.17"

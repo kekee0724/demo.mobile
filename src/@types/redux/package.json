@@ -1,14 +1,14 @@
 {
     "name": "@types/reco-redux",
     "version": "0.0.1",
-    "description": "TypeScript definitions for RECO",
+    "description": "TypeScript definitions for Levi",
     "license": "MIT",
     "main": "",
     "dependencies":{
         "redux":"^3.7.2"
     },
     "publishConfig": {
-        "registry": "http://192.168.1.247:86/repository/RECO.NPM.PKG/"
+        "registry": "http://192.168.1.247:86/repository/Levi.NPM.PKG/"
     },
     "repository": {
         "type": "git",

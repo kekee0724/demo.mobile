@@ -1,7 +1,7 @@
 {
     "name": "@reco-m/core-ui",
     "version": "0.0.0",
-    "description": "RECO Core UI Mobile lib",
+    "description": "Levi Core UI Mobile lib",
     "license": "MIT",
     "dependencies": {
         "@reco-m/core": "~0.0.0"

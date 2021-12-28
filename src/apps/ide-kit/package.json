@@ -1,7 +1,7 @@
 {
     "name": "@reco-m/ide-kit",
     "version": "0.0.0",
-    "description": "RECO IDE Mobile lib",
+    "description": "Levi IDE Mobile lib",
     "license": "MIT",
     "dependencies": {
         "@testing-library/jest-dom": "~5.14.1",

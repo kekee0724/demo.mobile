@@ -1,9 +1,9 @@
 {
     "name": "@reco-m/assets",
     "version": "0.0.4",
-    "description": "RECO Assets Mobile lib",
+    "description": "Levi Assets Mobile lib",
     "license": "MIT",
     "publishConfig": {
-        "registry": "http://src.devops.bitech.cn:86/repository/RECO.NPM.PKG/"
+        "registry": "https://registry.npmjs.org/"
     }
 }

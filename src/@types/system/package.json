@@ -1,7 +1,7 @@
 {
     "name": "@types/reco-mobile-system",
     "version": "0.1.1",
-    "description": "TypeScript definitions for RECO",
+    "description": "TypeScript definitions for Levi",
     "license": "MIT",
     "main": "",
     "dependencies": {
@@ -13,7 +13,7 @@
         "@types/webuploader": "^1.0.0"
     },
     "publishConfig": {
-        "registry": "http://src.devops.bitech.cn:86/repository/RECO.NPM.PKG/"
+        "registry": "https://registry.npmjs.org/"
     },
     "repository": {
         "type": "git",
