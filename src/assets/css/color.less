@@ -8,151 +8,120 @@
  * 定义循环方法
  * @index--传入的循环起始值
  * @len--循环的最大值  也可使用常量  eg:(@index<4)
+ * color-1、...  back-1、...  0 - 13
  */
 .Loop(@index) when (@index<@len) {
-    // 执行内容
-    // 类名参数要加大括号@{index}
-    // 根据index获取对应的某个值 extract(数组名, 对应的序号)
-    .color-@{index} {
-        color: extract(@colorArr, @index + 1);
-    }
+  // 执行内容
+  // 类名参数要加大括号@{index}
+  // 根据index获取对应的某个值 extract(数组名, 对应的序号)
+  .color-@{index} {
+    color: extract(@colorArr, @index + 1);
+  }
 
-    //递归调用 达到循环目的
-    .Loop(@index + 1);
+  .back-@{index} {
+    background-color: extract(@colorArr, @index + 1);
+  }
+
+  //递归调用 达到循环目的
+  .Loop(@index + 1);
 }
 
 // 调用循环
 .Loop(0);
 
+/*微信品牌色*/
 .color-wechat {
-    color: #27c069;
+  color: #27c069 !important;
 }
 
+/*qq品牌色*/
 .color-qq {
-    color: #27b6f1;
+  color: #27b6f1 !important;
 }
 
+/*微博品牌色*/
 .color-weiBo {
-    color: #d3342e;
+  color: #d3342e !important;
 }
 
+/*红色*/
 .color-red {
-    color: red !important;
+  color: #d31212 !important;
 }
 
-.color-white{
-    color: white !important;
-}
-
-.color-black{
-  color: black !important;
-}
-
-/*循环颜色*/
-
-.color-0 {
-    color: #00b2c6 !important;
-}
-
-.color-1 {
-    color: #ee5a40 !important;
-}
-
-.color-2 {
-    color: #27c5a6 !important;
-}
-
-.color-3 {
-    color: #85c920 !important;
-}
-
-.color-4 {
-    color: #f04151 !important;
-}
-
-.color-5 {
-    color: #ffa200 !important;
-}
-
-.color-6 {
-    color: #0c8ef2 !important;
-}
-
-.color-7 {
-    color: #55a892 !important;
-}
-
-.color-question {
-    color: #02b8cd !important;
-}
-
-.color-8 {
-    color: #536480 !important;
-}
-
-.color-9 {
-    color: #ff9933 !important;
-}
-
-.color-10 {
-    color: #b54fe0 !important;
-}
-
-.color-waiting {
-    color: #02b8cd !important;
-}
-
+/*橙色*/
 .color-orange {
-    color: #ff9a1b !important;
+  color: #ff9a1b !important;
 }
 
-.back-0 {
-    background-color: #01b8cc !important;
+/*黄色*/
+.color-yellow {
+  color: #a6d013 !important;
 }
 
-.back-1 {
-    background-color: #f16a5d !important;
+/*绿色*/
+.color-green {
+  color: #16bd5e !important;
 }
 
-.back-2 {
-    background-color: #f3ad56 !important;
+/*青色*/
+.color-cyan {
+  color: #13cccc !important;
 }
 
-.back-3 {
-    background-color: #5cb1ee !important;
+/*蓝色*/
+.color-blue {
+  color: #1137d5 !important;
 }
 
-.back-4 {
-    background-color: #df6452 !important;
+/*紫色*/
+.color-blue {
+  color: #6911d5 !important;
 }
 
-.back-5 {
-    background-color: #f4b743 !important;
+/*白色*/
+.color-white {
+  color: #ffffff !important;
 }
 
-.back-6 {
-    background-color: #458ddb !important;
+/*黑色*/
+.color-black {
+  color: #000000 !important;
 }
 
-.back-7 {
-    background-color: #55a892 !important;
+/*品牌色*/
+.color-primary {
+  color: var(--adm-color-primary) !important;
 }
 
-.back-8 {
-    background-color: #536480 !important;
+/*开始*/
+.color-start {
+  color: #1bffbb !important;
 }
 
-.back-9 {
-    background-color: #ff9933 !important;
+/*完成*/
+.color-success {
+  color: #52c41a !important;
 }
 
-.back-10 {
-    background-color: #ff4500 !important;
+/*错误*/
+.color-error {
+  color: #ff4d4f !important;
 }
 
-.dark {
-    background-color: #f4f4f4 !important;
+/*默认*/
+.color-default {
+  color: #d9d9d9 !important;
 }
 
-/*循环颜色end*/
+/*正在处理*/
+.color-processing {
+  color: var(--adm-color-primary) !important;
+}
+
+/*等待*/
+.color-waiting {
+  color: #faad14 !important;
+}
+
 

@@ -1,234 +1,282 @@
 @import "themes/default";
 
 * {
-    word-break: break-all;
+  word-break: break-all;
 }
 
 html,
 body {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
 }
 
 html,
 body,
 #root {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    font-size: 15px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  font-size: 15px;
 }
 
 a {
-    color: var(--adm-color-primary);
-    transition: opacity 0.2s ease-in-out;
-    text-decoration: none;
+  color: var(--adm-color-primary);
+  transition: opacity 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .text-center {
-    text-align: center !important;
+  text-align: center !important;
 }
 
 .text-left {
-    text-align: left !important;
+  text-align: left !important;
 }
 
 .text-right {
-    text-align: right !important;
+  text-align: right !important;
 }
 
 /*字体 12px-50px*/
 .cont(@count) when (@count > 8) {
-    .cont((@count - 1));
+  .cont((@count - 1));
 
-    .size-@{count} {
-        font-size: (1px * @count) !important;
-    }
+  .size-@{count} {
+    font-size: (1px * @count) !important;
+  }
 }
 
 .cont(48);
 /*字体 12px-32px end*/
 
 .mobile {
-    font-size: 17px;
+  font-size: 17px;
 }
 
 div.adm-nav-bar {
-    border-bottom: 1px var(--adm-border-color) solid;
-    background: var(--nav-bar-color);
+  border-bottom: 1px var(--adm-border-color) solid;
+  background: var(--nav-bar-color);
 
-    .adm-nav-bar-back {
-        padding: 10px 12px 10px 0;
-        margin-right: 0;
-    }
+  .adm-nav-bar-back {
+    padding: 10px 12px 10px 0;
+    margin-right: 0;
+  }
 }
 
 .adm-tab-bar {
-    border-top: solid 1px var(--adm-border-color);
-    background: var(--nav-bar-color);
+  border-top: solid 1px var(--adm-border-color);
+  background: var(--nav-bar-color);
+}
+
+.adm-popup .adm-popup-body {
+  background-color: var(--bg-color);
 }
 
 .adm-nav-bar-back-arrow {
-    svg {
-        pointer-events: none;
-    }
+  svg {
+    pointer-events: none;
+  }
 }
 
 .adm-popup-body-position-right {
-    min-width: 260px;
+  width: 300px;
 }
 
 [class*="rotate-"] {
-    transition: all 0.3s;
+  transition: all 0.3s;
 }
 
 .rotate-0 {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .rotate-90 {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .rotate-180 {
-    transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
-.width-full{
-    width: 100% !important;
-}
-.width-auto{
-    width: 100% !important;
-}
-.height-full{
-    height: 100% !important;
+.rotate-360 {
+  transform: rotate(360deg);
 }
 
-.height-auto{
-    height: auto !important;
+.width-full {
+  width: 100% !important;
+}
+
+.width-auto {
+  width: auto !important;
+}
+
+.height-full {
+  height: 100% !important;
+}
+
+.height-auto {
+  height: auto !important;
 }
 
 .adm-card {
-    margin: var(--default-gap);
+  margin: var(--default-gap);
 }
 
 .adm-tab-bar-item-icon {
-    i {
-        font-size: 20px;
-    }
+  i {
+    font-size: 20px;
+  }
 }
 
 .animate__animated.animate__faster {
-    animation-duration: 400ms;
-    animation-fill-mode: forwards;
+  animation-duration: 400ms;
+  animation-fill-mode: forwards;
 }
 
 .space-map {
-    height: 180px;
+  height: 180px;
 }
 
 .list-definition {
-    border-radius: var(--border-radius);
-    margin: var(--default-gap);
+  border-radius: var(--border-radius);
+  margin: var(--default-gap);
 }
 
 .reco-hint {
-    color: var(--adm-color-weak);
-    margin: var(--default-gap);
-    font-size: var(--default);
+  color: var(--adm-color-weak);
+  margin: var(--default-gap);
+  font-size: var(--default);
 }
 
 .reco-title {
-    margin: 12px 12px 6px;
-    color: #969696;
-    font-size: 14px;
+  margin: 12px 12px 6px;
+  color: #969696;
+  font-size: 14px;
 
-    + .adm-list {
-        margin-top: 6px;
+  + .adm-list {
+    margin-top: 6px;
+  }
+
+  + .adm-card {
+    margin-top: 6px;
+  }
+
+
+  + .adm-form {
+    .adm-list {
+      margin-top: 6px;
     }
-    + .adm-form{
-        .adm-list {
-            margin-top: 6px;
-        }
-    }
+  }
 }
 
 .reco-edit-view {
-    white-space: pre-wrap;
-    color: #000000;
-    font-size: 16px;
-    line-height: 1.8;
+  white-space: pre-wrap;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .reco-footer-button {
-    padding: var(--default);
+  padding: var(--default);
 }
 
 .reco-file-icon {
-    position: relative;
-    color: var(--adm-color-weak);
+  position: relative;
+  color: var(--adm-color-weak);
 
-    i {
-        font-size: 28px;
-    }
+  i {
+    font-size: 28px;
+  }
 
-    .file-icon-text {
-        position: absolute;
-        right: -4px;
-        bottom: -2px;
-        padding: 2px;
-        font-size: 12px;
-        transform: scale(0.6);
-        white-space: nowrap;
-        background-color: #fff;
-    }
+  .file-icon-text {
+    position: absolute;
+    right: -4px;
+    bottom: -2px;
+    padding: 2px;
+    font-size: 12px;
+    transform: scale(0.6);
+    white-space: nowrap;
+    background-color: #fff;
+  }
 }
 
 a.adm-list-item:active {
-    .reco-file-icon {
-        .file-icon-text {
-            background-color: var(--adm-border-color);
-        }
+  .reco-file-icon {
+    .file-icon-text {
+      background-color: var(--adm-border-color);
     }
+  }
 }
 
 .reco-selector-more {
-    display: block;
-    text-align: center;
-    margin-top: @xs;
+  display: block;
+  text-align: center;
+  margin-top: @xs;
 }
 
 .horizontal-scroll {
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    &:before,
-    &:after {
-        content: "";
-        height: 1px;
-        position: absolute;
-        width: 1px;
-    }
-    &:before {
-        right: -1px;
-    }
+  position: relative;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
 
-    &:after {
-        left: -1px;
-    }
+
+  &:before,
+  &:after {
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 1px;
+  }
+
+  &:before {
+    right: -1px;
+  }
+
+  &:after {
+    left: -1px;
+  }
 }
 
-.reco-describe{
-    color: var(--adm-color-weak);
+
+/*描述等次级灰色字体*/
+.reco-describe {
+  color: var(--adm-color-weak);
 }
 
-.footer-border{
-    border-top: 1px var(--adm-border-color) solid;
+.footer-border {
+  border-top: 1px var(--adm-border-color) solid;
 }
 
-.footer-back{
-    background: var(--nav-bar-color);
+.footer-back {
+  background: var(--nav-bar-color);
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+/*隐藏*/
+.none {
+  display: none;
+}
+
+/*子级所有的隐藏内容显示*/
+.all-show {
+  .none {
+    display: initial;
+  }
+}
+
+.card {
+  margin: var(--default);
+  border-radius: 8px;
+  overflow: hidden;
 }

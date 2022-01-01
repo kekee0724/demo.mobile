@@ -1,7 +1,8 @@
-.reco-custom-header{
+.reco-custom-header {
   position: relative;
   overflow: hidden;
-  .reco-header-content{
+
+  .reco-header-content {
     position: absolute;
     left: 0;
     right: 0;
@@ -9,13 +10,20 @@
     bottom: 0;
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.6);
-    .header-text-shadow{
+    > .adm-card {
+      background: #fff;
+    }
+
+    > .adm-list-default {
+      border: none;
+    }
+    .header-text-shadow {
       text-shadow: 0 0 1px #000;
     }
   }
 
-  &.custom-header-list{
-    .adm-list{
+  &.custom-header-list {
+    .adm-list {
       position: absolute;
       left: 0;
       right: 0;
@@ -25,33 +33,34 @@
     }
   }
 
-  &.nav-no-back{
-    .adm-nav-bar{
+  &.nav-no-back {
+    .adm-nav-bar {
       background: transparent;
     }
   }
 
-  &.nav-no-border{
-    .adm-nav-bar{
+  &.nav-no-border {
+    .adm-nav-bar {
       border: none;
     }
   }
 
-  &.header-no-back{
-    .reco-header-content{
-       position: relative;
-       background-color: transparent;
+  &.header-no-back {
+    .reco-header-content {
+      position: relative;
+      background-color: transparent;
     }
   }
 
-  .reco-describe{
-    color: #444;
-  }
-
-  > .reco-image{
+  > .reco-image {
     filter: blur(2px);
-    .adm-image{
-       display: block;
+
+    .adm-image {
+      display: block;
     }
   }
+}
+
+.reco-custom-back{
+   background: var(--nav-bar-color);
 }

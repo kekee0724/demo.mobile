@@ -1,14 +1,49 @@
-.reco-image{
+.reco-image {
   position: relative;
   max-width: 100%;
-  .adm-image{
+
+  .adm-image {
     max-width: 100%;
   }
-  .reco-image-shade{
+
+  .reco-image-shade {
     position: absolute;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
   }
+}
+
+.long-rectangle, .rectangle, .vertical-rectangle-xs, .vertical-rectangle, .square {
+  overflow: hidden;
+
+  .adm-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+
+.long-rectangle {
+  padding-bottom: 56%;
+}
+
+.rectangle {
+  padding-bottom: 75%;
+}
+
+.vertical-rectangle-xs {
+  padding-bottom: 150%;
+}
+
+.vertical-rectangle {
+  padding-bottom: 133%;
+}
+
+.square {
+  padding-bottom: 100%;
 }

@@ -10,6 +10,7 @@
 
 .container-column,
 .container-row {
+  box-sizing: border-box;
   #react-container .display-flex();
   max-height: 100%;
   width: 100%;
@@ -118,6 +119,14 @@
   opacity: 1;
   background-color: var(--bg-color);
   transform: translate3d(0, 0, 0);
+}
+
+.container-body{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .android {

@@ -1,4 +1,5 @@
 .card-text-container {
+  --text-content-margin: var(--default);
   display: inline-block;
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -8,18 +9,39 @@
     display: block;
   }
 
+  .card-text-content {
+    margin: var(--text-content-margin);
+  }
+
+  &.card-text-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .card-text-content {
+      flex: 1;
+    }
+  }
+
   .adm-image {
     display: block;
   }
 
   .card-text {
-    margin: var(--xs);
     white-space: normal;
   }
 
   .card-footer {
-    margin: var(--xs);
   }
+}
+
+.card-title {
+  font-size: var(--lg);
+  margin: var(--default);
 }
 
 .card-text-tag {
@@ -42,4 +64,10 @@
   &.released {
     background-color: #a4a4a4;
   }
+}
+
+.card-text-footer{
+  padding: 0 var(--default) var(--default);
+  width: 100%;
+  box-sizing: border-box;
 }
