@@ -5,7 +5,7 @@ import { Input, Button, Grid, Checkbox, Toast, List } from "antd-mobile";
 import { LockOutline, UserOutline } from "antd-mobile-icons";
 
 import { template, Validators } from "@reco-m/core";
-import { ViewComponent, Countdown, loginType, setEventWithLabel, ToastInfo } from "@reco-m/core-ui";
+import { ViewComponent, Countdown, loginType, setEventWithLabel, ToastInfo, CustomHeader } from "@reco-m/core-ui";
 
 import { LoginTypeEnum, Namespaces, loginModel } from "@reco-m/auth-models";
 
@@ -28,6 +28,16 @@ export namespace Login {
             this.dispatch({ type: "hideLoading" });
         }
 
+        renderHeader(headerContent?: any): React.ReactNode {
+            return (
+                <>
+                    <span className="reco-login-back" style={{ backgroundImage: "url('../assets/images/back.png')" }} />
+                    <span className="reco-login-back_1" style={{ backgroundImage: "url('../assets/images/back_1.png')" }} />
+                    <CustomHeader>{super.renderHeader(headerContent)}</CustomHeader>
+                </>
+            );
+        }
+
         renderSmsLoginView(): React.ReactNode {
             const { state } = this.props;
 
@@ -43,12 +53,22 @@ export namespace Login {
                             prefix={<i className="mobile mobile-phone size-24" />}
                             extra={<Countdown.Component start={this.sendVerifyCode.bind(this)} content="获取验证码" type="logincode" />}
                         >
-                            <Input maxLength={11} placeholder="请输入手机号" value={state!.loginName} onChange={(e) => this.dispatch({ type: "input", data: { loginName: e } })} />
+                            <Input
+                                maxLength={11}
+                                placeholder="请输入手机号"
+                                value={state!.loginName || ""}
+                                onChange={(e) => this.dispatch({ type: "input", data: { loginName: e } })}
+                            />
                         </List.Item>
                     </div>
                     <div className="reco-login-item">
                         <List.Item prefix={<i className="mobile mobile-code size-24" />}>
-                            <Input maxLength={4} placeholder="请输入短信验证码" value={state!.password} onChange={(e) => this.dispatch({ type: "input", data: { password: e } })} />
+                            <Input
+                                maxLength={4}
+                                placeholder="请输入短信验证码"
+                                value={state!.password || ""}
+                                onChange={(e) => this.dispatch({ type: "input", data: { password: e } })}
+                            />
                         </List.Item>
                     </div>
                 </>
@@ -85,12 +105,21 @@ export namespace Login {
                     <div className="reco-login-desc">新用户请选择手机号快捷登录</div>
                     <div className="reco-login-item">
                         <List.Item prefix={<UserOutline fontSize={26} />}>
-                            <Input placeholder="请输入用户名、手机号或邮箱" value={state!.loginName} onChange={(e) => this.dispatch({ type: "input", data: { loginName: e } })} />
+                            <Input
+                                placeholder="请输入用户名、手机号或邮箱"
+                                value={state!.loginName || ""}
+                                onChange={(e) => this.dispatch({ type: "input", data: { loginName: e } })}
+                            />
                         </List.Item>
                     </div>
                     <div className="reco-login-item">
                         <List.Item prefix={<LockOutline fontSize={26} />} extra={<router.Link to={"/login/find"}>找回密码</router.Link>}>
-                            <Input type="password" placeholder="请输入密码" value={state!.password} onChange={(e) => this.dispatch({ type: "input", data: { password: e } })} />
+                            <Input
+                                type="password"
+                                placeholder="请输入密码"
+                                value={state!.password || ""}
+                                onChange={(e) => this.dispatch({ type: "input", data: { password: e } })}
+                            />
                         </List.Item>
                     </div>
                 </>
