@@ -1,9 +1,10 @@
 import React from "react";
 
-import { Button } from "antd-mobile";
+import { Button, Result } from "antd-mobile";
 
 import { PureComponent, browser } from "@reco-m/core";
 
+import { ListContainer } from "./ui/list.container";
 const ddkit = window["dd"];
 export namespace DeletData {
     export interface IProps extends PureComponent.IProps {
@@ -23,6 +24,33 @@ export namespace DeletData {
             const { title, text } = this.props;
             return (
                 <div>
+                    <Result status="error" title={title as any} description={text} />
+                    <ListContainer>
+                        <Button
+                            onClick={() => {
+                                if (ddkit && ddkit.env.platform !== "notInDingTalk") {
+                                    alert(JSON.stringify(ddkit));
+                                    ddkit.biz.navigation.close({
+                                        onSuccess: function () {},
+                                        onFail: function () {},
+                                    });
+                                } else if (browser.versions.weChatMini) {
+                                    (wx["miniProgram"] as any).redirectTo({ url: "/pages/index/index/index" });
+                                } else {
+                                    history.go(-2);
+                                }
+                            }}
+                            color="primary"
+                            block
+                            type="button"
+                        >
+                            {browser.versions.weChatMini ? "返回首页" : "返回上一页"}
+                        </Button>
+                    </ListContainer>
+                </div>
+            );
+            return (
+                <div>
                     <div className="pay-content">
                         <div className="pay-icon " style={{ color: "red" }}>
                             <i className="icon icon-cuo" />
@@ -33,16 +61,12 @@ export namespace DeletData {
                     <div
                         className="pay-button"
                         onClick={() => {
-
                             if (ddkit && ddkit.env.platform !== "notInDingTalk") {
-                                alert(JSON.stringify(ddkit))
+                                alert(JSON.stringify(ddkit));
                                 ddkit.biz.navigation.close({
-                                    onSuccess : function() {
-
-                                    },
-                                    onFail : function() {
-                                    }
-                                })
+                                    onSuccess: function () {},
+                                    onFail: function () {},
+                                });
                             } else if (browser.versions.weChatMini) {
                                 (wx["miniProgram"] as any).redirectTo({ url: "/pages/index/index/index" });
                             } else {

@@ -8,7 +8,9 @@ export namespace FooterButton {
         className?: string;
         border?: boolean;
         back?: boolean;
-        children?: any[];
+        columns?: number;
+        gridProps?: any;
+        gap?: number | string | [number | string, number | string];
     }
 
     export interface IState extends PureComponent.IState {}
@@ -16,14 +18,28 @@ export namespace FooterButton {
     export class Component<P extends IProps = IProps, S extends IState = IState> extends PureComponent.Base<P, S> {
         static defaultProps: any = {
             className: "",
+            columns: 0,
+            gap: 8,
         };
 
         render() {
+            console.log("this.props.children", this.props.children);
+
             const bodyCls = classNames("reco-footer-button", this.props.className, this.props.border && "footer-border", this.props.back && "footer-back");
-            return (
-                <Grid columns={this.props.children!.length} gap={8} className={bodyCls}>
-                    {this.props.children}
+
+            let children = this.props.children;
+            if (this.props.children instanceof Array) {
+                children = this.props.children.filter((item) => {
+                    return item instanceof Object;
+                });
+            }
+
+            return children instanceof Array ? (
+                <Grid columns={this.props.columns || children!.length} gap={this.props.gap} className={bodyCls} {...this.props.gridProps}>
+                    {children}
                 </Grid>
+            ) : (
+                <div className={bodyCls}>{children}</div>
             );
         }
     }
@@ -33,7 +49,8 @@ export namespace FooterButton {
         onClick?: () => void;
         children?: ReactNode;
         align?: "center" | "top" | "bottom";
-        justify?: "left" | "center" | "right";
+        justify?: "start" | "center" | "end";
+        gridItemProps?: any;
     }
 
     export const Item = (props: ItemProps) => {
@@ -52,10 +69,10 @@ export namespace FooterButton {
             case "center":
                 justifyClass = "justify-center";
                 break;
-            case "left":
+            case "start":
                 justifyClass = "justify-start";
                 break;
-            case "right":
+            case "end":
                 justifyClass = "justify-end";
         }
         return (

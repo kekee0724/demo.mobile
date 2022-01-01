@@ -17,6 +17,11 @@ export namespace PictureUploadWrap {
     export class Component<P extends IProps = IProps, S extends IState = IState> extends UploadrWrap.Base<P, S> {
         private files: WebUploader.File[];
 
+        componentDidMount() {
+            const {onRef} = this.props as any;
+            onRef && onRef(this)
+        }
+
         showErrorMessage(content: string): void {
             Toast.show({ icon: "fail", content });
         }
@@ -80,6 +85,17 @@ export namespace PictureUploadWrap {
 
             this.files = files;
         }
+        clearFiles() {
+            let {files} = this.state;
+
+            files && files.map(item => {
+                this.removeFile(item);
+
+            })
+            
+            this.setState({files: []})
+        }
+
 
         protected onFileUploadProgress(_file: WebUploader.File, _percentage: number) {}
 

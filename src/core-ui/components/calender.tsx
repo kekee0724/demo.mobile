@@ -22,8 +22,8 @@ interface ObjState {
 
 let st: any = 0,
     sc: any = 0,
-    startx: any,
-    starty: any,
+    startX: any,
+    startY: any,
     result: any,
     _this: ObjState;
 
@@ -39,11 +39,12 @@ export namespace RMCalendar {
         schedule: any;
         onCellClick: any;
         onPageChange: any;
+        mode?: "card" | undefined;
     }
 
     export interface IState extends PureComponent.IState {
         type: any;
-        dropdownlist: boolean;
+        dropdownList: boolean;
         hasError: boolean;
         prevProps: any;
         date: any;
@@ -326,7 +327,7 @@ export namespace RMCalendar {
                     day: validDate.getDate(),
                 },
                 cellHeight: 0,
-                dropdownlist: false,
+                dropdownList: false,
                 index: 0, // 滑动面板默认页索引
                 animate: true,
             } as any;
@@ -403,7 +404,7 @@ export namespace RMCalendar {
                             });
                         }, 300);
                         this.setState({
-                            dropdownlist: false,
+                            dropdownList: false,
                         });
                     }
                 );
@@ -438,9 +439,9 @@ export namespace RMCalendar {
             return (Math.atan2(angy, angx) * 180) / Math.PI;
         }
 
-        _getDirection(startx, starty, endx?, endy?) {
-            const angx = endx - startx;
-            const angy = endy - starty;
+        _getDirection(startX, startY, endx?, endy?) {
+            const angx = endx - startX;
+            const angy = endy - startY;
             if (Math.abs(angx) < 2 && Math.abs(angy) < 2) {
                 return result;
             }
@@ -458,32 +459,37 @@ export namespace RMCalendar {
         }
 
         _handleTouch(e) {
+            const dom = document.querySelector(".container-scrollable") as any;
             if (e.type === "touchstart") {
-                startx = e.touches[0].pageX;
-                starty = e.touches[0].pageY;
+                startX = e.touches[0].pageX;
+                startY = e.touches[0].pageY;
                 sc = $(this.calendar.current);
                 sc.css({ transform: "translate3d(0, 0, 0)" });
                 st = sc.height();
-                $(".container-scrollable").css({ overflow: "hidden" });
+                dom!.style.overflow = "hidden";
             } else if (e.type === "touchend") {
-                let endx, endy;
-                endx = e.changedTouches[0].pageX;
-                endy = e.changedTouches[0].pageY;
-                let direction = this._getDirection(startx, starty, endx, endy);
-                if (Math.abs(endy - starty) >= 60) {
+                let endX, endY;
+                endX = e.changedTouches[0].pageX;
+                endY = e.changedTouches[0].pageY;
+                let direction = this._getDirection(startX, startY, endX, endY);
+                if (Math.abs(endY - startY) >= 60) {
                     switch (direction) {
                         case 1:
-                            sc.css({ transition: "all .1s" });
-                            this.handleChangeType("week");
-                            setTimeout(function () {
+                            sc.css({ transition: "height .1s" });
+                            setTimeout(() => {
                                 sc.css({ height: "116px" });
+                                setTimeout(() => {
+                                    this.handleChangeType("week");
+                                }, 100);
                             });
                             break;
                         case 2:
-                            sc.css({ transition: "all .1s" });
-                            this.handleChangeType("month");
-                            setTimeout(function () {
+                            sc.css({ transition: "height .1s" });
+                            setTimeout(() => {
                                 sc.css({ height: "316px" });
+                                setTimeout(() => {
+                                    this.handleChangeType("month");
+                                }, 100);
                             });
                             break;
                         default:
@@ -498,21 +504,21 @@ export namespace RMCalendar {
                     }, 300);
                 } else {
                     if (this.state.type === "week") {
-                        sc.css({ transition: "all .1s" });
+                        sc.css({ transition: "height .3s" });
                         setTimeout(function () {
                             sc.css({ height: "116px" });
                         });
                     } else {
-                        sc.css({ transition: "all .1s" });
+                        sc.css({ transition: "height .3s" });
                         setTimeout(function () {
                             sc.css({ height: "316px" });
                         });
                     }
                 }
+                dom!.style.overflow = "auto";
             } else if (e.type === "touchmove") {
-                $(".container-scrollable").attr("style", "");
-                let sel = this._getDirection(startx, starty) || 1;
-                const ie = e.touches[0].clientY - starty <= 0 ? e.touches[0].clientY - starty : e.touches[0].clientY - starty;
+                let sel = this._getDirection(startX, startY) || 1;
+                const ie = e.touches[0].clientY - startY <= 0 ? e.touches[0].clientY - startY : e.touches[0].clientY - startY;
                 switch (sel) {
                     default:
                         break;
@@ -547,7 +553,7 @@ export namespace RMCalendar {
             }
 
             const { firstDayOfWeek, toolbar, width, touch, className, bodyClassName }: any = this.props;
-            const { type, selectDate, dropdownlist, index, animate }: any = this.state;
+            const { type, selectDate, dropdownList, index, animate }: any = this.state;
             const selectDateTime = new Date(selectDate.year, selectDate.month, selectDate.day);
 
             const computeSlideCount = () => {
@@ -562,9 +568,8 @@ export namespace RMCalendar {
 
             return (
                 <div
-                    style={{ overflow: "hidden", backgroundColor: "#ffffff" }}
                     ref={this.calendar}
-                    className={className}
+                    className={classNames("calendar-box", className, this.props.mode === "card" && "calendar-card")}
                     onTouchStart={this._handleTouch.bind(this)}
                     onTouchMove={this._handleTouch.bind(this)}
                     onTouchEnd={this._handleTouch.bind(this)}
@@ -573,7 +578,7 @@ export namespace RMCalendar {
                     {toolbar && (
                         <div className={"top-bar"} style={{ width: typeof width === "number" ? `${width}px` : width }}>
                             <div className={"date"}>
-                                <div className={"opt-btn"} role="button" data-index="0" onClick={() => this.setState((state) => ({ dropdownlist: !state.dropdownlist }))}>
+                                <div className={"opt-btn"} role="button" data-index="0" onClick={() => this.setState((state) => ({ dropdownList: !state.dropdownList }))}>
                                     <div className={"month"}>{`${selectDate.month < 9 ? 0 : ""}${selectDate.month + 1}月`}</div>
                                     <div className={"week-year"}>
                                         <div>
@@ -581,7 +586,7 @@ export namespace RMCalendar {
                                                 ? `第 ${moment(selectDateTime).format(firstDayOfWeek === 0 ? "ww" : "WW")} 周`
                                                 : `周${Component.turnWeekNumToChar(selectDateTime.getDay())}`}
                                         </div>
-                                        <div className={cx("year", { up: !dropdownlist, down: dropdownlist })}>{`${selectDate.year}年`}</div>
+                                        <div className={cx("year", { up: !dropdownList, down: dropdownList })}>{`${selectDate.year}年`}</div>
                                     </div>
                                 </div>
                                 <div className={"turn-btn"}>
@@ -603,7 +608,7 @@ export namespace RMCalendar {
                                     />
                                 </div>
                             </div>
-                            {dropdownlist && (
+                            {dropdownList && (
                                 <div key={"a"} className={"options"}>
                                     <div className={"opt"} role="button" data-index="-3" onClick={() => this.handleChangeType("month")}>
                                         <i className={cx({ selected: type === "month" })}>月</i>

@@ -177,15 +177,15 @@ export function getResolveData(state: any, object: any) {
 export function iconSvg(text, _animation?) {
     return (
         <svg
-            width="40px"
+            width="120px"
             height="35px"
-            style={{ marginTop: "-10px" }}
+            style={{ marginTop: 12 }}
             xmlns="http://www.w3.org/2000/svg"
             xmlnsXlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 100 100"
+            viewBox="0 0 200 100"
             preserveAspectRatio="xMidYMid"
         >
-            <g transform="translate(0, -25)">
+            <g transform="translate(-40, 0)">
                 <g transform="rotate(0 50 50)">
                     <rect x="47.5" y="24" rx="4.75" ry="2.4" width="5" height="12" fill="#cccccc">
                         <animate attributeName="opacity" values="1;0" keyTimes="0;1" dur="1s" begin="-0.9166666666666666s" repeatCount="indefinite" />
@@ -247,7 +247,7 @@ export function iconSvg(text, _animation?) {
                     </rect>
                 </g>
             </g>
-            <text x="8" y="80" fontSize="20" fill="#333333">
+            <text x="52" y="62" fontSize="32" fill="#333333">
                 {text}
             </text>
         </svg>

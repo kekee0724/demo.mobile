@@ -12,17 +12,19 @@ declare type CustomHeaderProps = {
     navBarNoBorder?: boolean;
     navBarNoBack?: boolean;
     customHeaderList?: boolean;
+    backColor?: boolean;
 };
 
 export const CustomHeader = forwardRef((props: CustomHeaderProps, _ref: any) => {
-    const { className, style, children, backImageSrc, backCutWidth, backCutHeight, navBarNoBorder, navBarNoBack, customHeaderList } = props;
+    const { className, style, children, backImageSrc, backCutWidth, backCutHeight, navBarNoBorder, navBarNoBack, customHeaderList, backColor } = props;
     const bodyCls = classNames(
         "reco-custom-header",
         className,
         !navBarNoBorder && "nav-no-border",
         !navBarNoBack && "nav-no-back",
         customHeaderList && "custom-header-list",
-        !backImageSrc && "header-no-back"
+        !backImageSrc && "header-no-back",
+        backColor && "reco-custom-back"
     );
     return (
         <div className={bodyCls} style={style}>

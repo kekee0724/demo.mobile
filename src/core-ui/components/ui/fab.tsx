@@ -63,8 +63,46 @@ export const Fab = forwardRef((props: any, _ref) => {
 
     $(dom).find(".fab-close").off("click", close).on("click", close);
 
+    let oL, oT;
     return (
-        <div id={id} style={style} className={classes} data-morph-to={morphTo} ref={elRef} {...extraAttrs}>
+        <div
+            id={id}
+            style={style}
+            className={classes}
+            data-morph-to={morphTo}
+            ref={elRef}
+            {...extraAttrs}
+            onTouchStart={(e) => {
+                const touchDom = elRef.current as any;
+                let ev = e || window.event;
+                let touch = ev.targetTouches[0];
+                oL = touch.clientX - touchDom.offsetLeft;
+                oT = touch.clientY - touchDom.offsetTop;
+            }}
+            onTouchMove={(e) => {
+                const touchDom = elRef.current as any;
+                let maxW = document.body.clientWidth - touchDom?.offsetWidth;
+                let maxH = document.body.clientHeight - touchDom?.offsetHeight;
+                let ev = e || window.event;
+                let touch = ev.targetTouches[0];
+                let oLeft = touch.clientX - oL;
+                let oTop = touch.clientY - oT;
+                if (oLeft < 0) {
+                    oLeft = 0;
+                } else if (oLeft >= maxW) {
+                    oLeft = maxW;
+                }
+                if (oTop < 0) {
+                    oTop = 0;
+                } else if (oTop >= maxH) {
+                    oTop = maxH;
+                }
+                touchDom.style.left = oLeft + "px";
+                touchDom.style.top = oTop + "px";
+                touchDom.style.bottom = "auto";
+                touchDom.style.right = "auto";
+            }}
+        >
             <a className="fab-toggle-button" onClick={() => setShow(!show)}>
                 <i>
                     <AddOutline />

@@ -115,9 +115,9 @@ export namespace GDMap {
 
             return (
                 <List className={mapStyle} mode="card">
-                    <List.Item className={titleStyle}>
+                    {title && <List.Item className={titleStyle}>
                         <span>{title}</span>
-                    </List.Item>
+                    </List.Item>}
                     <List.Item>
                         {!this.state.show ? <div className="space-map" id="spaceMap" /> : null}
                         {this.state.show ? (

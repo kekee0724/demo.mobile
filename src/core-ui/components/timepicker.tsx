@@ -19,6 +19,9 @@ export namespace TimePicker {
         visible?: boolean;
         value?: PickerValue[];
         defaultValue?: Date;
+        min?: Date;
+        max?: Date;
+
         onConfirm?: (label: PickerValue[], value: any, date: Date) => void;
         onSelect?: (label: PickerValue[], value: any, date: Date) => void;
         onCancel?: () => void;
@@ -34,7 +37,7 @@ export namespace TimePicker {
 
     export class Component<P extends IProps = IProps, S extends IState = IState> extends PureComponent.Base<P, S> {
         static defaultProps: TimePicker.IProps = {
-            defaultValue: new Date(),
+            // defaultValue: new Date(),
         } as any;
 
         renderFab(right) {
@@ -56,10 +59,14 @@ export namespace TimePicker {
         }
 
         render(): React.ReactNode {
-            const { visible, cancelText, confirmText, title, onClose, onCancel, onSelect, onConfirm, defaultValue, value, content } = this.props;
+            const { visible, cancelText, confirmText, title, onClose, onCancel, onSelect, onConfirm, defaultValue, value, content, min, max } = this.props;
 
             let hour = defaultValue?.getHours(),
-                mInit = defaultValue?.getMinutes();
+                mInit = defaultValue?.getMinutes(),
+                minHour = min?.getHours(),
+                minMinut = min?.getMinutes(),
+                maxHour = max?.getHours(),
+                maxMinut = max?.getMinutes();
 
             let timeProps = {
                 visible,
@@ -87,17 +94,24 @@ export namespace TimePicker {
 
                     onConfirm && onConfirm(value, { hour, mInit }, data);
                 },
-                defaultValue: [`${hour}时`, `${mInit}分`],
+                defaultValue: hour && [`${hour}时`, `${mInit}分`],
                 value,
             } as any;
 
             let columnsT = [[], []] as any;
             for (let i = 0; i < 24; i++) {
+                if ((minHour && i < minHour) || (maxHour && i > maxHour)) {
+                    continue;
+                }
                 columnsT[0].push(`${i}时`);
             }
             for (let j = 0; j < 60; j++) {
+                if ((minMinut && j < minMinut) || (maxMinut && j > maxMinut)) {
+                    continue;
+                }
                 columnsT[1].push(`${j}分`);
             }
+        
             timeProps.columns = columnsT;
 
             return <Picker {...timeProps}>{content}</Picker>;

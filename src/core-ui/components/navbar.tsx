@@ -31,7 +31,7 @@ export namespace NavBar {
             if (!right) return null;
 
             if (!(right as any)!.props.children || !Array.isArray((right as any)!.props.children)) {
-                return <Fab position="right-bottom" text={right}></Fab>;
+                return <Fab position="right-bottom" text={right} />;
             } else if ((right as any)!.props.children.length > 1) {
                 return (
                     <Fab position="right-bottom">

@@ -17,6 +17,11 @@ export namespace Picture {
     export class Component<P extends IProps = IProps, S extends IState = IState> extends BasePicture.Component<P, S> {
         static defaultProps = getPictureDefaultProps();
 
+        componentDidMount() {
+            const {onBasePicturRef} = this.props as any;
+            onBasePicturRef && onBasePicturRef(this)
+        }
+        
         protected onShowErrorMessage(msg: string): void {
             Toast.show({ icon: "fail", content: msg });
         }
