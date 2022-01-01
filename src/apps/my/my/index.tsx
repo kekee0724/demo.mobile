@@ -1,7 +1,7 @@
 import React from "react";
 
 import { router } from "dva";
-import { Route } from "@reco-m/core-ui";
+import { Route, DeletData } from "@reco-m/core-ui";
 
 import { aboutRoutes } from "@reco-m/system-about";
 import { filesRoutes } from "@reco-m/files-manage";
@@ -33,6 +33,7 @@ export const routes = ({ match }, renderRoutes?: (match: router.match) => React.
             {testFormRoutes(match)}
             {signatureRoutes(match)}
             {pChangePasswordRoutes(match)}
+            {deleteDataRoutes(match)}
         </>
     );
 };
@@ -40,3 +41,6 @@ export function testFormRoutes(match) {
     return <Route path={`${match.path}/form`} component={IparkTestForm.Page} />;
 }
 
+export function deleteDataRoutes(match) {
+    return <Route path={`${match.path}/deleteData`} component={DeletData.Component} />;
+}

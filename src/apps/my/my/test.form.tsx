@@ -33,6 +33,7 @@ export namespace IparkTestForm {
                 <div>
                     <ListTitle>基本信息</ListTitle>
                     {this.renderForm({
+                        layout: "horizontal",
                         children: (
                             <>
                                 {this.renderInput({
@@ -40,7 +41,6 @@ export namespace IparkTestForm {
                                     stateKey: "name",
                                     placeholder: "请输入姓名",
                                     isRequired: true,
-                                    // rollTitle: true,
                                 })}
                                 {this.renderInput({
                                     title: "民族",
@@ -160,7 +160,7 @@ export namespace IparkTestForm {
                         ),
                     })}
                     <ListTitle>物业项目</ListTitle>
-                    <List>
+                    <List mode={"card"}>
                         <List.Item>
                             {this.renderTags({
                                 stateKey: "projects",
@@ -175,7 +175,7 @@ export namespace IparkTestForm {
                         </List.Item>
                     </List>
                     <ListTitle>设备小标签</ListTitle>
-                    <List>
+                    <List mode={"card"}>
                         <List.Item>
                             {this.renderTags({
                                 stateKey: "devicessamll",
@@ -199,7 +199,7 @@ export namespace IparkTestForm {
                         </List.Item>
                     </List>
                     <ListTitle>设备大标签</ListTitle>
-                    <List>
+                    <List mode={"card"}>
                         <List.Item>
                             {this.renderTags({
                                 stateKey: "devicesbig",
@@ -245,7 +245,7 @@ export namespace IparkTestForm {
                         tagValueKey: "tagValue",
                     })}
                     <ListTitle>单选</ListTitle>
-                    <List>
+                    <List mode={"card"}>
                         <List.Item prefix="单行标签选择">
                             {this.renderTagsLine({
                                 stateKey: "devicesTag",
