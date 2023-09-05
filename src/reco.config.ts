@@ -107,12 +107,13 @@ export const server: RECO.Mobile.Config.Server = (window["server"] = {
     /**
      * 项目资源文件地址
      */
-    assetsUrl: "https://fat.bitechdevelop.com/reco-oa-10-1-mobileapi/",
+  // assetsUrl: "https://fat.bitechdevelop.com/reco-oa-10-1-mobileapi/",
+    assetsUrl: "http://localhost:8081/",
     /**
      * 项目接口地址
      */
-    url: "https://fat.bitechdevelop.com/reco-oa-10-1-mobileapi/", // 正在使用win
-    // url: "http://192.168.30.150:8081/",  // 伍振飞本地
+    // url: "https://fat.bitechdevelop.com/reco-oa-10-1-mobileapi/", // 正在使用win
+    url: "http://localhost:8081/",  // 伍振飞本地
 
     // assetsUrl: "https://linux.bitechdevelop.com/ipark_test1.mobileapi/",
     // url: "https://linux.bitechdevelop.com/ipark_test1.mobileapi/"

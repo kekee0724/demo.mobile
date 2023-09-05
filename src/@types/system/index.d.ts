@@ -7,6 +7,7 @@ declare namespace RECO.Mobile {
          */
         interface Client {
             title: string;
+            techSupport: string;
             /**
              *  资源加载参数
              *
@@ -141,6 +142,7 @@ declare namespace RECO.Mobile {
             corpId?: string;
             h5url?: string;
             rsa?: any;
+            appdownload?: string;
         }
 
         namespace Server {
